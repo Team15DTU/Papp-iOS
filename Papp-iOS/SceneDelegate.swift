@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Papp-iOS
+//  Papp
 //
-//  Created by Nikolaj Wassmann on 25/02/2020.
+//  Created by Nikolaj Wassmann on 07/02/2020.
 //  Copyright © 2020 Nikolaj Wassmann. All rights reserved.
 //
 
