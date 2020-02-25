@@ -8,6 +8,8 @@
 
 import Foundation
 
+//Temp UserDTO object
+
 struct UserDTO: Decodable {
     
     var name: String
