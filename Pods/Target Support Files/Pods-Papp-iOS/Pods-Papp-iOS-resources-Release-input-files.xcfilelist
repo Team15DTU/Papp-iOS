@@ -1,3 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS-resources.sh
-${PODS_ROOT}/MapboxMobileEvents/MapboxMobileEvents/Resources/logger.html
 ${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle
