@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="VL5-bp-iAM">
+            <objects>
+                <viewController storyboardIdentifier="MapView" id="a2Y-F3-dSY" customClass="MapViewController" customModule="Papp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CAU-4c-lVm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WJ-x8-wPZ" customClass="MGLMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/mapbox/streets-v11"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bw-SM-kL2">
+                                <rect key="frame" x="346" y="713" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Q8K-U6-P0l"/>
+                                    <constraint firstAttribute="width" constant="50" id="kZP-BJ-ZqQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="location" catalog="system"/>
+                                <connections>
+                                    <action selector="onClickTrackButton" destination="a2Y-F3-dSY" eventType="touchUpInside" id="36e-Iq-qfK"/>
+                                </connections>
+                            </button>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LsQ-k1-6cK">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Hjem" image="house.fill" catalog="system" id="bEG-l5-6qa"/>
+                                    <tabBarItem title="Tip" image="message.fill" catalog="system" id="ba9-cq-bbd"/>
+                                    <tabBarItem title="P-Vagt" image="exclamationmark.triangle.fill" catalog="system" id="YR4-qh-U7d"/>
+                                    <tabBarItem title="Menu" image="circle.grid.3x3.fill" catalog="system" id="tzm-fr-PLx"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="4WJ-x8-wPZ" firstAttribute="top" secondItem="CAU-4c-lVm" secondAttribute="top" id="4MX-TY-FkL"/>
+                            <constraint firstItem="LsQ-k1-6cK" firstAttribute="bottom" secondItem="CAU-4c-lVm" secondAttribute="bottom" id="7lr-w0-asA"/>
+                            <constraint firstItem="LsQ-k1-6cK" firstAttribute="top" secondItem="4WJ-x8-wPZ" secondAttribute="bottom" id="JHy-Vy-NKn"/>
+                            <constraint firstItem="4WJ-x8-wPZ" firstAttribute="trailing" secondItem="hZb-f8-uga" secondAttribute="trailing" id="QeD-X3-vvZ"/>
+                            <constraint firstItem="4WJ-x8-wPZ" firstAttribute="leading" secondItem="hZb-f8-uga" secondAttribute="leading" id="ccH-BC-wwO"/>
+                            <constraint firstItem="LsQ-k1-6cK" firstAttribute="leading" secondItem="hZb-f8-uga" secondAttribute="leading" id="lKW-j6-oBC"/>
+                            <constraint firstItem="LsQ-k1-6cK" firstAttribute="trailing" secondItem="hZb-f8-uga" secondAttribute="trailing" id="n5d-Ci-g2c"/>
+                            <constraint firstItem="LsQ-k1-6cK" firstAttribute="top" secondItem="3Bw-SM-kL2" secondAttribute="bottom" constant="50" id="raD-ay-f4j"/>
+                            <constraint firstItem="hZb-f8-uga" firstAttribute="trailing" secondItem="3Bw-SM-kL2" secondAttribute="trailing" constant="18" id="vsm-8P-nA4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hZb-f8-uga"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/mapbox/streets-v11"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="showsUserLocation" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
+                                <real key="value" value="11"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="mapTabBar" destination="LsQ-k1-6cK" id="Ohm-tW-6ac"/>
+                        <outlet property="mapView" destination="4WJ-x8-wPZ" id="VAS-yc-pzx"/>
+                        <outlet property="trackButton" destination="3Bw-SM-kL2" id="GHo-6a-nSm"/>
+                        <outletCollection property="tabBarItems" destination="bEG-l5-6qa" collectionClass="NSMutableArray" id="4FK-eY-1XX"/>
+                        <outletCollection property="tabBarItems" destination="ba9-cq-bbd" collectionClass="NSMutableArray" id="k2B-dT-zX8"/>
+                        <outletCollection property="tabBarItems" destination="YR4-qh-U7d" collectionClass="NSMutableArray" id="asc-E0-0tH"/>
+                        <outletCollection property="tabBarItems" destination="tzm-fr-PLx" collectionClass="NSMutableArray" id="8Rk-Uq-gIJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Djg-0S-Hma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="95.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle.grid.3x3.fill" catalog="system" width="64" height="56"/>
+        <image name="exclamationmark.triangle.fill" catalog="system" width="64" height="56"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="location" catalog="system" width="64" height="56"/>
+        <image name="message.fill" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
