@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,6 +42,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		345E1A402405AA4C003E859B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		34BC10B8240534ED0082476D = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +70,7 @@
 		34BC10C3240534ED0082476D /* Papp-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				345E1A402405AA4C003E859B /* New Group */,
 				34BC10C4240534ED0082476D /* AppDelegate.swift */,
 				34BC10C6240534ED0082476D /* SceneDelegate.swift */,
 				34BC10C8240534ED0082476D /* ViewController.swift */,
@@ -88,7 +96,6 @@
 				9E0C25528CBAB91B65E6BB84 /* Pods-Papp-iOS.debug.xcconfig */,
 				10BD691B177CC7E27620FC44 /* Pods-Papp-iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
