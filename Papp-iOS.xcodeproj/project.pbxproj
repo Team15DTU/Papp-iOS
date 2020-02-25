@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3410D5FB24054C450017C44D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3410D5FA24054C450017C44D /* GoogleService-Info.plist */; };
+		3410D60024054CC20017C44D /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3410D5FC24054CC20017C44D /* SignIn.storyboard */; };
+		3410D60124054CC20017C44D /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3410D5FD24054CC20017C44D /* SignViewController.swift */; };
+		3410D60224054CC20017C44D /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3410D5FE24054CC20017C44D /* SignUp.storyboard */; };
+		3410D60324054CC20017C44D /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3410D5FF24054CC20017C44D /* ForgotPassword.storyboard */; };
+		3410D60524054CCD0017C44D /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3410D60424054CCD0017C44D /* UserDTO.swift */; };
+		3410D60824054CD80017C44D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3410D60624054CD80017C44D /* MapViewController.swift */; };
+		3410D60924054CD80017C44D /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3410D60724054CD80017C44D /* MapView.storyboard */; };
 		34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C4240534ED0082476D /* AppDelegate.swift */; };
 		34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C6240534ED0082476D /* SceneDelegate.swift */; };
 		34BC10C9240534ED0082476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C8240534ED0082476D /* ViewController.swift */; };
@@ -18,6 +26,36 @@
 
 /* Begin PBXFileReference section */
 		10BD691B177CC7E27620FC44 /* Pods-Papp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.release.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		3410D5E124054C110017C44D /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		3410D5E224054C120017C44D /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		3410D5E324054C120017C44D /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		3410D5E424054C120017C44D /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		3410D5E524054C120017C44D /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		3410D5E624054C120017C44D /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		3410D5E724054C130017C44D /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3410D5E824054C130017C44D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		3410D5E924054C130017C44D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		3410D5EA24054C130017C44D /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		3410D5EB24054C130017C44D /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		3410D5EC24054C140017C44D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		3410D5ED24054C140017C44D /* Gibson-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-RegularItalic.ttf"; sourceTree = "<group>"; };
+		3410D5EE24054C140017C44D /* Gibson-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-Regular.ttf"; sourceTree = "<group>"; };
+		3410D5EF24054C140017C44D /* gibson-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gibson-bold.ttf"; sourceTree = "<group>"; };
+		3410D5F024054C140017C44D /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		3410D5F124054C150017C44D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		3410D5F224054C150017C44D /* Gibson-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-BoldItalic.ttf"; sourceTree = "<group>"; };
+		3410D5F324054C150017C44D /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		3410D5F424054C150017C44D /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		3410D5F524054C150017C44D /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		3410D5F624054C160017C44D /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		3410D5FA24054C450017C44D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3410D5FC24054CC20017C44D /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		3410D5FD24054CC20017C44D /* SignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
+		3410D5FE24054CC20017C44D /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		3410D5FF24054CC20017C44D /* ForgotPassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
+		3410D60424054CCD0017C44D /* UserDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		3410D60624054CD80017C44D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3410D60724054CD80017C44D /* MapView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
 		34BC10C1240534ED0082476D /* Papp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Papp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BC10C4240534ED0082476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BC10C6240534ED0082476D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +80,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3410D5E024054BDD0017C44D /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3410D5EF24054C140017C44D /* gibson-bold.ttf */,
+				3410D5F224054C150017C44D /* Gibson-BoldItalic.ttf */,
+				3410D5EE24054C140017C44D /* Gibson-Regular.ttf */,
+				3410D5ED24054C140017C44D /* Gibson-RegularItalic.ttf */,
+				3410D5E124054C110017C44D /* Montserrat-Black.ttf */,
+				3410D5E424054C120017C44D /* Montserrat-BlackItalic.ttf */,
+				3410D5F124054C150017C44D /* Montserrat-Bold.ttf */,
+				3410D5F324054C150017C44D /* Montserrat-BoldItalic.ttf */,
+				3410D5EC24054C140017C44D /* Montserrat-ExtraBold.ttf */,
+				3410D5E324054C120017C44D /* Montserrat-ExtraBoldItalic.ttf */,
+				3410D5E724054C130017C44D /* Montserrat-ExtraLight.ttf */,
+				3410D5EB24054C130017C44D /* Montserrat-ExtraLightItalic.ttf */,
+				3410D5F424054C150017C44D /* Montserrat-Italic.ttf */,
+				3410D5E524054C120017C44D /* Montserrat-Light.ttf */,
+				3410D5F524054C150017C44D /* Montserrat-LightItalic.ttf */,
+				3410D5EA24054C130017C44D /* Montserrat-Medium.ttf */,
+				3410D5F624054C160017C44D /* Montserrat-MediumItalic.ttf */,
+				3410D5E824054C130017C44D /* Montserrat-Regular.ttf */,
+				3410D5E924054C130017C44D /* Montserrat-SemiBold.ttf */,
+				3410D5E624054C120017C44D /* Montserrat-SemiBoldItalic.ttf */,
+				3410D5F024054C140017C44D /* Montserrat-Thin.ttf */,
+				3410D5E224054C120017C44D /* Montserrat-ThinItalic.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		3410D5F724054C1A0017C44D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3410D60424054CCD0017C44D /* UserDTO.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3410D5F824054C2A0017C44D /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				3410D60724054CD80017C44D /* MapView.storyboard */,
+				3410D60624054CD80017C44D /* MapViewController.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		3410D5F924054C350017C44D /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				3410D5FF24054CC20017C44D /* ForgotPassword.storyboard */,
+				3410D5FC24054CC20017C44D /* SignIn.storyboard */,
+				3410D5FE24054CC20017C44D /* SignUp.storyboard */,
+				3410D5FD24054CC20017C44D /* SignViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		34BC10B8240534ED0082476D = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +158,17 @@
 		34BC10C3240534ED0082476D /* Papp-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3410D5F924054C350017C44D /* SignIn */,
+				3410D5F824054C2A0017C44D /* MapView */,
+				3410D5F724054C1A0017C44D /* Model */,
+				3410D5E024054BDD0017C44D /* fonts */,
 				34BC10C4240534ED0082476D /* AppDelegate.swift */,
 				34BC10C6240534ED0082476D /* SceneDelegate.swift */,
 				34BC10C8240534ED0082476D /* ViewController.swift */,
 				34BC10CA240534ED0082476D /* Main.storyboard */,
 				34BC10CD240534ED0082476D /* Assets.xcassets */,
 				34BC10CF240534ED0082476D /* LaunchScreen.storyboard */,
+				3410D5FA24054C450017C44D /* GoogleService-Info.plist */,
 				34BC10D2240534ED0082476D /* Info.plist */,
 			);
 			path = "Papp-iOS";
@@ -88,7 +188,6 @@
 				9E0C25528CBAB91B65E6BB84 /* Pods-Papp-iOS.debug.xcconfig */,
 				10BD691B177CC7E27620FC44 /* Pods-Papp-iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,7 +252,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */,
+				3410D60024054CC20017C44D /* SignIn.storyboard in Resources */,
+				3410D60924054CD80017C44D /* MapView.storyboard in Resources */,
+				3410D60224054CC20017C44D /* SignUp.storyboard in Resources */,
+				3410D5FB24054C450017C44D /* GoogleService-Info.plist in Resources */,
 				34BC10CE240534ED0082476D /* Assets.xcassets in Resources */,
+				3410D60324054CC20017C44D /* ForgotPassword.storyboard in Resources */,
 				34BC10CC240534ED0082476D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,8 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BC10C9240534ED0082476D /* ViewController.swift in Sources */,
+				3410D60824054CD80017C44D /* MapViewController.swift in Sources */,
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
 				34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */,
+				3410D60524054CCD0017C44D /* UserDTO.swift in Sources */,
+				3410D60124054CC20017C44D /* SignViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +468,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wassmann..Papp-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dtu.papp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -380,7 +487,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wassmann..Papp-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dtu.papp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
