@@ -40,7 +40,6 @@
 /* Begin PBXFileReference section */
 		10BD691B177CC7E27620FC44 /* Pods-Papp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.release.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		3410D5E124054C110017C44D /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
-		3410D5E224054C120017C44D /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		3410D5E324054C120017C44D /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		3410D5E424054C120017C44D /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
 		3410D5E524054C120017C44D /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -117,7 +116,6 @@
 				3410D5E924054C130017C44D /* Montserrat-SemiBold.ttf */,
 				3410D5E624054C120017C44D /* Montserrat-SemiBoldItalic.ttf */,
 				3410D5F024054C140017C44D /* Montserrat-Thin.ttf */,
-				3410D5E224054C120017C44D /* Montserrat-ThinItalic.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";

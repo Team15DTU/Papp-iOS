@@ -10,6 +10,8 @@
 import UIKit
 import Firebase
 
+// SignViewController
+
 class SignViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField?

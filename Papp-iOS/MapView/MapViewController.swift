@@ -9,6 +9,8 @@
 import UIKit
 import Mapbox
 
+// MapViewController
+
 class MapViewController: UIViewController, MGLMapViewDelegate {
     
     @IBOutlet weak var mapView: MGLMapView!
