@@ -12,9 +12,11 @@ import Firebase
 
 class SignViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var emailTextField: UITextField?
+    @IBOutlet weak var loginButton: UIButton?
     
-    @IBOutlet weak var passwordTextField: UITextField?
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var emailSignUpTextField: UITextField?
     
@@ -105,6 +107,10 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpbutton()
+        setUpTextFields(emailTextField)
+        setUpTextFields(passwordTextField)
+        
         // Do any additional setup after loading the view.
         emailTextField?.delegate = self
         passwordTextField?.delegate = self
@@ -115,8 +121,37 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        if textField == emailTextField {
+            emailTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            login()
+        }
+        return true
+        
+        
+        /*self.view.endEditing(true)
         return false
+ */
+    }
+    
+    func setUpbutton(){
+        loginButton?.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        loginButton?.layer.cornerRadius = 10
+        loginButton?.layer.borderWidth = 1
+        loginButton?.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    func setUpTextFields(_ textField: UITextField) {
+        let bottomline = CALayer()
+        
+        bottomline.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width, height: 2)
+        
+        bottomline.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        
+        textField.borderStyle = .none
+        
+        textField.layer.addSublayer(bottomline)
     }
     
     

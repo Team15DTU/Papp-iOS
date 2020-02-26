@@ -10,6 +10,9 @@
         <array key="Montserrat-Bold.ttf">
             <string>Montserrat-Bold</string>
         </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Sign View Controller-->
@@ -29,25 +32,30 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XpI-Zv-4OM">
-                                <rect key="frame" x="45" y="307" width="324" height="50"/>
+                                <rect key="frame" x="25" y="305" width="364" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bL0-vh-CiU"/>
+                                    <constraint firstAttribute="height" constant="45" id="VXZ-Dq-pwq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFD-qr-w33">
-                                <rect key="frame" x="45" y="412" width="324" height="50"/>
+                                <rect key="frame" x="25" y="410" width="364" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="pNU-g2-rwY"/>
+                                    <constraint firstAttribute="height" constant="45" id="Om2-Ru-B5u"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbY-lr-Z0q">
-                                <rect key="frame" x="188" y="521" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbY-lr-Z0q">
+                                <rect key="frame" x="25" y="515" width="364" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6dQ-fk-Qb8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                <state key="normal" title="Log På">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="login" destination="eyf-yw-fWI" eventType="touchUpInside" id="AQG-gT-xEB"/>
                                 </connections>
@@ -59,7 +67,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log På" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDP-Si-JUu">
-                                <rect key="frame" x="165.5" y="223" width="83" height="29"/>
+                                <rect key="frame" x="166" y="223" width="82.5" height="28.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,22 +76,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ErX-YI-7AP" firstAttribute="leading" secondItem="pNl-kZ-tnH" secondAttribute="leading" constant="-12" id="2xC-op-aEL"/>
-                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="KFD-qr-w33" secondAttribute="trailing" constant="45" id="8dC-5B-29U"/>
-                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="XpI-Zv-4OM" secondAttribute="trailing" constant="45" id="Pqj-9P-BUK"/>
+                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="EbY-lr-Z0q" secondAttribute="trailing" constant="25" id="6Jj-yU-P1J"/>
+                            <constraint firstItem="KFD-qr-w33" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="25" id="B5Q-m9-Fwb"/>
+                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="top" secondItem="pDP-Si-JUu" secondAttribute="bottom" constant="53.5" id="CDv-cd-eTm"/>
+                            <constraint firstItem="EbY-lr-Z0q" firstAttribute="top" secondItem="KFD-qr-w33" secondAttribute="bottom" constant="60" id="R4o-kq-8te"/>
                             <constraint firstAttribute="trailing" secondItem="ErX-YI-7AP" secondAttribute="trailing" constant="-12" id="RPo-A3-4fE"/>
+                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="XpI-Zv-4OM" secondAttribute="trailing" constant="25" id="Vxr-eQ-XFN"/>
                             <constraint firstItem="pDP-Si-JUu" firstAttribute="centerX" secondItem="tgV-ZX-3MW" secondAttribute="centerX" id="ZMG-nX-fNA"/>
-                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="top" secondItem="pDP-Si-JUu" secondAttribute="bottom" constant="55" id="ZZi-3B-dJn"/>
-                            <constraint firstItem="KFD-qr-w33" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="45" id="e1i-ty-Ogh"/>
+                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="KFD-qr-w33" secondAttribute="trailing" constant="25" id="bDX-UZ-ADu"/>
                             <constraint firstItem="pDP-Si-JUu" firstAttribute="top" secondItem="ErX-YI-7AP" secondAttribute="bottom" constant="34" id="e6A-Hp-95i"/>
-                            <constraint firstItem="KFD-qr-w33" firstAttribute="top" secondItem="XpI-Zv-4OM" secondAttribute="bottom" constant="55" id="hpp-Vy-hgD"/>
+                            <constraint firstItem="EbY-lr-Z0q" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="25" id="fcW-mN-gRV"/>
+                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="25" id="jaS-F3-nib"/>
                             <constraint firstItem="ErX-YI-7AP" firstAttribute="top" secondItem="pNl-kZ-tnH" secondAttribute="top" constant="-11" id="lOC-vQ-sE3"/>
-                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="centerX" secondItem="tgV-ZX-3MW" secondAttribute="centerX" id="sft-Nu-3rP"/>
-                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="45" id="tXN-iR-xg4"/>
+                            <constraint firstItem="KFD-qr-w33" firstAttribute="top" secondItem="XpI-Zv-4OM" secondAttribute="bottom" constant="60" id="ukU-Lt-ybk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tgV-ZX-3MW"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="XpI-Zv-4OM" id="8sk-Ea-fzo"/>
+                        <outlet property="loginButton" destination="EbY-lr-Z0q" id="TvK-s3-zdR"/>
                         <outlet property="passwordTextField" destination="KFD-qr-w33" id="cFE-gy-oM8"/>
                     </connections>
                 </viewController>
