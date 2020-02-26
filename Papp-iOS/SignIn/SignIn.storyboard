@@ -6,11 +6,16 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Sign View Controller-->
         <scene sceneID="S4x-JL-Cp9">
             <objects>
-                <viewController storyboardIdentifier="Sign" id="eyf-yw-fWI" customClass="SignViewController" customModule="Papp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Sign" id="eyf-yw-fWI" customClass="SignViewController" customModule="Papp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pNl-kZ-tnH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,15 +28,19 @@
                                     <action selector="toSignUp" destination="eyf-yw-fWI" eventType="touchUpInside" id="fhO-hs-tUp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XpI-Zv-4OM">
-                                <rect key="frame" x="159" y="356" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XpI-Zv-4OM">
+                                <rect key="frame" x="45" y="307" width="324" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bL0-vh-CiU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFD-qr-w33">
-                                <rect key="frame" x="159" y="415" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFD-qr-w33">
+                                <rect key="frame" x="45" y="412" width="324" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pNU-g2-rwY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -43,8 +52,34 @@
                                     <action selector="login" destination="eyf-yw-fWI" eventType="touchUpInside" id="AQG-gT-xEB"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="topbackground" translatesAutoresizingMaskIntoConstraints="NO" id="ErX-YI-7AP">
+                                <rect key="frame" x="-12" y="-11" width="438" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="UTm-aL-V2M"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log På" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDP-Si-JUu">
+                                <rect key="frame" x="165.5" y="223" width="83" height="29"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ErX-YI-7AP" firstAttribute="leading" secondItem="pNl-kZ-tnH" secondAttribute="leading" constant="-12" id="2xC-op-aEL"/>
+                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="KFD-qr-w33" secondAttribute="trailing" constant="45" id="8dC-5B-29U"/>
+                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="XpI-Zv-4OM" secondAttribute="trailing" constant="45" id="Pqj-9P-BUK"/>
+                            <constraint firstAttribute="trailing" secondItem="ErX-YI-7AP" secondAttribute="trailing" constant="-12" id="RPo-A3-4fE"/>
+                            <constraint firstItem="pDP-Si-JUu" firstAttribute="centerX" secondItem="tgV-ZX-3MW" secondAttribute="centerX" id="ZMG-nX-fNA"/>
+                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="top" secondItem="pDP-Si-JUu" secondAttribute="bottom" constant="55" id="ZZi-3B-dJn"/>
+                            <constraint firstItem="KFD-qr-w33" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="45" id="e1i-ty-Ogh"/>
+                            <constraint firstItem="pDP-Si-JUu" firstAttribute="top" secondItem="ErX-YI-7AP" secondAttribute="bottom" constant="34" id="e6A-Hp-95i"/>
+                            <constraint firstItem="KFD-qr-w33" firstAttribute="top" secondItem="XpI-Zv-4OM" secondAttribute="bottom" constant="55" id="hpp-Vy-hgD"/>
+                            <constraint firstItem="ErX-YI-7AP" firstAttribute="top" secondItem="pNl-kZ-tnH" secondAttribute="top" constant="-11" id="lOC-vQ-sE3"/>
+                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="centerX" secondItem="tgV-ZX-3MW" secondAttribute="centerX" id="sft-Nu-3rP"/>
+                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="45" id="tXN-iR-xg4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tgV-ZX-3MW"/>
                     </view>
                     <connections>
@@ -57,4 +92,7 @@
             <point key="canvasLocation" x="34.782608695652179" y="46.875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="topbackground" width="378" height="150"/>
+    </resources>
 </document>
