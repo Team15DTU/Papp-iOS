@@ -26,6 +26,8 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailForgotTextField: UITextField?
     
+    @IBOutlet weak var repeatPassword: UITextField?
+    
     @IBOutlet weak var facebookButton: UIButton!
     
     @IBAction func login() {
@@ -128,6 +130,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         nameSignUpTextField?.delegate = self
         passwordSignUpTextField?.delegate = self
         emailForgotTextField?.delegate = self
+        repeatPassword?.delegate = self
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -149,8 +152,11 @@ class SignViewController: UIViewController, UITextFieldDelegate {
             passwordSignUpTextField?.becomeFirstResponder()
             break
         case passwordSignUpTextField:
-            signUp()
+            passwordSignUpTextField?.resignFirstResponder()
+            repeatPassword?.becomeFirstResponder()
             break
+        case repeatPassword:
+            signUp()
         case emailForgotTextField:
             forgotPassword()
             break
