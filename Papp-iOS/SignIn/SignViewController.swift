@@ -14,9 +14,9 @@ class SignViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginButton: UIButton?
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField?
     
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField?
     
     @IBOutlet weak var emailSignUpTextField: UITextField?
     
@@ -25,6 +25,8 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordSignUpTextField: UITextField?
     
     @IBOutlet weak var emailForgotTextField: UITextField?
+    
+    @IBOutlet weak var facebookButton: UIButton!
     
     @IBAction func login() {
         Auth.auth().signIn(withEmail: emailTextField!.text!, password: passwordTextField!.text!) { [weak self] authResult, error in
@@ -41,6 +43,9 @@ class SignViewController: UIViewController, UITextFieldDelegate {
           
             self?.present(secondVC, animated: false, completion: nil)
         }
+    }
+    
+    @IBAction func facebookLogin() {
     }
     
     @IBAction func signUp() {
@@ -107,9 +112,14 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpbutton()
-        setUpTextFields(emailTextField)
-        setUpTextFields(passwordTextField)
+        setUpLoginbutton()
+        setUpFacebookbutton()
+    
+        if emailTextField?.text != nil && passwordTextField?.text != nil{
+        setUpTextFields(emailTextField!)
+        setUpTextFields(passwordTextField!)
+        }
+
         
         // Do any additional setup after loading the view.
         emailTextField?.delegate = self
@@ -122,24 +132,26 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
-            emailTextField.resignFirstResponder()
-            passwordTextField.becomeFirstResponder()
+            emailTextField?.resignFirstResponder()
+            passwordTextField?.becomeFirstResponder()
         } else if textField == passwordTextField {
             login()
         }
         return true
-        
-        
-        /*self.view.endEditing(true)
-        return false
- */
     }
     
-    func setUpbutton(){
+    func setUpLoginbutton(){
         loginButton?.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         loginButton?.layer.cornerRadius = 10
         loginButton?.layer.borderWidth = 1
         loginButton?.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    func setUpFacebookbutton(){
+        facebookButton?.backgroundColor = UIColor.init(red: 66/255, green: 103/255, blue: 178/255, alpha: 1)
+        facebookButton?.layer.cornerRadius = 10
+        facebookButton?.layer.borderWidth = 1
+        facebookButton?.layer.borderColor = UIColor.white.cgColor
     }
     
     func setUpTextFields(_ textField: UITextField) {
