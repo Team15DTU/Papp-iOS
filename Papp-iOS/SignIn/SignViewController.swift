@@ -9,6 +9,8 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class SignViewController: UIViewController, UITextFieldDelegate {
 
@@ -48,6 +50,10 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func facebookLogin() {
+        
+        /*var login = LoginManager.init()
+        login.logIn(permissions: ["public_profile"], from: self, handler: LoginManagerLoginResult)
+ */
         
         /*
         FBSDKLoginManager login = [[FBSDKLoginManager alloc] init];
@@ -127,9 +133,12 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         present(secondVC, animated: false, completion: nil)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            //MARK: Benyt extension i stedet for at direkte tilføje MGLMapViewDelegate
+            //MARK: Lav metoder til delegate.
+    
         
         setUpLoginbutton()
         setUpFacebookbutton()
@@ -194,7 +203,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         let icon = UIImage(named: "facebook")!
         facebookButton?.setImage(icon, for: .normal)
         facebookButton?.imageView?.contentMode = .scaleAspectFit
-        facebookButton?.imageEdgeInsets = UIEdgeInsets(top: 0, left: -100, bottom: 0, right: 0)
+        facebookButton?.imageEdgeInsets = UIEdgeInsets(top: 0, left: -90, bottom: 0, right: 0)
         facebookButton?.backgroundColor = UIColor.init(red: 66/255, green: 103/255, blue: 178/255, alpha: 1)
         facebookButton?.layer.cornerRadius = 10
         facebookButton?.layer.borderWidth = 1
@@ -204,7 +213,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     func setUpTextFields(_ textField: UITextField) {
         let bottomline = CALayer()
         
-        bottomline.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width, height: 2)
+        bottomline.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width-45, height: 2)
         
         bottomline.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         

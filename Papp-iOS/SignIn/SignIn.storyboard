@@ -23,34 +23,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Io-vR-s4W">
-                                <rect key="frame" x="255.5" y="770" width="73" height="31"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
-                                <state key="normal" title="Opret dig"/>
-                                <connections>
-                                    <action selector="toSignUp" destination="eyf-yw-fWI" eventType="touchUpInside" id="fhO-hs-tUp"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XpI-Zv-4OM">
-                                <rect key="frame" x="25" y="305" width="364" height="45"/>
+                                <rect key="frame" x="30" y="305" width="354" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="VXZ-Dq-pwq"/>
+                                    <constraint firstAttribute="height" constant="45" id="M2g-DI-OK7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFD-qr-w33">
-                                <rect key="frame" x="25" y="410" width="364" height="45"/>
+                                <rect key="frame" x="30" y="410" width="354" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Om2-Ru-B5u"/>
+                                    <constraint firstAttribute="height" constant="45" id="X3k-15-wNb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbY-lr-Z0q">
-                                <rect key="frame" x="25" y="515" width="364" height="50"/>
+                                <rect key="frame" x="30" y="515" width="354" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6dQ-fk-Qb8"/>
+                                    <constraint firstAttribute="height" constant="50" id="FuB-V5-npR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                 <state key="normal" title="Log På">
@@ -73,15 +65,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Har du ikke en bruger?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K68-sy-fug">
-                                <rect key="frame" x="74" y="777.5" width="173.5" height="18.5"/>
+                                <rect key="frame" x="75" y="726" width="173.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-fX-xGG">
-                                <rect key="frame" x="25" y="661" width="364" height="50"/>
+                                <rect key="frame" x="30" y="625" width="354" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="B9G-md-tz0"/>
+                                    <constraint firstAttribute="height" constant="50" id="Qlv-r1-58d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                 <state key="normal" title="Log på med Facebook">
@@ -91,30 +83,38 @@
                                     <action selector="facebookLogin" destination="eyf-yw-fWI" eventType="touchUpInside" id="xlx-d0-i9n"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Io-vR-s4W">
+                                <rect key="frame" x="256" y="720" width="73" height="31"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                <state key="normal" title="Opret dig"/>
+                                <connections>
+                                    <action selector="toSignUp" destination="eyf-yw-fWI" eventType="touchUpInside" id="fhO-hs-tUp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="3Io-vR-s4W" firstAttribute="leading" secondItem="K68-sy-fug" secondAttribute="trailing" constant="8" id="1rf-cr-ZZb"/>
+                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="KFD-qr-w33" secondAttribute="trailing" constant="30" id="0YI-d9-Koy"/>
                             <constraint firstItem="ErX-YI-7AP" firstAttribute="leading" secondItem="pNl-kZ-tnH" secondAttribute="leading" constant="-12" id="2xC-op-aEL"/>
-                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="EbY-lr-Z0q" secondAttribute="trailing" constant="25" id="6Jj-yU-P1J"/>
-                            <constraint firstItem="KFD-qr-w33" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="25" id="B5Q-m9-Fwb"/>
-                            <constraint firstItem="GdP-fX-xGG" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="25" id="C8C-aL-skZ"/>
-                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="top" secondItem="pDP-Si-JUu" secondAttribute="bottom" constant="53.5" id="CDv-cd-eTm"/>
-                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="bottom" secondItem="K68-sy-fug" secondAttribute="bottom" constant="66" id="Jcp-qw-q3u"/>
-                            <constraint firstItem="EbY-lr-Z0q" firstAttribute="top" secondItem="KFD-qr-w33" secondAttribute="bottom" constant="60" id="R4o-kq-8te"/>
+                            <constraint firstItem="KFD-qr-w33" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="30" id="4Br-LY-JY5"/>
+                            <constraint firstItem="3Io-vR-s4W" firstAttribute="top" secondItem="GdP-fX-xGG" secondAttribute="bottom" constant="45" id="4gl-31-bZ7"/>
+                            <constraint firstItem="EbY-lr-Z0q" firstAttribute="top" secondItem="KFD-qr-w33" secondAttribute="bottom" constant="60" id="5bF-9p-Xg6"/>
+                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="30" id="DlH-hw-BXY"/>
+                            <constraint firstItem="KFD-qr-w33" firstAttribute="top" secondItem="XpI-Zv-4OM" secondAttribute="bottom" constant="60" id="FZg-Kr-qkE"/>
+                            <constraint firstItem="GdP-fX-xGG" firstAttribute="top" secondItem="EbY-lr-Z0q" secondAttribute="bottom" constant="60" id="I1U-NZ-q0k"/>
+                            <constraint firstItem="EbY-lr-Z0q" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="30" id="IyA-K9-Rkr"/>
                             <constraint firstAttribute="trailing" secondItem="ErX-YI-7AP" secondAttribute="trailing" constant="-12" id="RPo-A3-4fE"/>
-                            <constraint firstItem="K68-sy-fug" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="74" id="T7U-WF-0hu"/>
-                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="XpI-Zv-4OM" secondAttribute="trailing" constant="25" id="Vxr-eQ-XFN"/>
+                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="EbY-lr-Z0q" secondAttribute="trailing" constant="30" id="Rg3-ab-FEV"/>
+                            <constraint firstItem="K68-sy-fug" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="75" id="WQi-Ox-TYq"/>
+                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="XpI-Zv-4OM" secondAttribute="trailing" constant="30" id="Yvy-bD-0pX"/>
                             <constraint firstItem="pDP-Si-JUu" firstAttribute="centerX" secondItem="tgV-ZX-3MW" secondAttribute="centerX" id="ZMG-nX-fNA"/>
-                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="KFD-qr-w33" secondAttribute="trailing" constant="25" id="bDX-UZ-ADu"/>
                             <constraint firstItem="pDP-Si-JUu" firstAttribute="top" secondItem="ErX-YI-7AP" secondAttribute="bottom" constant="34" id="e6A-Hp-95i"/>
-                            <constraint firstItem="EbY-lr-Z0q" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="25" id="fcW-mN-gRV"/>
-                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="GdP-fX-xGG" secondAttribute="trailing" constant="25" id="j4J-NF-d0Q"/>
-                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="25" id="jaS-F3-nib"/>
-                            <constraint firstItem="GdP-fX-xGG" firstAttribute="top" secondItem="EbY-lr-Z0q" secondAttribute="bottom" constant="96" id="k0b-aA-mwV"/>
                             <constraint firstItem="ErX-YI-7AP" firstAttribute="top" secondItem="pNl-kZ-tnH" secondAttribute="top" constant="-11" id="lOC-vQ-sE3"/>
-                            <constraint firstItem="KFD-qr-w33" firstAttribute="top" secondItem="XpI-Zv-4OM" secondAttribute="bottom" constant="60" id="ukU-Lt-ybk"/>
-                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="bottom" secondItem="3Io-vR-s4W" secondAttribute="bottom" constant="61" id="yBz-fI-geO"/>
+                            <constraint firstItem="XpI-Zv-4OM" firstAttribute="top" secondItem="pDP-Si-JUu" secondAttribute="bottom" constant="53.5" id="nAG-o4-W1y"/>
+                            <constraint firstItem="3Io-vR-s4W" firstAttribute="leading" secondItem="K68-sy-fug" secondAttribute="trailing" constant="7.5" id="ojF-TQ-ElC"/>
+                            <constraint firstItem="GdP-fX-xGG" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="30" id="qr6-1Q-td3"/>
+                            <constraint firstItem="K68-sy-fug" firstAttribute="top" secondItem="GdP-fX-xGG" secondAttribute="bottom" constant="51" id="wB3-ks-HU4"/>
+                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="GdP-fX-xGG" secondAttribute="trailing" constant="30" id="xmX-Uo-XuG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tgV-ZX-3MW"/>
                     </view>
