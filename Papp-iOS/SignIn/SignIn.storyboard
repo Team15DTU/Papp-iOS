@@ -26,9 +26,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Io-vR-s4W">
                                 <rect key="frame" x="255.5" y="770" width="73" height="31"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
-                                <state key="normal" title="Opret dig">
-                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Opret dig"/>
                                 <connections>
                                     <action selector="toSignUp" destination="eyf-yw-fWI" eventType="touchUpInside" id="fhO-hs-tUp"/>
                                 </connections>

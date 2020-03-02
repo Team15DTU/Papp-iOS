@@ -148,6 +148,10 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setUpFacebookbutton(){
+        let icon = UIImage(named: "facebook")!
+        facebookButton?.setImage(icon, for: .normal)
+        facebookButton?.imageView?.contentMode = .scaleAspectFit
+        facebookButton?.imageEdgeInsets = UIEdgeInsets(top: 0, left: -100, bottom: 0, right: 0)
         facebookButton?.backgroundColor = UIColor.init(red: 66/255, green: 103/255, blue: 178/255, alpha: 1)
         facebookButton?.layer.cornerRadius = 10
         facebookButton?.layer.borderWidth = 1
