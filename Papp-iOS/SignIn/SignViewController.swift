@@ -131,11 +131,31 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == emailTextField {
+        
+        switch textField {
+        case emailTextField:
             emailTextField?.resignFirstResponder()
             passwordTextField?.becomeFirstResponder()
-        } else if textField == passwordTextField {
+            break
+        case passwordTextField:
             login()
+            break
+        case nameSignUpTextField:
+            nameSignUpTextField?.resignFirstResponder()
+            emailSignUpTextField?.becomeFirstResponder()
+            break
+        case emailSignUpTextField:
+            emailSignUpTextField?.resignFirstResponder()
+            passwordSignUpTextField?.becomeFirstResponder()
+            break
+        case passwordSignUpTextField:
+            signUp()
+            break
+        case emailForgotTextField:
+            forgotPassword()
+            break
+        default:
+            print("Cant find next button")
         }
         return true
     }
