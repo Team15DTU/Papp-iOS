@@ -48,6 +48,23 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func facebookLogin() {
+        
+        /*
+        FBSDKLoginManager login = [[FBSDKLoginManager alloc] init];
+        [login
+         logInWithReadPermissions: @[@"public_profile"]
+         fromViewController:self
+         handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+             if (error) {
+                 NSLog(@"Process error");
+             } else if (result.isCancelled) {
+                 NSLog(@"Cancelled");
+             } else {
+                 NSLog(@"Logged in");
+                 FIRAuthCredential *credential = [FIRFacebookAuthProvider credentialWithAccessToken:[FBSDKAccessToken currentAccessToken].tokenString];
+             }
+         }];
+ */
     }
     
     @IBAction func signUp() {
