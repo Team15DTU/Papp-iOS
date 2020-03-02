@@ -16,19 +16,11 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
 #import <UIKit/UIKit.h>
 
-#ifdef FBSDKCOCOAPODS
-#import <FBSDKCoreKit/FBSDKCoreKit+Internal.h>
-#else
-#import "FBSDKCoreKit+Internal.h"
-#endif
+#import <FBSDKLoginKit/FBSDKLoginManager.h>
 
-#import "FBSDKLoginManager.h"
+#import "FBSDKCoreKit+Internal.h"
 
 @class FBSDKAccessToken;
 @class FBSDKLoginCompletionParameters;
@@ -36,7 +28,7 @@
 /**
  Success Block
  */
-typedef void (^FBSDKBrowserLoginSuccessBlock)(BOOL didOpen, NSError *error)
+typedef void (^FBSDKBrowserLoginSuccessBlock)(BOOL didOpen, NSString *authMethod, NSError *error)
 NS_SWIFT_NAME(BrowserLoginSuccessBlock);
 
 @interface FBSDKLoginManager () <FBSDKURLOpening>
@@ -50,7 +42,7 @@ NS_SWIFT_NAME(BrowserLoginSuccessBlock);
 
 // available to internal types to trigger login without checking read/publish mixtures.
 - (void)logInWithPermissions:(NSSet *)permissions handler:(FBSDKLoginManagerLoginResultBlock)handler;
-- (void)logIn;
+- (void)logInWithBehavior:(FBSDKLoginBehavior)loginBehavior;
 
 // made available for testing only
 - (NSDictionary *)logInParametersWithPermissions:(NSSet *)permissions serverConfiguration:(FBSDKServerConfiguration *)serverConfiguration;
@@ -65,5 +57,3 @@ NS_SWIFT_NAME(BrowserLoginSuccessBlock);
 - (void)performBrowserLogInWithParameters:(NSDictionary *)loginParams handler:(FBSDKBrowserLoginSuccessBlock)handler;
 
 @end
-
-#endif

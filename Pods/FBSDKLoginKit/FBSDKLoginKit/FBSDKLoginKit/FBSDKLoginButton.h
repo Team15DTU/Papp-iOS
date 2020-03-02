@@ -18,25 +18,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "TargetConditionals.h"
+#import <FBSDKCoreKit/FBSDKButton.h>
 
-#if TARGET_OS_TV
+#import <FBSDKLoginKit/FBSDKLoginManager.h>
 
-@interface FBLoginButton : UIView
-
-@property (copy, nonatomic) NSArray<NSString *> *permissions;
-
-@end
-
-#else
-
-#if defined BUCK || defined FBSDKCOCOAPODS || defined __cplusplus
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#else
-@import FBSDKCoreKit;
-#endif
-
-#import "FBSDKLoginManager.h"
 #import "FBSDKTooltipView.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -83,6 +68,11 @@ NS_SWIFT_NAME(FBLoginButton)
   Gets or sets the delegate.
  */
 @property (weak, nonatomic) IBOutlet id<FBSDKLoginButtonDelegate> delegate;
+/**
+  Gets or sets the login behavior to use
+ */
+@property (assign, nonatomic) FBSDKLoginBehavior loginBehavior;
+
 /*!
  @abstract The permissions to request.
  @discussion To provide the best experience, you should minimize the number of permissions you request, and only ask for them when needed.
@@ -140,5 +130,3 @@ didCompleteWithResult:(nullable FBSDKLoginManagerLoginResult *)result
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif

@@ -16,18 +16,14 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
 #import <Foundation/Foundation.h>
 
 #import "FBSDKAppLinkResolving.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- A reference implementation for an App Link resolver that uses a hidden WKWebView
+/*!
+ A reference implementation for an App Link resolver that uses a hidden UIWebView
  to parse the HTML containing App Link metadata.
  */
 NS_SWIFT_NAME(WebViewAppLinkResolver)
@@ -42,5 +38,3 @@ NS_SWIFT_NAME(shared);
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif

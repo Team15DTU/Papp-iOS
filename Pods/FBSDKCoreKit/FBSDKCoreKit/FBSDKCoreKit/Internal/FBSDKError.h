@@ -37,13 +37,13 @@ NS_SWIFT_NAME(SDKError)
              underlyingError:(nullable NSError *)underlyingError;
 
 + (NSError *)errorWithCode:(NSInteger)code
-                  userInfo:(nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo
+                  userInfo:(NSDictionary<NSErrorUserInfoKey, id> *)userInfo
                    message:(nullable NSString *)message
            underlyingError:(nullable NSError *)underlyingError;
 
 + (NSError *)errorWithDomain:(NSErrorDomain)domain
                         code:(NSInteger)code
-                    userInfo:(nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo
+                    userInfo:(NSDictionary<NSErrorUserInfoKey, id> *)userInfo
                      message:(nullable NSString *)message
              underlyingError:(nullable NSError *)underlyingError;
 
@@ -91,7 +91,6 @@ NS_SWIFT_NAME(SDKError)
 + (NSError *)unknownErrorWithMessage:(NSString *)message;
 
 + (BOOL)isNetworkError:(NSError *)error;
-+ (void)enableErrorReport;
 
 @end
 

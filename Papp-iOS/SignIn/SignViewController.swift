@@ -40,37 +40,28 @@ class SignViewController: UIViewController, UITextFieldDelegate {
               print("Error! Could not login")
               return
             }
-            let storyboard = UIStoryboard(name: "MapView", bundle: nil)
-            let secondVC = storyboard.instantiateViewController(identifier: "MapView")
-          
-            secondVC.modalPresentationStyle = .fullScreen
-          
-            self?.present(secondVC, animated: false, completion: nil)
+            self?.goToMapView()
         }
     }
     
     @IBAction func facebookLogin() {
         
-        /*var login = LoginManager.init()
-        login.logIn(permissions: ["public_profile"], from: self, handler: LoginManagerLoginResult)
- */
-        
-        /*
-        FBSDKLoginManager login = [[FBSDKLoginManager alloc] init];
-        [login
-         logInWithReadPermissions: @[@"public_profile"]
-         fromViewController:self
-         handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-             if (error) {
-                 NSLog(@"Process error");
-             } else if (result.isCancelled) {
-                 NSLog(@"Cancelled");
-             } else {
-                 NSLog(@"Logged in");
-                 FIRAuthCredential *credential = [FIRFacebookAuthProvider credentialWithAccessToken:[FBSDKAccessToken currentAccessToken].tokenString];
-             }
-         }];
- */
+        let loginManager=LoginManager()
+        loginManager.logIn(permissions: ["public_profile", "email"], from: self, handler: { result, error in
+
+            guard let result = result else {
+                print("No result found")
+                return
+            }
+            if result.isCancelled {
+                print("Cancelled \(error?.localizedDescription)")
+            } else if let error = error {
+                print("Process error \(error.localizedDescription)")
+            } else {
+                print("Logged in")
+                self.signInWithFacebook()
+            }
+        })
     }
     
     @IBAction func signUp() {
@@ -81,12 +72,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
               print("Error! Could not create user")
               return
             }
-            let storyboard = UIStoryboard(name: "MapView", bundle: nil)
-            let secondVC = storyboard.instantiateViewController(identifier: "MapView")
-          
-            secondVC.modalPresentationStyle = .fullScreen
-          
-            self?.present(secondVC, animated: false, completion: nil)
+            self?.goToMapView()
         }
     }
     
@@ -222,5 +208,24 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         textField.layer.addSublayer(bottomline)
     }
     
+    func goToMapView(){
+        let storyboard = UIStoryboard(name: "MapView", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "MapView")
+        secondVC.modalPresentationStyle = .fullScreen
+        self.present(secondVC, animated: false, completion: nil)
+    }
+    
+    func signInWithFacebook(){
+        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if error != nil {
+              print("Error! Could not login with Facebook")
+              return
+            }
+            self.goToMapView()
+        }
+        
+    }
     
 }

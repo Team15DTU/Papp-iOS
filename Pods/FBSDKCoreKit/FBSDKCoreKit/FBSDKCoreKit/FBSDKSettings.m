@@ -93,7 +93,7 @@ static NSString *const advertiserIDCollectionEnabledFalseWarning =
     g_tokenCache = [[FBSDKAccessTokenCache alloc] init];
     g_accessTokenExpirer = [[FBSDKAccessTokenExpirer alloc] init];
 
-    [FBSDKSettings _logWarnings];
+    [FBSDKSettings logWarnings];
     [FBSDKSettings _logIfSDKSettingsChanged];
   }
 }
@@ -107,7 +107,6 @@ FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSString, FacebookDisplayName, di
 FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSString, FacebookDomainPart, facebookDomainPart, setFacebookDomainPart, nil, NO);
 FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookJpegCompressionQuality, _JPEGCompressionQualityNumber, _setJPEGCompressionQualityNumber, @0.9, NO);
 FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookAutoInitEnabled, _autoInitEnabled, _setAutoInitEnabled, @1, YES);
-FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookInstrumentEnabled, _instrumentEnabled, _setInstrumentEnabled, @1, YES);
 FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookAutoLogAppEventsEnabled, _autoLogAppEventsEnabled, _setAutoLogAppEventsEnabled, @1, YES);
 FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookAdvertiserIDCollectionEnabled, _advertiserIDCollectionEnabled, _setAdvertiserIDCollectionEnabled, @1, YES);
 FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookCodelessDebugLogEnabled, _codelessDebugLogEnabled,
@@ -144,16 +143,6 @@ FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookCodelessDebugLo
   if (autoInitEnabled) {
     [FBSDKApplicationDelegate initializeSDK:nil];
   }
-}
-
-+ (BOOL)isInstrumentEnabled
-{
-  return [self _instrumentEnabled].boolValue;
-}
-
-+ (void)setInstrumentEnabled:(BOOL)instrumentEnabled
-{
-  [self _setInstrumentEnabled:@(instrumentEnabled)];
 }
 
 + (BOOL)isCodelessDebugLogEnabled
@@ -311,7 +300,7 @@ FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(NSNumber, FacebookCodelessDebugLo
   return defaultValue;
 }
 
-+ (void)_logWarnings
++ (void)logWarnings
 {
   NSBundle *mainBundle = [NSBundle mainBundle];
   // Log warnings for App Event Flags

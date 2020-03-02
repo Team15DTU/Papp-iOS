@@ -16,18 +16,11 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
 #import "FBSDKLoginCompletion+Internal.h"
 
-#if SWIFT_PACKAGE
-@import FBSDKCoreKit;
-#else
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#endif
+#import <FBSDKCoreKit/FBSDKConstants.h>
 
+#import "FBSDKCoreKit+Internal.h"
 #import "FBSDKLoginConstants.h"
 #import "FBSDKLoginError.h"
 #import "FBSDKLoginManager+Internal.h"
@@ -198,9 +191,6 @@ static void FBSDKLoginRequestMeAndPermissions(FBSDKLoginCompletionParameters *pa
   NSError *error = nil;
   NSDictionary<id, id> *state = [FBSDKBasicUtility objectForJSONString:parameters[@"state"] error:&error];
   _parameters.challenge = [FBSDKUtility URLDecode:state[@"challenge"]];
-
-  NSString *domain = parameters[@"graph_domain"];
-  _parameters.graphDomain = [domain copy];
 }
 
 - (void)setErrorWithDictionary:(NSDictionary *)parameters
@@ -224,7 +214,7 @@ static void FBSDKLoginRequestMeAndPermissions(FBSDKLoginCompletionParameters *pa
   }
 
   if ([FBSDKBridgeAPI sharedInstance].isActive) {
-    [loginManager logIn];
+    [loginManager logInWithBehavior:FBSDKLoginBehaviorBrowser];
   } else {
     // The application is active but due to notification ordering the FBSDKApplicationDelegate
     // doesn't know it yet. Wait one more turn of the run loop.
@@ -287,5 +277,3 @@ static void FBSDKLoginRequestMeAndPermissions(FBSDKLoginCompletionParameters *pa
 }
 
 @end
-
-#endif

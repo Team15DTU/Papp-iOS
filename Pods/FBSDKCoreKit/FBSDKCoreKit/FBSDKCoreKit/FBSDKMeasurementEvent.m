@@ -16,10 +16,6 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
 #import "FBSDKMeasurementEvent_Internal.h"
 
 #import "FBSDKLogger.h"
@@ -40,11 +36,11 @@ NSString *const FBSDKMeasurementEventNotificationName = @"com.facebook.facebook-
 NSString *const FBSDKMeasurementEventNameKey = @"event_name";
 NSString *const FBSDKMeasurementEventArgsKey = @"event_args";
 
-/** app Link Event raised by this FBSDKURL */
+/* app Link Event raised by this FBSDKURL */
 NSString *const FBSDKAppLinkParseEventName = @"al_link_parse";
 NSString *const FBSDKAppLinkNavigateInEventName = @"al_nav_in";
 
-/** AppLink events raised in this class */
+/*! AppLink events raised in this class */
 NSString *const FBSDKAppLinkNavigateOutEventName = @"al_nav_out";
 NSString *const FBSDKAppLinkNavigateBackToReferrerEventName = @"al_ref_back_out";
 
@@ -84,5 +80,3 @@ NSString *const FBSDKAppLinkNavigateBackToReferrerEventName = @"al_ref_back_out"
 }
 
 @end
-
-#endif

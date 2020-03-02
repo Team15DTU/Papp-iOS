@@ -16,17 +16,9 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
 #import "FBSDKLoginManagerLogger.h"
 
-#ifdef FBSDKCOCOAPODS
-#import <FBSDKCoreKit/FBSDKCoreKit+Internal.h>
-#else
 #import "FBSDKCoreKit+Internal.h"
-#endif
 #import "FBSDKLoginError.h"
 #import "FBSDKLoginManagerLoginResult+Internal.h"
 #import "FBSDKLoginUtility.h"
@@ -101,8 +93,15 @@ static NSString *const FBSDKLoginManagerLoggerTryBrowser = @"trySafariAuth";
 {
   BOOL isReauthorize = ([FBSDKAccessToken currentAccessToken] != nil);
   BOOL willTryNative = NO;
-  BOOL willTryBrowser = YES;
-  NSString *behaviorString = @"FBSDKLoginBehaviorBrowser";
+  BOOL willTryBrowser = NO;
+  NSString *behaviorString = nil;
+
+  switch (loginManager.loginBehavior) {
+    case FBSDKLoginBehaviorBrowser:
+      willTryBrowser = YES;
+      behaviorString = @"FBSDKLoginBehaviorBrowser";
+      break;
+  }
 
   [_extras addEntriesFromDictionary:@{
     FBSDKLoginManagerLoggerTryNative : @(willTryNative),
@@ -179,6 +178,14 @@ static NSString *const FBSDKLoginManagerLoggerTryBrowser = @"trySafariAuth";
     @"isURLSchemeRegistered" : @(isURLSchemeRegistered),
     @"isFacebookAppCanOpenURLSchemeRegistered" : @(isFacebookAppCanOpenURLSchemeRegistered),
     @"isMessengerAppCanOpenURLSchemeRegistered" : @(isMessengerAppCanOpenURLSchemeRegistered),
+  }];
+}
+
+- (void)systemAuthDidShowDialog:(BOOL)didShowDialog isUnTOSedDevice:(BOOL)isUnTOSedDevice
+{
+  [_extras addEntriesFromDictionary:@{
+    @"isUntosedDevice" : @(isUnTOSedDevice),
+    @"dialogShown" : @(didShowDialog),
   }];
 }
 
@@ -279,5 +286,3 @@ static NSString *const FBSDKLoginManagerLoggerTryBrowser = @"trySafariAuth";
 }
 
 @end
-
-#endif

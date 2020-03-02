@@ -19,13 +19,9 @@
 #import "FBSDKDeviceLoginManager.h"
 #import "FBSDKDeviceLoginManagerResult+Internal.h"
 
-#ifdef FBSDKCOCOAPODS
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKCoreKit/FBSDKCoreKit+Internal.h>
-#else
-#import "FBSDKCoreKit+Internal.h"
-#endif
+#import <FBSDKCoreKit/FBSDKConstants.h>
 
+#import "FBSDKCoreKit+Internal.h"
 #import "FBSDKDeviceLoginCodeInfo+Internal.h"
 #import "FBSDKLoginConstants.h"
 
@@ -162,8 +158,7 @@ static NSMutableArray<FBSDKDeviceLoginManager *> *g_loginManagerInstances;
                                                                                userID:userID
                                                                        expirationDate:nil
                                                                           refreshDate:nil
-                                                             dataAccessExpirationDate:nil
-                                                                          graphDomain:nil];
+                                                             dataAccessExpirationDate:nil];
         FBSDKDeviceLoginManagerResult *result = [[FBSDKDeviceLoginManagerResult alloc] initWithToken:accessToken
                                                                                          isCancelled:NO];
         completeWithResult(result);
