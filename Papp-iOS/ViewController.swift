@@ -13,27 +13,6 @@ import FirebaseAuth
 class ViewController: UIViewController {
     
     
-    @IBAction func sendToMapView() {
-        
-        let storyboard = UIStoryboard(name: "MapView", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "MapView")
-        
-        secondVC.modalPresentationStyle = .fullScreen
-        
-        present(secondVC, animated: false, completion: nil)
-    }
-    
-    
-    @IBAction func sendToSignIn() {
-        
-        let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "Sign")
-        
-        secondVC.modalPresentationStyle = .fullScreen
-        
-        present(secondVC, animated: false, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         dispatchLogin()
@@ -58,6 +37,27 @@ class ViewController: UIViewController {
                 }
         })
     }
+    
+    func sendToMapView() {
+         
+         let storyboard = UIStoryboard(name: "MapView", bundle: nil)
+         let secondVC = storyboard.instantiateViewController(identifier: "MapView")
+         
+         secondVC.modalPresentationStyle = .fullScreen
+         
+         present(secondVC, animated: false, completion: nil)
+     }
+     
+     
+     func sendToSignIn() {
+         
+         let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
+         let secondVC = storyboard.instantiateViewController(identifier: "Sign")
+         
+         secondVC.modalPresentationStyle = .fullScreen
+         
+         present(secondVC, animated: false, completion: nil)
+     }
     
     
 
