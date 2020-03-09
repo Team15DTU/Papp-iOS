@@ -35,9 +35,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (AccessToken.current != nil){
-            sendToMapView()
-        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                if (AccessToken.current != nil){
+                    self.sendToMapView()
+             }
+        })
         // Do any additional setup after loading the view.
         
         // MARK: If user is logged in and have given permissions, send them to MapViewController using below
@@ -53,6 +55,14 @@ class ViewController: UIViewController {
         // MARK: Else send them to LoginViewController
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                if (AccessToken.current != nil){
+                    self.sendToMapView()
+             }
+        })
     }
     
     
