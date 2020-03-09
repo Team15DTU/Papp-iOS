@@ -17,4 +17,6 @@ struct UserDTO: Decodable {
         self.name = name
         self.email = email
     }
+    
+    
 }
