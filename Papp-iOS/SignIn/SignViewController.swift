@@ -216,14 +216,22 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     }
     
     func signInWithFacebook(){
-        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
         
+        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+        // Perform login by calling Firebase APIs
         Auth.auth().signIn(with: credential) { (authResult, error) in
-            if error != nil {
-              print("Error! Could not login with Facebook")
-              return
-            }
-            self.goToMapView()
+          if let error = error {
+            print("Login error: \(error.localizedDescription)")
+            
+            let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+            
+            let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(okayAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+          }
+          self.goToMapView()
         }
         
     }

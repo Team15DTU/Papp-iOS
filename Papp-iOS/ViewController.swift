@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class ViewController: UIViewController {
     
@@ -34,6 +35,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (AccessToken.current != nil){
+            sendToMapView()
+        }
         // Do any additional setup after loading the view.
         
         // MARK: If user is logged in and have given permissions, send them to MapViewController using below
