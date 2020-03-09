@@ -13,6 +13,8 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 
 class SignViewController: UIViewController, UITextFieldDelegate {
+    
+    let db = Firestore.firestore()
 
     @IBOutlet weak var loginButton: UIButton?
     
