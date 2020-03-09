@@ -10,7 +10,7 @@
         <!--Sign View Controller-->
         <scene sceneID="zwe-1Y-Uh9">
             <objects>
-                <viewController storyboardIdentifier="Sign" id="Cf0-ia-5pH" customClass="SignViewController" customModule="Papp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Sign" id="Cf0-ia-5pH" customClass="SignViewController" customModule="Papp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mJL-DC-5AN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,11 +27,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SB6-v1-SGa">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adgangskode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SB6-v1-SGa">
                                 <rect key="frame" x="159" y="405" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67E-Mh-Ybs">
                                 <rect key="frame" x="180" y="509" width="54" height="30"/>
@@ -57,6 +57,12 @@
                                     <action selector="toForgotPassword" destination="Cf0-ia-5pH" eventType="touchUpInside" id="8xl-yj-saq"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gentag Adgangskode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edb-9o-YAZ">
+                                <rect key="frame" x="159" y="467" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="icC-oy-e2p"/>
@@ -65,6 +71,7 @@
                         <outlet property="emailSignUpTextField" destination="40a-8j-mJH" id="0Ji-Im-K5s"/>
                         <outlet property="nameSignUpTextField" destination="JGX-RA-veF" id="7ov-uV-yCb"/>
                         <outlet property="passwordSignUpTextField" destination="SB6-v1-SGa" id="pgr-zV-d7G"/>
+                        <outlet property="repeatPassword" destination="edb-9o-YAZ" id="rzk-Oo-EhS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eoa-FV-OLy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
