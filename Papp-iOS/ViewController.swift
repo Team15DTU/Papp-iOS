@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
     
@@ -35,33 +36,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                if (AccessToken.current != nil){
-                    self.sendToMapView()
-             }
-        })
-        // Do any additional setup after loading the view.
-        
-        // MARK: If user is logged in and have given permissions, send them to MapViewController using below
-        /*
-         let storyboard = UIStoryboard(name: "test", bundle: nil)
-         let secondVC = storyboard.instantiateViewController(identifier: "LoginViewController")
-         
-         secondVC.modalPresentationStyle = .fullScreen
-         
-         present(secondVC, animated: false, completion: nil)
-         */
-        
-        // MARK: Else send them to LoginViewController
-        
-        
+        dispatchLogin()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            dispatchLogin()
+    }
+    
+    func dispatchLogin() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 if (AccessToken.current != nil){
+                    print("Facebook login")
                     self.sendToMapView()
-             }
+                }
+                else if (Auth.auth().currentUser != nil){
+                       print("Firebase login")
+                    self.sendToMapView()
+                }
+                else {
+                    self.sendToSignIn()
+                }
         })
     }
     
