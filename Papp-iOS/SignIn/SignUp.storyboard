@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Sign View Controller-->
         <scene sceneID="zwe-1Y-Uh9">
@@ -16,25 +21,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="40a-8j-mJH">
-                                <rect key="frame" x="159" y="312" width="97" height="34"/>
+                                <rect key="frame" x="159" y="395" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGX-RA-veF">
-                                <rect key="frame" x="159" y="235" width="97" height="34"/>
+                                <rect key="frame" x="159" y="335" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adgangskode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SB6-v1-SGa">
-                                <rect key="frame" x="159" y="405" width="97" height="34"/>
+                                <rect key="frame" x="159" y="452" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67E-Mh-Ybs">
-                                <rect key="frame" x="180" y="509" width="54" height="30"/>
+                                <rect key="frame" x="180" y="618" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -58,13 +63,32 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gentag Adgangskode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edb-9o-YAZ">
-                                <rect key="frame" x="159" y="467" width="97" height="34"/>
+                                <rect key="frame" x="159" y="514" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="topbackground" translatesAutoresizingMaskIntoConstraints="NO" id="Sr4-n5-sKv">
+                                <rect key="frame" x="-12" y="-9" width="438" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="tWV-E8-KBz"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opret Bruger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lf-s9-aRC">
+                                <rect key="frame" x="127" y="225" width="160" height="29"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Sr4-n5-sKv" secondAttribute="trailing" constant="-12" id="5vH-EB-7jw"/>
+                            <constraint firstItem="Sr4-n5-sKv" firstAttribute="leading" secondItem="mJL-DC-5AN" secondAttribute="leading" constant="-12" id="A2l-BA-J23"/>
+                            <constraint firstItem="Sr4-n5-sKv" firstAttribute="top" secondItem="mJL-DC-5AN" secondAttribute="top" constant="-9" id="I68-Fq-cHx"/>
+                            <constraint firstItem="3lf-s9-aRC" firstAttribute="centerX" secondItem="icC-oy-e2p" secondAttribute="centerX" id="h5w-2h-8xx"/>
+                            <constraint firstItem="3lf-s9-aRC" firstAttribute="top" secondItem="Sr4-n5-sKv" secondAttribute="bottom" constant="34" id="o8a-4k-N0C"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="icC-oy-e2p"/>
                     </view>
                     <connections>
@@ -79,4 +103,7 @@
             <point key="canvasLocation" x="165" y="56"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="topbackground" width="378" height="150"/>
+    </resources>
 </document>

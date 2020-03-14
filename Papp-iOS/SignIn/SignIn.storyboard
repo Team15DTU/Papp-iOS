@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbY-lr-Z0q">
-                                <rect key="frame" x="30" y="515" width="354" height="50"/>
+                                <rect key="frame" x="30" y="519" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="FuB-V5-npR"/>
                                 </constraints>
@@ -59,19 +59,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log På" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDP-Si-JUu">
-                                <rect key="frame" x="166" y="223" width="82.5" height="28.5"/>
+                                <rect key="frame" x="165.5" y="223" width="83" height="28.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Har du ikke en bruger?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K68-sy-fug">
-                                <rect key="frame" x="75" y="726" width="173.5" height="18.5"/>
+                                <rect key="frame" x="75" y="730" width="173.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-fX-xGG">
-                                <rect key="frame" x="30" y="625" width="354" height="50"/>
+                                <rect key="frame" x="30" y="629" width="354" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Qlv-r1-58d"/>
                                 </constraints>
@@ -84,11 +84,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Io-vR-s4W">
-                                <rect key="frame" x="256" y="720" width="73" height="31"/>
+                                <rect key="frame" x="256" y="724" width="73" height="31"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <state key="normal" title="Opret dig"/>
                                 <connections>
                                     <action selector="toSignUp" destination="eyf-yw-fWI" eventType="touchUpInside" id="fhO-hs-tUp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ib-gx-wQk">
+                                <rect key="frame" x="222" y="463" width="162" height="31"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                <state key="normal" title="Glemt adgangskode?"/>
+                                <connections>
+                                    <action selector="toForgotPassword" destination="eyf-yw-fWI" eventType="touchUpInside" id="GXr-PO-Qpl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,7 +106,7 @@
                             <constraint firstItem="ErX-YI-7AP" firstAttribute="leading" secondItem="pNl-kZ-tnH" secondAttribute="leading" constant="-12" id="2xC-op-aEL"/>
                             <constraint firstItem="KFD-qr-w33" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="30" id="4Br-LY-JY5"/>
                             <constraint firstItem="3Io-vR-s4W" firstAttribute="top" secondItem="GdP-fX-xGG" secondAttribute="bottom" constant="45" id="4gl-31-bZ7"/>
-                            <constraint firstItem="EbY-lr-Z0q" firstAttribute="top" secondItem="KFD-qr-w33" secondAttribute="bottom" constant="60" id="5bF-9p-Xg6"/>
+                            <constraint firstItem="EbY-lr-Z0q" firstAttribute="top" secondItem="8Ib-gx-wQk" secondAttribute="bottom" constant="25" id="CTs-WY-520"/>
                             <constraint firstItem="XpI-Zv-4OM" firstAttribute="leading" secondItem="tgV-ZX-3MW" secondAttribute="leading" constant="30" id="DlH-hw-BXY"/>
                             <constraint firstItem="KFD-qr-w33" firstAttribute="top" secondItem="XpI-Zv-4OM" secondAttribute="bottom" constant="60" id="FZg-Kr-qkE"/>
                             <constraint firstItem="GdP-fX-xGG" firstAttribute="top" secondItem="EbY-lr-Z0q" secondAttribute="bottom" constant="60" id="I1U-NZ-q0k"/>
@@ -109,6 +117,8 @@
                             <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="XpI-Zv-4OM" secondAttribute="trailing" constant="30" id="Yvy-bD-0pX"/>
                             <constraint firstItem="pDP-Si-JUu" firstAttribute="centerX" secondItem="tgV-ZX-3MW" secondAttribute="centerX" id="ZMG-nX-fNA"/>
                             <constraint firstItem="pDP-Si-JUu" firstAttribute="top" secondItem="ErX-YI-7AP" secondAttribute="bottom" constant="34" id="e6A-Hp-95i"/>
+                            <constraint firstItem="tgV-ZX-3MW" firstAttribute="trailing" secondItem="8Ib-gx-wQk" secondAttribute="trailing" constant="30" id="hj2-9q-aM4"/>
+                            <constraint firstItem="8Ib-gx-wQk" firstAttribute="top" secondItem="KFD-qr-w33" secondAttribute="bottom" constant="8" id="kgs-j1-bce"/>
                             <constraint firstItem="ErX-YI-7AP" firstAttribute="top" secondItem="pNl-kZ-tnH" secondAttribute="top" constant="-11" id="lOC-vQ-sE3"/>
                             <constraint firstItem="XpI-Zv-4OM" firstAttribute="top" secondItem="pDP-Si-JUu" secondAttribute="bottom" constant="53.5" id="nAG-o4-W1y"/>
                             <constraint firstItem="3Io-vR-s4W" firstAttribute="leading" secondItem="K68-sy-fug" secondAttribute="trailing" constant="7.5" id="ojF-TQ-ElC"/>
