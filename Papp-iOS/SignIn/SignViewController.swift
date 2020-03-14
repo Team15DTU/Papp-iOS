@@ -35,6 +35,8 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var facebookButton: UIButton!
     
+    @IBOutlet weak var signUpButton: UIButton?
+    
     @IBAction func login() {
         Auth.auth().signIn(withEmail: emailTextField!.text!, password: passwordTextField!.text!) { [weak self] authResult, error in
             guard self != nil else { return }
@@ -128,12 +130,20 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
-        setUpLoginbutton()
+        setUpGreyButtons(button: loginButton)
+        setUpGreyButtons(button: signUpButton)
         setUpFacebookbutton()
     
         if emailTextField?.text != nil && passwordTextField?.text != nil{
         setUpTextFields(emailTextField!)
         setUpTextFields(passwordTextField!)
+        }
+        
+        if emailSignUpTextField?.text != nil && nameSignUpTextField?.text != nil {
+            setUpTextFields(emailSignUpTextField!)
+            setUpTextFields(nameSignUpTextField!)
+            setUpTextFields(passwordSignUpTextField!)
+            setUpTextFields(repeatPassword!)
         }
 
         
@@ -180,11 +190,11 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func setUpLoginbutton(){
-        loginButton?.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        loginButton?.layer.cornerRadius = 10
-        loginButton?.layer.borderWidth = 1
-        loginButton?.layer.borderColor = UIColor.white.cgColor
+    func setUpGreyButtons( button: UIButton?){
+        button?.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        button?.layer.cornerRadius = 10
+        button?.layer.borderWidth = 1
+        button?.layer.borderColor = UIColor.white.cgColor
     }
     
     func setUpFacebookbutton(){
