@@ -15,10 +15,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        try! Auth.auth().signOut()
         dispatchLogin()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        try! Auth.auth().signOut()
             dispatchLogin()
     }
     

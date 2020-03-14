@@ -43,6 +43,7 @@
 		34BC10CC240534ED0082476D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CA240534ED0082476D /* Main.storyboard */; };
 		34BC10CE240534ED0082476D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CD240534ED0082476D /* Assets.xcassets */; };
 		34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CF240534ED0082476D /* LaunchScreen.storyboard */; };
+		34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */; };
 		8731DE26BC89D1967C907B6C /* Pods_Papp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		34BC10CD240534ED0082476D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34BC10D0240534ED0082476D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34BC10D2240534ED0082476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		9E0C25528CBAB91B65E6BB84 /* Pods-Papp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Papp_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -180,6 +182,7 @@
 		34BC10C3240534ED0082476D /* Papp-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				34FCAB6E24168A0C00E5E5D0 /* Firebase */,
 				345E1A492405AC2D003E859B /* SignIn */,
 				345E1A482405AC26003E859B /* MapView */,
 				345E1A472405AC21003E859B /* Model */,
@@ -194,6 +197,14 @@
 				34BC10D2240534ED0082476D /* Info.plist */,
 			);
 			path = "Papp-iOS";
+			sourceTree = "<group>";
+		};
+		34FCAB6E24168A0C00E5E5D0 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		3D09587567127F9FF6E7A7B9 /* Frameworks */ = {
@@ -359,6 +370,7 @@
 				342E55412405ADB7007BB920 /* MapViewController.swift in Sources */,
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
 				342E553B2405AD12007BB920 /* SignViewController.swift in Sources */,
+				34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */,
 				342E55362405AD06007BB920 /* UserDTO.swift in Sources */,
 				34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */,
 			);

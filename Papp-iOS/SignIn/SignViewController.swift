@@ -13,6 +13,9 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 
 class SignViewController: UIViewController, UITextFieldDelegate {
+    
+    let fireStoreController = FirestoreController.init()
+    
 
     @IBOutlet weak var loginButton: UIButton?
     
@@ -37,7 +40,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
             guard self != nil else { return }
         // [START_EXCLUDE]
             if error != nil {
-              print("Error! Could not login")
+              print("Error! Could not login \(error!.localizedDescription)")
               return
             }
             self?.goToMapView()
@@ -54,7 +57,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
                 return
             }
             if result.isCancelled {
-                print("Cancelled \(error?.localizedDescription)")
+                print("Cancelled \(error!.localizedDescription)")
             } else if let error = error {
                 print("Process error \(error.localizedDescription)")
             } else {
@@ -65,13 +68,15 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signUp() {
+        let user = UserDTO.init(name: nameSignUpTextField!.text!, email: emailSignUpTextField!.text!)
         Auth.auth().createUser(withEmail: emailSignUpTextField!.text!, password: passwordSignUpTextField!.text!){ [weak self] authResult, error in
             guard self != nil else { return }
         // [START_EXCLUDE]
             if error != nil {
-              print("Error! Could not create user")
+                print("Error! Could not create user \(error!.localizedDescription)")
               return
             }
+             self?.fireStoreController.createUser(name: user.name, email: user.email)
             self?.goToMapView()
         }
     }
@@ -80,7 +85,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         Auth.auth().sendPasswordReset(withEmail: emailForgotTextField!.text!) { error in
           // [START_EXCLUDE]
             if error != nil {
-                print("Error! Could not send reset email")
+                print("Error! Could not send reset email \(error!.localizedDescription)")
               return
             }
             let alertController = UIAlertController(title: "Email Reset", message:
@@ -121,10 +126,6 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-            //MARK: Benyt extension i stedet for at direkte tilføje MGLMapViewDelegate
-            //MARK: Lav metoder til delegate.
-    
         
         setUpLoginbutton()
         setUpFacebookbutton()
@@ -231,6 +232,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
             self.present(alertController, animated: true, completion: nil)
             return
           }
+            self.fireStoreController.createUser()
           self.goToMapView()
         }
         
