@@ -81,13 +81,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Har du allerede en bruger?" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQG-Q2-Pxm">
-                                <rect key="frame" x="47" y="733" width="203" height="18.5"/>
+                                <rect key="frame" x="72" y="733" width="203" height="18.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEu-XB-gFL">
-                                <rect key="frame" x="258" y="727" width="57" height="31"/>
+                                <rect key="frame" x="283" y="727" width="57" height="31"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <state key="normal" title="Log ind"/>
                                 <connections>
@@ -106,21 +106,21 @@
                             <constraint firstItem="Sr4-n5-sKv" firstAttribute="top" secondItem="mJL-DC-5AN" secondAttribute="top" constant="-9" id="I68-Fq-cHx"/>
                             <constraint firstItem="icC-oy-e2p" firstAttribute="trailing" secondItem="40a-8j-mJH" secondAttribute="trailing" constant="30" id="IE0-38-fbY"/>
                             <constraint firstItem="67E-Mh-Ybs" firstAttribute="top" secondItem="edb-9o-YAZ" secondAttribute="bottom" constant="53" id="KCm-vt-79B"/>
-                            <constraint firstItem="eQG-Q2-Pxm" firstAttribute="leading" secondItem="icC-oy-e2p" secondAttribute="leading" constant="47" id="Oya-6W-E1x"/>
+                            <constraint firstItem="eQG-Q2-Pxm" firstAttribute="top" secondItem="67E-Mh-Ybs" secondAttribute="bottom" constant="53" id="LVh-VJ-rBu"/>
                             <constraint firstItem="icC-oy-e2p" firstAttribute="trailing" secondItem="JGX-RA-veF" secondAttribute="trailing" constant="30" id="Pml-Ku-jWW"/>
-                            <constraint firstItem="eQG-Q2-Pxm" firstAttribute="top" secondItem="67E-Mh-Ybs" secondAttribute="bottom" constant="53" id="SDl-VO-XSJ"/>
+                            <constraint firstItem="SEu-XB-gFL" firstAttribute="leading" secondItem="eQG-Q2-Pxm" secondAttribute="trailing" constant="8" id="Q13-0o-AcG"/>
                             <constraint firstItem="40a-8j-mJH" firstAttribute="top" secondItem="JGX-RA-veF" secondAttribute="bottom" constant="30" id="boU-cZ-wxz"/>
+                            <constraint firstItem="SEu-XB-gFL" firstAttribute="top" secondItem="67E-Mh-Ybs" secondAttribute="bottom" constant="47" id="d4b-pz-95X"/>
                             <constraint firstItem="icC-oy-e2p" firstAttribute="trailing" secondItem="edb-9o-YAZ" secondAttribute="trailing" constant="30" id="dZO-fQ-7g3"/>
                             <constraint firstItem="SB6-v1-SGa" firstAttribute="top" secondItem="40a-8j-mJH" secondAttribute="bottom" constant="30" id="ffx-SD-g9z"/>
-                            <constraint firstItem="SEu-XB-gFL" firstAttribute="leading" secondItem="eQG-Q2-Pxm" secondAttribute="trailing" constant="8" id="gNt-N0-gd6"/>
                             <constraint firstItem="3lf-s9-aRC" firstAttribute="centerX" secondItem="icC-oy-e2p" secondAttribute="centerX" id="h5w-2h-8xx"/>
                             <constraint firstItem="icC-oy-e2p" firstAttribute="trailing" secondItem="67E-Mh-Ybs" secondAttribute="trailing" constant="30" id="jZ2-X3-vUc"/>
                             <constraint firstItem="3lf-s9-aRC" firstAttribute="top" secondItem="Sr4-n5-sKv" secondAttribute="bottom" constant="34" id="o8a-4k-N0C"/>
                             <constraint firstItem="icC-oy-e2p" firstAttribute="trailing" secondItem="SB6-v1-SGa" secondAttribute="trailing" constant="30" id="p3T-X4-DQN"/>
+                            <constraint firstItem="eQG-Q2-Pxm" firstAttribute="leading" secondItem="icC-oy-e2p" secondAttribute="leading" constant="71.900000000000006" id="qo7-G2-0Qz"/>
                             <constraint firstItem="40a-8j-mJH" firstAttribute="leading" secondItem="icC-oy-e2p" secondAttribute="leading" constant="30" id="s94-0G-4u6"/>
                             <constraint firstItem="67E-Mh-Ybs" firstAttribute="leading" secondItem="icC-oy-e2p" secondAttribute="leading" constant="30" id="w5E-Py-VHa"/>
                             <constraint firstItem="edb-9o-YAZ" firstAttribute="top" secondItem="SB6-v1-SGa" secondAttribute="bottom" constant="30" id="yhD-BQ-X93"/>
-                            <constraint firstItem="SEu-XB-gFL" firstAttribute="top" secondItem="67E-Mh-Ybs" secondAttribute="bottom" constant="47" id="yxT-tv-wsp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="icC-oy-e2p"/>
                     </view>

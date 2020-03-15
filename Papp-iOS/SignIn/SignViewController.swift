@@ -37,6 +37,8 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var signUpButton: UIButton?
     
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    
     @IBAction func login() {
         Auth.auth().signIn(withEmail: emailTextField!.text!, password: passwordTextField!.text!) { [weak self] authResult, error in
             guard self != nil else { return }
@@ -132,6 +134,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         
         setUpGreyButtons(button: loginButton)
         setUpGreyButtons(button: signUpButton)
+        setUpGreyButtons(button: forgotPasswordButton)
         setUpFacebookbutton()
     
         if emailTextField?.text != nil && passwordTextField?.text != nil{
@@ -144,6 +147,10 @@ class SignViewController: UIViewController, UITextFieldDelegate {
             setUpTextFields(nameSignUpTextField!)
             setUpTextFields(passwordSignUpTextField!)
             setUpTextFields(repeatPassword!)
+        }
+        
+        if emailForgotTextField?.text != nil {
+            setUpTextFields(emailForgotTextField!)
         }
 
         
