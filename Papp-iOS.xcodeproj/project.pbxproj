@@ -43,6 +43,12 @@
 		34BC10CC240534ED0082476D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CA240534ED0082476D /* Main.storyboard */; };
 		34BC10CE240534ED0082476D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CD240534ED0082476D /* Assets.xcassets */; };
 		34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CF240534ED0082476D /* LaunchScreen.storyboard */; };
+		34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA74241E94B50085B303 /* TipViewController.swift */; };
+		34DBEA77241E94C50085B303 /* PVagtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA76241E94C50085B303 /* PVagtViewController.swift */; };
+		34DBEA79241E94F20085B303 /* PVagt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA78241E94F20085B303 /* PVagt.storyboard */; };
+		34DBEA7B241E95070085B303 /* PreTip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7A241E95070085B303 /* PreTip.storyboard */; };
+		34DBEA7D241E95110085B303 /* Tip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7C241E95110085B303 /* Tip.storyboard */; };
+		34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7E241E951B0085B303 /* TipDef.storyboard */; };
 		34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */; };
 		8731DE26BC89D1967C907B6C /* Pods_Papp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +93,12 @@
 		34BC10CD240534ED0082476D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34BC10D0240534ED0082476D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34BC10D2240534ED0082476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34DBEA74241E94B50085B303 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
+		34DBEA76241E94C50085B303 /* PVagtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVagtViewController.swift; sourceTree = "<group>"; };
+		34DBEA78241E94F20085B303 /* PVagt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PVagt.storyboard; sourceTree = "<group>"; };
+		34DBEA7A241E95070085B303 /* PreTip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreTip.storyboard; sourceTree = "<group>"; };
+		34DBEA7C241E95110085B303 /* Tip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tip.storyboard; sourceTree = "<group>"; };
+		34DBEA7E241E951B0085B303 /* TipDef.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipDef.storyboard; sourceTree = "<group>"; };
 		34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		9E0C25528CBAB91B65E6BB84 /* Pods-Papp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Papp_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +156,8 @@
 		345E1A482405AC26003E859B /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				34DBEA73241E94A30085B303 /* PVagt */,
+				34DBEA72241E94920085B303 /* Tip */,
 				342E55402405ADB7007BB920 /* MapView.storyboard */,
 				342E553F2405ADB7007BB920 /* MapViewController.swift */,
 			);
@@ -197,6 +211,26 @@
 				34BC10D2240534ED0082476D /* Info.plist */,
 			);
 			path = "Papp-iOS";
+			sourceTree = "<group>";
+		};
+		34DBEA72241E94920085B303 /* Tip */ = {
+			isa = PBXGroup;
+			children = (
+				34DBEA74241E94B50085B303 /* TipViewController.swift */,
+				34DBEA7A241E95070085B303 /* PreTip.storyboard */,
+				34DBEA7C241E95110085B303 /* Tip.storyboard */,
+				34DBEA7E241E951B0085B303 /* TipDef.storyboard */,
+			);
+			path = Tip;
+			sourceTree = "<group>";
+		};
+		34DBEA73241E94A30085B303 /* PVagt */ = {
+			isa = PBXGroup;
+			children = (
+				34DBEA76241E94C50085B303 /* PVagtViewController.swift */,
+				34DBEA78241E94F20085B303 /* PVagt.storyboard */,
+			);
+			path = PVagt;
 			sourceTree = "<group>";
 		};
 		34FCAB6E24168A0C00E5E5D0 /* Firebase */ = {
@@ -285,11 +319,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				345E1A622405AC45003E859B /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				34DBEA79241E94F20085B303 /* PVagt.storyboard in Resources */,
 				345E1A612405AC45003E859B /* Montserrat-Bold.ttf in Resources */,
 				34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */,
+				34DBEA7D241E95110085B303 /* Tip.storyboard in Resources */,
 				34BC10CE240534ED0082476D /* Assets.xcassets in Resources */,
 				345E1A722405AC45003E859B /* Montserrat-BoldItalic.ttf in Resources */,
 				342E55422405ADB7007BB920 /* MapView.storyboard in Resources */,
+				34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */,
 				345E1A652405AC45003E859B /* Montserrat-MediumItalic.ttf in Resources */,
 				345E1A642405AC45003E859B /* Montserrat-Light.ttf in Resources */,
 				345E1A6E2405AC45003E859B /* Montserrat-SemiBold.ttf in Resources */,
@@ -311,6 +348,7 @@
 				345E1A6B2405AC45003E859B /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				342E553D2405AD12007BB920 /* ForgotPassword.storyboard in Resources */,
 				345E1A602405AC45003E859B /* Montserrat-Italic.ttf in Resources */,
+				34DBEA7B241E95070085B303 /* PreTip.storyboard in Resources */,
 				345E1A6A2405AC45003E859B /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				345E1A742405AC45003E859B /* Montserrat-Medium.ttf in Resources */,
 				345E1A6F2405AC45003E859B /* Montserrat-BlackItalic.ttf in Resources */,
@@ -369,9 +407,11 @@
 				34BC10C9240534ED0082476D /* ViewController.swift in Sources */,
 				342E55412405ADB7007BB920 /* MapViewController.swift in Sources */,
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
+				34DBEA77241E94C50085B303 /* PVagtViewController.swift in Sources */,
 				342E553B2405AD12007BB920 /* SignViewController.swift in Sources */,
 				34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */,
 				342E55362405AD06007BB920 /* UserDTO.swift in Sources */,
+				34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */,
 				34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
