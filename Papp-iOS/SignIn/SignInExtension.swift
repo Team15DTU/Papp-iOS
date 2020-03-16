@@ -10,17 +10,27 @@ import UIKit
 import FirebaseAuth
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Lottie
 
 extension SignViewController {
     
     func signInWithFirebase() {
+        let animation = Animation.named("loading")
+        signInAnimationView.animation = animation
+        signInAnimationView.loopMode = .loop
+        signInAnimationBackground.isHidden = false
+        signInAnimationView.play()
         Auth.auth().signIn(withEmail: emailTextField!.text!, password: passwordTextField!.text!) { [weak self] authResult, error in
             guard self != nil else { return }
         // [START_EXCLUDE]
             if error != nil {
+                self?.signInAnimationView.stop()
+                self?.signInAnimationBackground.isHidden = true
               print("Error! Could not login \(error!.localizedDescription)")
               return
             }
+            self?.signInAnimationView.stop()
+            self?.signInAnimationBackground.isHidden = true
             self?.goToMapView()
         }
     }
@@ -54,10 +64,17 @@ extension SignViewController {
     }
     
     private func facebookCreditialsToFirestore() {
+        let animation = Animation.named("loading")
+        signInAnimationView.animation = animation
+        signInAnimationView.loopMode = .loop
+        signInAnimationBackground.isHidden = false
+        signInAnimationView.play()
         let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
         // Perform login by calling Firebase APIs
         Auth.auth().signIn(with: credential) { (authResult, error) in
           if let error = error {
+            self.signInAnimationView.stop()
+            self.signInAnimationBackground.isHidden = true
             print("Login error: \(error.localizedDescription)")
             
             let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -69,6 +86,8 @@ extension SignViewController {
             return
           }
             self.fireStoreController.createUser()
+            self.signInAnimationView.stop()
+            self.signInAnimationBackground.isHidden = true
           self.goToMapView()
         }
     }

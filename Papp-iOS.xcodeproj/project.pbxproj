@@ -37,6 +37,7 @@
 		345E1A732405AC45003E859B /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A5D2405AC45003E859B /* Montserrat-Black.ttf */; };
 		345E1A742405AC45003E859B /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A5E2405AC45003E859B /* Montserrat-Medium.ttf */; };
 		345E1A752405AC45003E859B /* Gibson-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A5F2405AC45003E859B /* Gibson-Regular.ttf */; };
+		3472D096241FCE7D00662E1C /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 3472D095241FCE7D00662E1C /* loading.json */; };
 		347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FC6241FB42F00C47FB4 /* SignUpExtension.swift */; };
 		347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */; };
 		347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */; };
@@ -89,6 +90,7 @@
 		345E1A5D2405AC45003E859B /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		345E1A5E2405AC45003E859B /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		345E1A5F2405AC45003E859B /* Gibson-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-Regular.ttf"; sourceTree = "<group>"; };
+		3472D095241FCE7D00662E1C /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		347F8FC6241FB42F00C47FB4 /* SignUpExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpExtension.swift; sourceTree = "<group>"; };
 		347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordExtension.swift; sourceTree = "<group>"; };
 		347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInExtension.swift; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		34B8A4B7241FCDF600166AE1 /* LottieAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				3472D095241FCE7D00662E1C /* loading.json */,
+			);
+			path = LottieAnimation;
+			sourceTree = "<group>";
+		};
 		34BC10B8240534ED0082476D = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +218,7 @@
 		34BC10C3240534ED0082476D /* Papp-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				34B8A4B7241FCDF600166AE1 /* LottieAnimation */,
 				34FCAB6E24168A0C00E5E5D0 /* Firebase */,
 				345E1A492405AC2D003E859B /* SignIn */,
 				345E1A482405AC26003E859B /* MapView */,
@@ -334,6 +345,7 @@
 				34DBEA79241E94F20085B303 /* PVagt.storyboard in Resources */,
 				345E1A612405AC45003E859B /* Montserrat-Bold.ttf in Resources */,
 				34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */,
+				3472D096241FCE7D00662E1C /* loading.json in Resources */,
 				34DBEA7D241E95110085B303 /* Tip.storyboard in Resources */,
 				34BC10CE240534ED0082476D /* Assets.xcassets in Resources */,
 				345E1A722405AC45003E859B /* Montserrat-BoldItalic.ttf in Resources */,
