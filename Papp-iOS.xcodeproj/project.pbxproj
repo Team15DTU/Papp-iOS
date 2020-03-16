@@ -37,6 +37,8 @@
 		345E1A732405AC45003E859B /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A5D2405AC45003E859B /* Montserrat-Black.ttf */; };
 		345E1A742405AC45003E859B /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A5E2405AC45003E859B /* Montserrat-Medium.ttf */; };
 		345E1A752405AC45003E859B /* Gibson-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A5F2405AC45003E859B /* Gibson-Regular.ttf */; };
+		347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FC6241FB42F00C47FB4 /* SignUpExtension.swift */; };
+		347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */; };
 		34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C4240534ED0082476D /* AppDelegate.swift */; };
 		34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C6240534ED0082476D /* SceneDelegate.swift */; };
 		34BC10C9240534ED0082476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C8240534ED0082476D /* ViewController.swift */; };
@@ -85,6 +87,8 @@
 		345E1A5D2405AC45003E859B /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		345E1A5E2405AC45003E859B /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		345E1A5F2405AC45003E859B /* Gibson-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-Regular.ttf"; sourceTree = "<group>"; };
+		347F8FC6241FB42F00C47FB4 /* SignUpExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpExtension.swift; sourceTree = "<group>"; };
+		347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordExtension.swift; sourceTree = "<group>"; };
 		34BC10C1240534ED0082476D /* Papp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Papp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BC10C4240534ED0082476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BC10C6240534ED0082476D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				342E553A2405AD12007BB920 /* SignIn.storyboard */,
 				342E55382405AD12007BB920 /* SignUp.storyboard */,
 				342E55372405AD12007BB920 /* SignViewController.swift */,
+				347F8FC6241FB42F00C47FB4 /* SignUpExtension.swift */,
+				347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -407,8 +413,10 @@
 				34BC10C9240534ED0082476D /* ViewController.swift in Sources */,
 				342E55412405ADB7007BB920 /* MapViewController.swift in Sources */,
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
+				347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */,
 				34DBEA77241E94C50085B303 /* PVagtViewController.swift in Sources */,
 				342E553B2405AD12007BB920 /* SignViewController.swift in Sources */,
+				347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */,
 				34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */,
 				342E55362405AD06007BB920 /* UserDTO.swift in Sources */,
 				34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */,
