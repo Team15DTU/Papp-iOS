@@ -7,7 +7,33 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 extension SignViewController {
+    
+    func sendNewPassword() {
+        Auth.auth().sendPasswordReset(withEmail: emailForgotTextField!.text!) { error in
+          // [START_EXCLUDE]
+            if error != nil {
+                print("Error! Could not send reset email \(error!.localizedDescription)")
+              return
+            }
+            let alertController = UIAlertController(title: "Email Reset", message:
+                "We have send you reset password email", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+            self.present(alertController, animated: true, completion: nil)
+          // [END_EXCLUDE]
+        }
+    }
+    
+    func transitionToForgotPassword() {
+        let storyboard = UIStoryboard(name: "ForgotPassword", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "Sign")
+               
+        secondVC.modalPresentationStyle = .fullScreen
+               
+        present(secondVC, animated: false, completion: nil)
+    }
     
 }

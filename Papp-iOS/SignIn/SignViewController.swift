@@ -15,7 +15,6 @@ import FBSDKCoreKit
 class SignViewController: UIViewController, UITextFieldDelegate {
     
     let fireStoreController = FirestoreController.init()
-    
 
     @IBOutlet weak var loginButton: UIButton?
     
@@ -40,92 +39,31 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
     @IBAction func login() {
-        Auth.auth().signIn(withEmail: emailTextField!.text!, password: passwordTextField!.text!) { [weak self] authResult, error in
-            guard self != nil else { return }
-        // [START_EXCLUDE]
-            if error != nil {
-              print("Error! Could not login \(error!.localizedDescription)")
-              return
-            }
-            self?.goToMapView()
-        }
+        signInWithFirebase()
     }
     
     @IBAction func facebookLogin() {
-        
-        let loginManager=LoginManager()
-        loginManager.logIn(permissions: ["public_profile", "email"], from: self, handler: { result, error in
-
-            guard let result = result else {
-                print("No result found")
-                return
-            }
-            if result.isCancelled {
-                print("Cancelled \(error!.localizedDescription)")
-            } else if let error = error {
-                print("Process error \(error.localizedDescription)")
-            } else {
-                print("Logged in")
-                self.signInWithFacebook()
-            }
-        })
+        signInWithFacebook()
     }
     
     @IBAction func signUp() {
-        let user = UserDTO.init(name: nameSignUpTextField!.text!, email: emailSignUpTextField!.text!)
-        Auth.auth().createUser(withEmail: emailSignUpTextField!.text!, password: passwordSignUpTextField!.text!){ [weak self] authResult, error in
-            guard self != nil else { return }
-        // [START_EXCLUDE]
-            if error != nil {
-                print("Error! Could not create user \(error!.localizedDescription)")
-              return
-            }
-             self?.fireStoreController.createUser(name: user.name, email: user.email)
-            self?.goToMapView()
-        }
+        signUpWithFirestore()
     }
     
     @IBAction func forgotPassword() {
-        Auth.auth().sendPasswordReset(withEmail: emailForgotTextField!.text!) { error in
-          // [START_EXCLUDE]
-            if error != nil {
-                print("Error! Could not send reset email \(error!.localizedDescription)")
-              return
-            }
-            let alertController = UIAlertController(title: "Email Reset", message:
-                "We have send you reset password email", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
-            self.present(alertController, animated: true, completion: nil)
-          // [END_EXCLUDE]
-        }
+        sendNewPassword()
     }
     
     @IBAction func toSignUp() {
-        let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "Sign")
-        
-        secondVC.modalPresentationStyle = .fullScreen
-        
-        present(secondVC, animated: false, completion: nil)
+        transitionToSignUp()
     }
     
     @IBAction func toSignIn() {
-        let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "Sign")
-        
-        secondVC.modalPresentationStyle = .fullScreen
-        
-        present(secondVC, animated: false, completion: nil)
+        transitionToSignIn()
     }
     
     @IBAction func toForgotPassword() {
-        let storyboard = UIStoryboard(name: "ForgotPassword", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "Sign")
-        
-        secondVC.modalPresentationStyle = .fullScreen
-        
-        present(secondVC, animated: false, completion: nil)
+       transitionToForgotPassword()
     }
     
     override func viewDidLoad() {
@@ -154,7 +92,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         }
 
         
-        // Do any additional setup after loading the view.
+        // Add delegate to textfields
         emailTextField?.delegate = self
         passwordTextField?.delegate = self
         emailSignUpTextField?.delegate = self
@@ -188,6 +126,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
             break
         case repeatPassword:
             signUp()
+            break
         case emailForgotTextField:
             forgotPassword()
             break
@@ -197,66 +136,15 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func setUpGreyButtons( button: UIButton?){
-        button?.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        button?.layer.cornerRadius = 10
-        button?.layer.borderWidth = 1
-        button?.layer.borderColor = UIColor.white.cgColor
-    }
-    
-    func setUpFacebookbutton(){
-        let icon = UIImage(named: "facebook")!
-        facebookButton?.setImage(icon, for: .normal)
-        facebookButton?.imageView?.contentMode = .scaleAspectFit
-        facebookButton?.imageEdgeInsets = UIEdgeInsets(top: 0, left: -90, bottom: 0, right: 0)
-        facebookButton?.backgroundColor = UIColor.init(red: 66/255, green: 103/255, blue: 178/255, alpha: 1)
-        facebookButton?.layer.cornerRadius = 10
-        facebookButton?.layer.borderWidth = 1
-        facebookButton?.layer.borderColor = UIColor.white.cgColor
-    }
-    
-    func setUpTextFields(_ textField: UITextField) {
-        let bottomline = CALayer()
-        
-        bottomline.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width-45, height: 2)
-        
-        bottomline.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        
-        textField.borderStyle = .none
-        
-        textField.layer.addSublayer(bottomline)
-    }
-    
-    func goToMapView(){
+     func goToMapView(){
         let storyboard = UIStoryboard(name: "MapView", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "MapView")
         secondVC.modalPresentationStyle = .fullScreen
         self.present(secondVC, animated: false, completion: nil)
     }
     
-    func signInWithFacebook(){
-        
-        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-        // Perform login by calling Firebase APIs
-        Auth.auth().signIn(with: credential) { (authResult, error) in
-          if let error = error {
-            print("Login error: \(error.localizedDescription)")
-            
-            let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
-            
-            let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
-            alertController.addAction(okayAction)
-            self.present(alertController, animated: true, completion: nil)
-            return
-          }
-            self.fireStoreController.createUser()
-          self.goToMapView()
-        }
-        
-    }
-    
 }
+
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
