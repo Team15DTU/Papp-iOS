@@ -11,11 +11,20 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
+import Lottie
 
 class SignViewController: UIViewController, UITextFieldDelegate {
     
     let fireStoreController = FirestoreController.init()
-
+    
+    @IBOutlet weak var signUpAnimationBackground: UIView!
+    
+    @IBOutlet weak var signUpAnimationView: AnimationView!
+    
+    @IBOutlet weak var signInAnimationBackground: UIView!
+    
+    @IBOutlet weak var signInAnimationView: AnimationView!
+    
     @IBOutlet weak var loginButton: UIButton?
     
     @IBOutlet weak var emailTextField: UITextField?
@@ -26,7 +35,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameSignUpTextField: UITextField?
     
-    @IBOutlet weak var passwordSignUpTextField: UITextField?
+    @IBOutlet weak var passwordSignUpTextField: UITextField!
     
     @IBOutlet weak var emailForgotTextField: UITextField?
     
@@ -111,6 +120,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
             break
         case passwordTextField:
             login()
+            self.view.endEditing(true)
             break
         case nameSignUpTextField:
             nameSignUpTextField?.resignFirstResponder()
@@ -126,9 +136,11 @@ class SignViewController: UIViewController, UITextFieldDelegate {
             break
         case repeatPassword:
             signUp()
+            self.view.endEditing(true)
             break
         case emailForgotTextField:
             forgotPassword()
+            self.view.endEditing(true)
             break
         default:
             print("Cant find next button")

@@ -38,6 +38,8 @@ extension SignViewController {
         
         textField.borderStyle = .none
         
+        //textField.accessibilityLanguage = "da-DK"
+        
         textField.layer.addSublayer(bottomline)
     }
     
