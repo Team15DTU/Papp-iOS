@@ -9,7 +9,7 @@
 import UIKit
 import Mapbox
 
-class MapViewController: UIViewController, MGLMapViewDelegate {
+class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate {
     
     @IBOutlet weak var mapView: MGLMapView!
     
@@ -32,6 +32,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         super.viewDidLoad()
         
         mapTabBar.selectedItem = tabBarItems[0]
+        
+        mapTabBar.delegate = self
         
         //MARK: Needs to be moved in to its own style 
         trackButton.layer.cornerRadius = trackButton.frame.width/2
@@ -66,5 +68,9 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     @objc @IBAction func handleMapPan(sender: UIPanGestureRecognizer) {
         print("test")
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print("Selected \(item.title)")
     }
 }
