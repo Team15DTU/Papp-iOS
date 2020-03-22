@@ -293,6 +293,7 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
+  - SideMenu (6.4.7)
 
 DEPENDENCIES:
   - FBSDKCoreKit
@@ -303,6 +304,7 @@ DEPENDENCIES:
   - FirebaseFirestoreSwift
   - lottie-ios
   - Mapbox-iOS-SDK (~> 5.7)
+  - SideMenu
 
 SPEC REPOS:
   trunk:
@@ -334,6 +336,7 @@ SPEC REPOS:
     - MapboxMobileEvents
     - nanopb
     - PromisesObjC
+    - SideMenu
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -364,8 +367,8 @@ SPEC CHECKSUMS:
   MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
 
-PODFILE CHECKSUM: 1169734542a3ec5b30b950f2d217829df0027d6f
-
+PODFILE CHECKSUM: 9199a6fe056fb7c6d38ef188209c40d5e25c88aa
 
 COCOAPODS: 1.8.4
