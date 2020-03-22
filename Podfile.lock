@@ -283,6 +283,7 @@ PODS:
   - gRPC-Core/Interface (1.21.0)
   - GTMSessionFetcher/Core (1.3.1)
   - leveldb-library (1.22)
+  - lottie-ios (3.1.6)
   - Mapbox-iOS-SDK (5.7.0):
     - MapboxMobileEvents (= 0.10.2)
   - MapboxMobileEvents (0.10.2)
@@ -300,6 +301,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - FirebaseFirestoreSwift
+  - lottie-ios
   - Mapbox-iOS-SDK (~> 5.7)
 
 SPEC REPOS:
@@ -327,6 +329,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - leveldb-library
+    - lottie-ios
     - Mapbox-iOS-SDK
     - MapboxMobileEvents
     - nanopb
@@ -356,11 +359,12 @@ SPEC CHECKSUMS:
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   Mapbox-iOS-SDK: 1b7cb0e739247d20ef75f5f14aa6ce34e1f0660f
   MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: 1e39bd1aa7faee4ec50fbc8851e0ed7e7a2c145f
+PODFILE CHECKSUM: 1169734542a3ec5b30b950f2d217829df0027d6f
 
 COCOAPODS: 1.8.4

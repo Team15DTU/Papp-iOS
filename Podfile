@@ -12,6 +12,7 @@ pod 'Mapbox-iOS-SDK', '~> 5.7'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'Firebase/Firestore'
+pod 'lottie-ios'
 # Optionally, include the Swift extensions if you're using Swift.
 pod 'FirebaseFirestoreSwift'
 end
