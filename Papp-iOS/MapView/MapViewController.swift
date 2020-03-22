@@ -8,8 +8,10 @@
 
 import UIKit
 import Mapbox
+import SideMenu
 
-class MapViewController: UIViewController, MGLMapViewDelegate {
+
+class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate {
     
     @IBOutlet weak var mapView: MGLMapView!
     
@@ -33,11 +35,12 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         
         mapTabBar.selectedItem = tabBarItems[0]
         
+        mapTabBar.delegate = self
+        
         //MARK: Needs to be moved in to its own style 
         trackButton.layer.cornerRadius = trackButton.frame.width/2
         trackButton.layer.borderWidth = 1
         trackButton.layer.borderColor = UIColor.lightGray.cgColor
-    
         
         mapView.showsUserLocation = true
         
@@ -66,5 +69,21 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     @objc @IBAction func handleMapPan(sender: UIPanGestureRecognizer) {
         print("test")
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print("Selected \(item.title)")
+        var menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
+        
+        if item.tag == 2{
+         
+        }
+        if item.tag == 3{
+            present(menu, animated: true, completion: nil)
+        }
+        
+    
+        
+        //dismiss(animated: true, completion: nil)
     }
 }
