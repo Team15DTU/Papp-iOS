@@ -15,13 +15,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signOut()
         dispatchLogin()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        signOut()
-            dispatchLogin()
+        dispatchLogin()
     }
     
     func dispatchLogin() {
@@ -60,22 +58,6 @@ class ViewController: UIViewController {
          
          present(secondVC, animated: false, completion: nil)
      }
-    
-    func signOut() {
-        guard Auth.auth().currentUser != nil else {
-               return
-           }
-
-           do {
-              try Auth.auth().signOut()
-            AccessToken.current = nil
-           } catch let error as NSError {
-               print(error.localizedDescription)
-           }
-    }
-    
-    
-
 
 }
 
