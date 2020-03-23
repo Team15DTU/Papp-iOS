@@ -73,14 +73,22 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         print("Selected \(item.title)")
-        var menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
-        menu.statusBarEndAlpha = 0
+        
+        let rightMenuNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
+        
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: mapView, forMenu: .right)
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view, forMenu: .right)
+        SideMenuManager.default.rightMenuNavigationController?.statusBarEndAlpha = 0
+        SideMenuManager.default.rightMenuNavigationController?.presentationStyle = .menuSlideIn
+        
+        
+        
         
         if item.tag == 2{
          
         }
         if item.tag == 3{
-            present(menu, animated: true, completion: nil)
+            present(rightMenuNavigationController, animated: true, completion: nil)
         }
         
     
