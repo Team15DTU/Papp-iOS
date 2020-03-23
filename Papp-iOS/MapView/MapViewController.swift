@@ -74,6 +74,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         print("Selected \(item.title)")
         var menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
+        menu.statusBarEndAlpha = 0
         
         if item.tag == 2{
          
