@@ -13,6 +13,8 @@ import SideMenu
 
 class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate {
     
+    var rightMenuNavigationController: SideMenuNavigationController!
+    
     @IBOutlet weak var mapView: MGLMapView!
     
     @IBOutlet weak var mapTabBar: UITabBar!
@@ -28,10 +30,15 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     }
     
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rightMenuNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as? SideMenuNavigationController
+        
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: mapView, forMenu: .right)
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view, forMenu: .right)
+        SideMenuManager.default.rightMenuNavigationController?.statusBarEndAlpha = 0
+        SideMenuManager.default.rightMenuNavigationController?.presentationStyle = .menuSlideIn
         
         mapTabBar.selectedItem = tabBarItems[0]
         
@@ -47,8 +54,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         mapView.userTrackingMode = .follow
         
         mapView.delegate = self
-    
-
     }
     
     
@@ -74,12 +79,9 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         print("Selected \(item.title)")
         
-        let rightMenuNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
         
-        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: mapView, forMenu: .right)
-        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: view, forMenu: .right)
-        SideMenuManager.default.rightMenuNavigationController?.statusBarEndAlpha = 0
-        SideMenuManager.default.rightMenuNavigationController?.presentationStyle = .menuSlideIn
+        
+        
         
         
         
