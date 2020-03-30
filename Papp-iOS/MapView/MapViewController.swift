@@ -15,6 +15,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     var rightMenuNavigationController: SideMenuNavigationController!
     
+    var mStyle: MGLStyle!
+    
     @IBOutlet weak var mapView: MGLMapView!
     
     @IBOutlet weak var mapTabBar: UITabBar!
@@ -54,6 +56,15 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         mapView.userTrackingMode = .follow
         
         mapView.delegate = self
+        
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(sender:)))
+        for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
+            singleTap.require(toFail: recognizer)
+        }
+        mapView.addGestureRecognizer(singleTap)
+        
+        
     }
     
     
@@ -67,9 +78,15 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     }
     
     func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool){
+        
         if mapView.userTrackingMode == .none {
             trackButton.setImage(UIImage(systemName: "location"), for: .normal)
         }
+    }
+    
+    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+        
+          mStyle = style
     }
     
     @objc @IBAction func handleMapPan(sender: UIPanGestureRecognizer) {
@@ -96,5 +113,35 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
         
         //dismiss(animated: true, completion: nil)
+    }
+    
+    @objc @IBAction func handleMapTap(sender: UITapGestureRecognizer) {
+        let tapPoint: CGPoint = sender.location(in: mapView)
+        let coordinate: CLLocationCoordinate2D = mapView.convert(tapPoint, toCoordinateFrom: nil)
+        
+        if mapView.annotations?.count != nil, let existingAnnotations = mapView.annotations {
+            mapView.removeAnnotations(existingAnnotations)
+            let pin = MGLPointAnnotation()
+            pin.coordinate = coordinate
+            mapView.addAnnotation(pin)
+        }
+        else {
+        
+        let pin = MGLPointAnnotation()
+        pin.coordinate = coordinate
+        
+        let shapeSource = MGLShapeSource(identifier: "marker-source", shape: pin, options: nil)
+        
+        let shapeLayer = MGLSymbolStyleLayer(identifier: "marker-style", source: shapeSource)
+        
+        mStyle.addSource(shapeSource)
+        mStyle.addLayer(shapeLayer)
+        mapView.addAnnotation(pin)
+        }
+        
+       
+        
+        
+ 
     }
 }
