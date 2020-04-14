@@ -12,17 +12,25 @@ import UIKit
 extension MapViewController {
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        
+        exitTip()
+        exitPVagt()
            
            if item.tag == 1{
-               
+               enterTip()
            }
            
            if item.tag == 2{
-            
+            enterPVagt()
            }
+        
            if item.tag == 3{
                present(rightMenuNavigationController, animated: true, completion: nil)
            }
        }
+    
+    
+    
+    
     
 }

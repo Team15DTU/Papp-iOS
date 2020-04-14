@@ -17,6 +17,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     var mStyle: MGLStyle!
     
+    var onMapTapRecognizer = UITapGestureRecognizer()
+    
     @IBOutlet weak var mapView: MGLMapView!
     
     @IBOutlet weak var mapTabBar: UITabBar!
@@ -57,14 +59,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
         mapView.delegate = self
         
-        
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(sender:)))
-        for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
-            singleTap.require(toFail: recognizer)
-        }
-        mapView.addGestureRecognizer(singleTap)
-        
-        
     }
     
     
@@ -95,6 +89,11 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
         if mapView.annotations?.count != nil, let existingAnnotations = mapView.annotations {
             mapView.removeAnnotations(existingAnnotations)
+            let pin = MGLPointAnnotation()
+            pin.coordinate = coordinate
+            mapView.addAnnotation(pin)
+        }
+        else if mStyle.sources.count > 0 {
             let pin = MGLPointAnnotation()
             pin.coordinate = coordinate
             mapView.addAnnotation(pin)
