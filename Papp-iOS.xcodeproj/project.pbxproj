@@ -42,6 +42,9 @@
 		347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */; };
 		347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */; };
 		347F8FCD241FBED100C47FB4 /* SignViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FCC241FBED100C47FB4 /* SignViewDatasource.swift */; };
+		3484BAE62445A7440064216E /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAE52445A7440064216E /* State.swift */; };
+		3484BAE82445AD160064216E /* TipExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAE72445AD160064216E /* TipExtension.swift */; };
+		3484BAEC2445B2930064216E /* PVagtExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAEB2445B2930064216E /* PVagtExtension.swift */; };
 		34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C4240534ED0082476D /* AppDelegate.swift */; };
 		34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C6240534ED0082476D /* SceneDelegate.swift */; };
 		34BC10C9240534ED0082476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C8240534ED0082476D /* ViewController.swift */; };
@@ -55,6 +58,7 @@
 		34DBEA7D241E95110085B303 /* Tip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7C241E95110085B303 /* Tip.storyboard */; };
 		34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7E241E951B0085B303 /* TipDef.storyboard */; };
 		34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E4447824279C9A0031FBC2 /* TableViewController.swift */; };
+		34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F610912445A19D006AA5E4 /* TabBarExtension.swift */; };
 		34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */; };
 		8731DE26BC89D1967C907B6C /* Pods_Papp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +100,9 @@
 		347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordExtension.swift; sourceTree = "<group>"; };
 		347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInExtension.swift; sourceTree = "<group>"; };
 		347F8FCC241FBED100C47FB4 /* SignViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewDatasource.swift; sourceTree = "<group>"; };
+		3484BAE52445A7440064216E /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		3484BAE72445AD160064216E /* TipExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipExtension.swift; sourceTree = "<group>"; };
+		3484BAEB2445B2930064216E /* PVagtExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVagtExtension.swift; sourceTree = "<group>"; };
 		34BC10C1240534ED0082476D /* Papp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Papp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BC10C4240534ED0082476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BC10C6240534ED0082476D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +118,7 @@
 		34DBEA7C241E95110085B303 /* Tip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tip.storyboard; sourceTree = "<group>"; };
 		34DBEA7E241E951B0085B303 /* TipDef.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipDef.storyboard; sourceTree = "<group>"; };
 		34E4447824279C9A0031FBC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		34F610912445A19D006AA5E4 /* TabBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
 		34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		9E0C25528CBAB91B65E6BB84 /* Pods-Papp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Papp_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,11 +176,10 @@
 		345E1A482405AC26003E859B /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				3484BAE42445A7350064216E /* State */,
+				34F610902445A178006AA5E4 /* MapView */,
 				34DBEA73241E94A30085B303 /* PVagt */,
 				34DBEA72241E94920085B303 /* Tip */,
-				342E55402405ADB7007BB920 /* MapView.storyboard */,
-				342E553F2405ADB7007BB920 /* MapViewController.swift */,
-				34E4447824279C9A0031FBC2 /* TableViewController.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -190,6 +197,14 @@
 				347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		3484BAE42445A7350064216E /* State */ = {
+			isa = PBXGroup;
+			children = (
+				3484BAE52445A7440064216E /* State.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 		34B8A4B7241FCDF600166AE1 /* LottieAnimation */ = {
@@ -257,6 +272,19 @@
 				34DBEA78241E94F20085B303 /* PVagt.storyboard */,
 			);
 			path = PVagt;
+			sourceTree = "<group>";
+		};
+		34F610902445A178006AA5E4 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				342E55402405ADB7007BB920 /* MapView.storyboard */,
+				342E553F2405ADB7007BB920 /* MapViewController.swift */,
+				34E4447824279C9A0031FBC2 /* TableViewController.swift */,
+				34F610912445A19D006AA5E4 /* TabBarExtension.swift */,
+				3484BAE72445AD160064216E /* TipExtension.swift */,
+				3484BAEB2445B2930064216E /* PVagtExtension.swift */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		34FCAB6E24168A0C00E5E5D0 /* Firebase */ = {
@@ -431,12 +459,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3484BAE82445AD160064216E /* TipExtension.swift in Sources */,
+				34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */,
 				34BC10C9240534ED0082476D /* ViewController.swift in Sources */,
 				34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */,
+				3484BAEC2445B2930064216E /* PVagtExtension.swift in Sources */,
 				342E55412405ADB7007BB920 /* MapViewController.swift in Sources */,
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
 				347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */,
 				34DBEA77241E94C50085B303 /* PVagtViewController.swift in Sources */,
+				3484BAE62445A7440064216E /* State.swift in Sources */,
 				347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */,
 				342E553B2405AD12007BB920 /* SignViewController.swift in Sources */,
 				347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */,
