@@ -55,6 +55,7 @@
 		34DBEA7D241E95110085B303 /* Tip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7C241E95110085B303 /* Tip.storyboard */; };
 		34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7E241E951B0085B303 /* TipDef.storyboard */; };
 		34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E4447824279C9A0031FBC2 /* TableViewController.swift */; };
+		34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F610912445A19D006AA5E4 /* TabBarExtension.swift */; };
 		34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */; };
 		8731DE26BC89D1967C907B6C /* Pods_Papp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,7 @@
 		34DBEA7C241E95110085B303 /* Tip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tip.storyboard; sourceTree = "<group>"; };
 		34DBEA7E241E951B0085B303 /* TipDef.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipDef.storyboard; sourceTree = "<group>"; };
 		34E4447824279C9A0031FBC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		34F610912445A19D006AA5E4 /* TabBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
 		34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		9E0C25528CBAB91B65E6BB84 /* Pods-Papp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Papp_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,11 +170,9 @@
 		345E1A482405AC26003E859B /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				34F610902445A178006AA5E4 /* MapView */,
 				34DBEA73241E94A30085B303 /* PVagt */,
 				34DBEA72241E94920085B303 /* Tip */,
-				342E55402405ADB7007BB920 /* MapView.storyboard */,
-				342E553F2405ADB7007BB920 /* MapViewController.swift */,
-				34E4447824279C9A0031FBC2 /* TableViewController.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -257,6 +257,17 @@
 				34DBEA78241E94F20085B303 /* PVagt.storyboard */,
 			);
 			path = PVagt;
+			sourceTree = "<group>";
+		};
+		34F610902445A178006AA5E4 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				342E55402405ADB7007BB920 /* MapView.storyboard */,
+				342E553F2405ADB7007BB920 /* MapViewController.swift */,
+				34E4447824279C9A0031FBC2 /* TableViewController.swift */,
+				34F610912445A19D006AA5E4 /* TabBarExtension.swift */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		34FCAB6E24168A0C00E5E5D0 /* Firebase */ = {
@@ -431,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */,
 				34BC10C9240534ED0082476D /* ViewController.swift in Sources */,
 				34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */,
 				342E55412405ADB7007BB920 /* MapViewController.swift in Sources */,

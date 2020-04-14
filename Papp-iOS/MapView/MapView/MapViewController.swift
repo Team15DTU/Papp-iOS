@@ -89,32 +89,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
           mStyle = style
     }
     
-    @objc @IBAction func handleMapPan(sender: UIPanGestureRecognizer) {
-        print("test")
-    }
-    
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("Selected \(item.title)")
-        
-        
-        
-        
-        
-        
-        
-        
-        if item.tag == 2{
-         
-        }
-        if item.tag == 3{
-            present(rightMenuNavigationController, animated: true, completion: nil)
-        }
-        
-    
-        
-        //dismiss(animated: true, completion: nil)
-    }
-    
     @objc @IBAction func handleMapTap(sender: UITapGestureRecognizer) {
         let tapPoint: CGPoint = sender.location(in: mapView)
         let coordinate: CLLocationCoordinate2D = mapView.convert(tapPoint, toCoordinateFrom: nil)
