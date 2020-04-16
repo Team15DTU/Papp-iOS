@@ -14,6 +14,8 @@ import Lottie
 
 extension SignViewController {
     
+    //MARK: Public methods
+    
     func signInWithFirebase() {
         let animation = Animation.named("loading")
         signInAnimationView.animation = animation
@@ -62,6 +64,8 @@ extension SignViewController {
         
         present(secondVC, animated: false, completion: nil)
     }
+    
+    //MARK: Support methods
     
     private func facebookCreditialsToFirestore() {
         let animation = Animation.named("loading")

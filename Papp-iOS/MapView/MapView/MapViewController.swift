@@ -13,6 +13,8 @@ import SideMenu
 
 class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate {
     
+    //MARK: Fields
+    
     var rightMenuNavigationController: SideMenuNavigationController!
     
     var mStyle: MGLStyle!
@@ -27,12 +29,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     @IBOutlet weak var trackButton: UIButton!
     
-    @IBAction func onClickTrackButton() {
-        mapView.userTrackingMode = .follow
-        
-        trackButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
-    }
-    
+    //MARK: View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +58,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
     }
     
+    //MARK: Delegate methods
     
     func mapView(_ mapView: MGLMapView, didUpdateUserLocation userLocation: Any!){
     }
@@ -81,6 +79,14 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
         
           mStyle = style
+    }
+    
+    //MARK: User interaction
+    
+    @IBAction func onClickTrackButton() {
+        mapView.userTrackingMode = .follow
+        
+        trackButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
     }
     
     @objc @IBAction func handleMapTap(sender: UITapGestureRecognizer) {
@@ -111,10 +117,5 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         mStyle.addLayer(shapeLayer)
         mapView.addAnnotation(pin)
         }
-        
-       
-        
-        
- 
     }
 }

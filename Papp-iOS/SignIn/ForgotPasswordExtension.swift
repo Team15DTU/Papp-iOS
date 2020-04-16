@@ -11,6 +11,8 @@ import FirebaseAuth
 
 extension SignViewController {
     
+    //MARK: Public methods
+    
     func sendNewPassword() {
         Auth.auth().sendPasswordReset(withEmail: emailForgotTextField!.text!) { error in
           // [START_EXCLUDE]
