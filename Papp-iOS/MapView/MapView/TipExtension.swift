@@ -27,7 +27,7 @@ extension MapViewController
     //MARK: Support methods
     
     private func showLayout() {
-        
+        addButtons()
     }
     
     private func hideLayout() {
@@ -50,6 +50,38 @@ extension MapViewController
         if (mapView.annotations?.count == 1) {
         mapView.removeAnnotations(mapView.annotations!)
         }
+    }
+    
+    private func addButtons(){
+        let confirmButton = UIButton()
+        confirmButton.setTitle("Bekræft", for: .normal)
+        confirmButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
+        confirmButton.backgroundColor = UIColor.init(red: 103/255, green: 150/255, blue: 190/255, alpha: 1)
+        confirmButton.layer.cornerRadius = 20
+        view.addSubview(confirmButton)
+        
+        confirmButton.translatesAutoresizingMaskIntoConstraints = false
+        confirmButton.bottomAnchor.constraint(equalTo: mapView.layoutMarginsGuide.bottomAnchor, constant: -25).isActive = true
+        confirmButton.rightAnchor.constraint(equalTo: mapView.layoutMarginsGuide.rightAnchor, constant: -10).isActive = true
+        confirmButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        confirmButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
+    
+        
+            let cancelButton = UIButton()
+            cancelButton.setTitle("Annuller", for: .normal)
+            cancelButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
+            cancelButton.backgroundColor = UIColor.gray
+            cancelButton.layer.cornerRadius = 20
+            view.addSubview(cancelButton)
+            
+            cancelButton.translatesAutoresizingMaskIntoConstraints = false
+            cancelButton.bottomAnchor.constraint(equalTo: mapView.layoutMarginsGuide.bottomAnchor, constant: -25).isActive = true
+            cancelButton.leftAnchor.constraint(equalTo: mapView.layoutMarginsGuide.leftAnchor, constant: 10).isActive = true
+            cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            cancelButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
+        
+        
+        
     }
     
     
