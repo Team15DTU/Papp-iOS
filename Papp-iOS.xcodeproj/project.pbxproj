@@ -53,8 +53,6 @@
 		34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA74241E94B50085B303 /* TipViewController.swift */; };
 		34DBEA77241E94C50085B303 /* PVagtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA76241E94C50085B303 /* PVagtViewController.swift */; };
 		34DBEA79241E94F20085B303 /* PVagt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA78241E94F20085B303 /* PVagt.storyboard */; };
-		34DBEA7B241E95070085B303 /* PreTip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7A241E95070085B303 /* PreTip.storyboard */; };
-		34DBEA7D241E95110085B303 /* Tip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7C241E95110085B303 /* Tip.storyboard */; };
 		34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7E241E951B0085B303 /* TipDef.storyboard */; };
 		34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E4447824279C9A0031FBC2 /* TableViewController.swift */; };
 		34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F610912445A19D006AA5E4 /* TabBarExtension.swift */; };
@@ -112,8 +110,6 @@
 		34DBEA74241E94B50085B303 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		34DBEA76241E94C50085B303 /* PVagtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVagtViewController.swift; sourceTree = "<group>"; };
 		34DBEA78241E94F20085B303 /* PVagt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PVagt.storyboard; sourceTree = "<group>"; };
-		34DBEA7A241E95070085B303 /* PreTip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreTip.storyboard; sourceTree = "<group>"; };
-		34DBEA7C241E95110085B303 /* Tip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tip.storyboard; sourceTree = "<group>"; };
 		34DBEA7E241E951B0085B303 /* TipDef.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipDef.storyboard; sourceTree = "<group>"; };
 		34E4447824279C9A0031FBC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		34F610912445A19D006AA5E4 /* TabBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
@@ -247,8 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				34DBEA74241E94B50085B303 /* TipViewController.swift */,
-				34DBEA7A241E95070085B303 /* PreTip.storyboard */,
-				34DBEA7C241E95110085B303 /* Tip.storyboard */,
 				34DBEA7E241E951B0085B303 /* TipDef.storyboard */,
 			);
 			path = Tip;
@@ -366,7 +360,6 @@
 				345E1A612405AC45003E859B /* Montserrat-Bold.ttf in Resources */,
 				34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */,
 				3472D096241FCE7D00662E1C /* loading.json in Resources */,
-				34DBEA7D241E95110085B303 /* Tip.storyboard in Resources */,
 				34BC10CE240534ED0082476D /* Assets.xcassets in Resources */,
 				345E1A722405AC45003E859B /* Montserrat-BoldItalic.ttf in Resources */,
 				342E55422405ADB7007BB920 /* MapView.storyboard in Resources */,
@@ -392,7 +385,6 @@
 				345E1A6B2405AC45003E859B /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				342E553D2405AD12007BB920 /* ForgotPassword.storyboard in Resources */,
 				345E1A602405AC45003E859B /* Montserrat-Italic.ttf in Resources */,
-				34DBEA7B241E95070085B303 /* PreTip.storyboard in Resources */,
 				345E1A6A2405AC45003E859B /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				345E1A742405AC45003E859B /* Montserrat-Medium.ttf in Resources */,
 				345E1A6F2405AC45003E859B /* Montserrat-BlackItalic.ttf in Resources */,
