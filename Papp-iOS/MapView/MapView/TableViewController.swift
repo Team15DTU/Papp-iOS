@@ -12,8 +12,11 @@ import FBSDKCoreKit
 
 class TableViewController: UITableViewController {
     
+    //MARK: Fields
+    
     @IBOutlet var menuTableView: UITableView!
     
+    //MARK: View Lifecycle
     
     override func viewDidLoad() {
         
@@ -21,6 +24,7 @@ class TableViewController: UITableViewController {
         
     }
     
+    //MARK: Delegate methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
@@ -45,6 +49,7 @@ class TableViewController: UITableViewController {
         }
     }
     
+    //MARK: Support methods
     
     private func logout() {
         guard Auth.auth().currentUser != nil else {

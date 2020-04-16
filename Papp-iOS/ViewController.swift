@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class ViewController: UIViewController {
     
+    //MARK: View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,9 @@ class ViewController: UIViewController {
         dispatchLogin()
     }
     
-    func dispatchLogin() {
+    //MARK: Support methods
+    
+    private func dispatchLogin() {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 if (AccessToken.current != nil){
                     print("Facebook login")
@@ -38,7 +41,7 @@ class ViewController: UIViewController {
         })
     }
     
-    func sendToMapView() {
+    private func sendToMapView() {
          
          let storyboard = UIStoryboard(name: "MapView", bundle: nil)
          let secondVC = storyboard.instantiateViewController(identifier: "MapView")
@@ -49,7 +52,7 @@ class ViewController: UIViewController {
      }
      
      
-     func sendToSignIn() {
+     private func sendToSignIn() {
          
          let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
          let secondVC = storyboard.instantiateViewController(identifier: "Sign")

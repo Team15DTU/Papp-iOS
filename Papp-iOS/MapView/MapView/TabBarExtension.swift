@@ -11,6 +11,8 @@ import UIKit
 
 extension MapViewController {
     
+    //MARK: Delegate methods
+    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
         exitTip()

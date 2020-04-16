@@ -15,6 +15,8 @@ import Lottie
 
 class SignViewController: UIViewController, UITextFieldDelegate {
     
+    //MARK: Fields
+    
     let fireStoreController = FirestoreController.init()
     
     @IBOutlet weak var signUpAnimationBackground: UIView!
@@ -47,33 +49,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
-    @IBAction func login() {
-        signInWithFirebase()
-    }
-    
-    @IBAction func facebookLogin() {
-        signInWithFacebook()
-    }
-    
-    @IBAction func signUp() {
-        signUpWithFirestore()
-    }
-    
-    @IBAction func forgotPassword() {
-        sendNewPassword()
-    }
-    
-    @IBAction func toSignUp() {
-        transitionToSignUp()
-    }
-    
-    @IBAction func toSignIn() {
-        transitionToSignIn()
-    }
-    
-    @IBAction func toForgotPassword() {
-       transitionToForgotPassword()
-    }
+    //MARK: View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,6 +86,8 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         emailForgotTextField?.delegate = self
         repeatPassword?.delegate = self
     }
+    
+    //MARK: Delegate methods
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -148,6 +126,38 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    //MARK: User interaction
+       
+       @IBAction func login() {
+           signInWithFirebase()
+       }
+       
+       @IBAction func facebookLogin() {
+           signInWithFacebook()
+       }
+       
+       @IBAction func signUp() {
+           signUpWithFirestore()
+       }
+       
+       @IBAction func forgotPassword() {
+           sendNewPassword()
+       }
+       
+       @IBAction func toSignUp() {
+           transitionToSignUp()
+       }
+       
+       @IBAction func toSignIn() {
+           transitionToSignIn()
+       }
+       
+       @IBAction func toForgotPassword() {
+          transitionToForgotPassword()
+       }
+    
+    //MARK: Public methods
+    
      func goToMapView(){
         let storyboard = UIStoryboard(name: "MapView", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "MapView")
@@ -156,6 +166,8 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     }
     
 }
+
+//MARK: Extension
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {

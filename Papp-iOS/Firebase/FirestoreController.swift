@@ -12,6 +12,8 @@ import FBSDKCoreKit
 
 class FirestoreController {
     
+    //MARK: Fields
+    
     var facebookName: String?
     var facebookEmail: String?
     
@@ -21,13 +23,17 @@ class FirestoreController {
         case Pvagt = "Pvagt"
     }
     
+    //MARK: Basic constructor
+    
     init() {
         
     }
     
+    //MARK: Local initialization
     
     let db = Firestore.firestore()
     
+    //MARK: Public methods
     
     func createUser(name: String, email: String ) {
         db.collection(Collections.User.rawValue).addDocument(data: ["name" : name, "email": email] ) {
@@ -51,7 +57,6 @@ class FirestoreController {
             }
         }
     }
-    
     
     func getDataFromFacebook() {
        if let user = Auth.auth().currentUser {

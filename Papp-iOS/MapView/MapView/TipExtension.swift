@@ -11,6 +11,7 @@ import Mapbox
 
 extension MapViewController
 {
+    //MARK: Public methods
     
     func enterTip() {
         showLayout()
@@ -22,6 +23,8 @@ extension MapViewController
         disableMapClick()
         removeAnnotations()
     }
+    
+    //MARK: Support methods
     
     private func showLayout() {
         

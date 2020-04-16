@@ -10,6 +10,8 @@ import UIKit
 
 extension SignViewController {
     
+    //MARK: Public methods
+    
     func setUpGreyButtons( button: UIButton?){
         button?.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         button?.layer.cornerRadius = 10

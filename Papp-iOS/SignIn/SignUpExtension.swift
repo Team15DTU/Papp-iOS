@@ -12,6 +12,8 @@ import Lottie
 
 extension SignViewController {
     
+    //MARK: Public methods
+    
     func signUpWithFirestore() {
         let animation = Animation.named("loading")
         signUpAnimationView.animation = animation

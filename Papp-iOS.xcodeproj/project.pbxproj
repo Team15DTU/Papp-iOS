@@ -42,7 +42,6 @@
 		347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */; };
 		347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */; };
 		347F8FCD241FBED100C47FB4 /* SignViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FCC241FBED100C47FB4 /* SignViewDatasource.swift */; };
-		3484BAE62445A7440064216E /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAE52445A7440064216E /* State.swift */; };
 		3484BAE82445AD160064216E /* TipExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAE72445AD160064216E /* TipExtension.swift */; };
 		3484BAEC2445B2930064216E /* PVagtExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAEB2445B2930064216E /* PVagtExtension.swift */; };
 		34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C4240534ED0082476D /* AppDelegate.swift */; };
@@ -100,7 +99,6 @@
 		347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordExtension.swift; sourceTree = "<group>"; };
 		347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInExtension.swift; sourceTree = "<group>"; };
 		347F8FCC241FBED100C47FB4 /* SignViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewDatasource.swift; sourceTree = "<group>"; };
-		3484BAE52445A7440064216E /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		3484BAE72445AD160064216E /* TipExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipExtension.swift; sourceTree = "<group>"; };
 		3484BAEB2445B2930064216E /* PVagtExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVagtExtension.swift; sourceTree = "<group>"; };
 		34BC10C1240534ED0082476D /* Papp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Papp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +174,6 @@
 		345E1A482405AC26003E859B /* MapView */ = {
 			isa = PBXGroup;
 			children = (
-				3484BAE42445A7350064216E /* State */,
 				34F610902445A178006AA5E4 /* MapView */,
 				34DBEA73241E94A30085B303 /* PVagt */,
 				34DBEA72241E94920085B303 /* Tip */,
@@ -197,14 +194,6 @@
 				347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */,
 			);
 			path = SignIn;
-			sourceTree = "<group>";
-		};
-		3484BAE42445A7350064216E /* State */ = {
-			isa = PBXGroup;
-			children = (
-				3484BAE52445A7440064216E /* State.swift */,
-			);
-			path = State;
 			sourceTree = "<group>";
 		};
 		34B8A4B7241FCDF600166AE1 /* LottieAnimation */ = {
@@ -468,7 +457,6 @@
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
 				347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */,
 				34DBEA77241E94C50085B303 /* PVagtViewController.swift in Sources */,
-				3484BAE62445A7440064216E /* State.swift in Sources */,
 				347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */,
 				342E553B2405AD12007BB920 /* SignViewController.swift in Sources */,
 				347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */,
