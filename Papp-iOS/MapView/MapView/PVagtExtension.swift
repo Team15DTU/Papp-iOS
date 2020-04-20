@@ -23,6 +23,21 @@ extension MapViewController
         hideLayout()
         disableMapClick()
         removeAnnotations()
+        confirmButton.removeTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
+        cancelButton.removeTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
+    }
+    
+    @objc private func onClickConfirm() {
+        if mapView.annotations?.count == 1 {
+            let pvagt = PVagtDTO(latitude: (mapView.annotations?[0].coordinate.latitude)!, longitude: (mapView.annotations?[0].coordinate.longitude)!)
+            fireStoreController.createPVagt(pvagt)
+            onClickCancel()
+        }
+    }
+    
+    @objc private func onClickCancel() {
+        tabBar(mapTabBar, didSelect: tabBarItems[0])
+        mapTabBar.selectedItem = tabBarItems[0]
     }
     
     //MARK: Support methods
@@ -55,7 +70,7 @@ extension MapViewController
     
     private func removeAnnotations(){
         if (mapView.annotations?.count == 1) {
-        mapView.removeAnnotations(mapView.annotations!)
+            mapView.removeAnnotations(mapView.annotations!)
         }
     }
     
@@ -84,6 +99,9 @@ extension MapViewController
         cancelButton.leftAnchor.constraint(equalTo: mapView.layoutMarginsGuide.leftAnchor, constant: 10).isActive = true
         cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         cancelButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
+        
+        confirmButton.addTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
     
     }
     

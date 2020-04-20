@@ -15,6 +15,7 @@
 		342E55412405ADB7007BB920 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E553F2405ADB7007BB920 /* MapViewController.swift */; };
 		342E55422405ADB7007BB920 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342E55402405ADB7007BB920 /* MapView.storyboard */; };
 		342E55442405ADBF007BB920 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 342E55432405ADBE007BB920 /* GoogleService-Info.plist */; };
+		343EF466244DCE8B00338C35 /* PVagtDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343EF465244DCE8B00338C35 /* PVagtDTO.swift */; };
 		345E1A602405AC45003E859B /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A4A2405AC42003E859B /* Montserrat-Italic.ttf */; };
 		345E1A612405AC45003E859B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A4B2405AC42003E859B /* Montserrat-Bold.ttf */; };
 		345E1A622405AC45003E859B /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A4C2405AC42003E859B /* Montserrat-SemiBoldItalic.ttf */; };
@@ -52,10 +53,9 @@
 		34BC10CE240534ED0082476D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CD240534ED0082476D /* Assets.xcassets */; };
 		34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CF240534ED0082476D /* LaunchScreen.storyboard */; };
 		34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA74241E94B50085B303 /* TipViewController.swift */; };
-		34DBEA77241E94C50085B303 /* PVagtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA76241E94C50085B303 /* PVagtViewController.swift */; };
-		34DBEA79241E94F20085B303 /* PVagt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA78241E94F20085B303 /* PVagt.storyboard */; };
 		34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7E241E951B0085B303 /* TipDef.storyboard */; };
 		34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E4447824279C9A0031FBC2 /* TableViewController.swift */; };
+		34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E49397244DDC3900D29C98 /* TipDTO.swift */; };
 		34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F610912445A19D006AA5E4 /* TabBarExtension.swift */; };
 		34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */; };
 		8731DE26BC89D1967C907B6C /* Pods_Papp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */; };
@@ -71,6 +71,7 @@
 		342E553F2405ADB7007BB920 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		342E55402405ADB7007BB920 /* MapView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
 		342E55432405ADBE007BB920 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		343EF465244DCE8B00338C35 /* PVagtDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVagtDTO.swift; sourceTree = "<group>"; };
 		345E1A4A2405AC42003E859B /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		345E1A4B2405AC42003E859B /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		345E1A4C2405AC42003E859B /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -110,10 +111,9 @@
 		34BC10D0240534ED0082476D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34BC10D2240534ED0082476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34DBEA74241E94B50085B303 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
-		34DBEA76241E94C50085B303 /* PVagtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVagtViewController.swift; sourceTree = "<group>"; };
-		34DBEA78241E94F20085B303 /* PVagt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PVagt.storyboard; sourceTree = "<group>"; };
 		34DBEA7E241E951B0085B303 /* TipDef.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipDef.storyboard; sourceTree = "<group>"; };
 		34E4447824279C9A0031FBC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		34E49397244DDC3900D29C98 /* TipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDTO.swift; sourceTree = "<group>"; };
 		34F610912445A19D006AA5E4 /* TabBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
 		34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		9E0C25528CBAB91B65E6BB84 /* Pods-Papp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				342E55352405AD06007BB920 /* UserDTO.swift */,
+				343EF465244DCE8B00338C35 /* PVagtDTO.swift */,
+				34E49397244DDC3900D29C98 /* TipDTO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				34F610902445A178006AA5E4 /* MapView */,
-				34DBEA73241E94A30085B303 /* PVagt */,
 				34DBEA72241E94920085B303 /* Tip */,
 			);
 			path = MapView;
@@ -248,15 +249,6 @@
 				34DBEA7E241E951B0085B303 /* TipDef.storyboard */,
 			);
 			path = Tip;
-			sourceTree = "<group>";
-		};
-		34DBEA73241E94A30085B303 /* PVagt */ = {
-			isa = PBXGroup;
-			children = (
-				34DBEA76241E94C50085B303 /* PVagtViewController.swift */,
-				34DBEA78241E94F20085B303 /* PVagt.storyboard */,
-			);
-			path = PVagt;
 			sourceTree = "<group>";
 		};
 		34F610902445A178006AA5E4 /* MapView */ = {
@@ -359,7 +351,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				345E1A622405AC45003E859B /* Montserrat-SemiBoldItalic.ttf in Resources */,
-				34DBEA79241E94F20085B303 /* PVagt.storyboard in Resources */,
 				345E1A612405AC45003E859B /* Montserrat-Bold.ttf in Resources */,
 				34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */,
 				3472D096241FCE7D00662E1C /* loading.json in Resources */,
@@ -451,12 +442,13 @@
 				342E55412405ADB7007BB920 /* MapViewController.swift in Sources */,
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
 				347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */,
-				34DBEA77241E94C50085B303 /* PVagtViewController.swift in Sources */,
 				347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */,
 				342E553B2405AD12007BB920 /* SignViewController.swift in Sources */,
+				343EF466244DCE8B00338C35 /* PVagtDTO.swift in Sources */,
 				347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */,
 				34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */,
 				342E55362405AD06007BB920 /* UserDTO.swift in Sources */,
+				34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */,
 				34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */,
 				34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */,
 				347F8FCD241FBED100C47FB4 /* SignViewDatasource.swift in Sources */,

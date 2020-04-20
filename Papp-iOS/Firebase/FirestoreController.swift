@@ -66,4 +66,28 @@ class FirestoreController {
        }
        }
     }
+    
+    func createPVagt(_ pvagt: PVagtDTO){
+        db.collection(Collections.Pvagt.rawValue).addDocument(data: ["latitude": pvagt.latitude as Any, "longitude": pvagt.longitude as Any]) {
+            error in
+            if let error = error {
+                print("ERROR: Could not add PVagt \(error)")
+            }
+            else {
+                print("Sucessfully added PVagt to DB")
+            }
+        }
+    }
+    
+    func createPTip(_ tip: TipDTO){
+        db.collection(Collections.Tips.rawValue).addDocument(data: ["description":tip.description as Any, "latitude": tip.latitude as Any, "longitude": tip.longitude as Any]){
+            error in
+            if let error = error {
+                print("ERROR: Could not add Tip \(error)")
+            }
+            else {
+                print("Sucessfully added Tip to DB")
+            }
+        }
+    }
 }

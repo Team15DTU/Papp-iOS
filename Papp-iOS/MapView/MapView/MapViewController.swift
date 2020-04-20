@@ -29,6 +29,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     let topText: UILabel = UILabel()
     
+    let fireStoreController = FirestoreController.init()
+    
     @IBOutlet weak var mapView: MGLMapView!
     
     @IBOutlet weak var mapTabBar: UITabBar!
