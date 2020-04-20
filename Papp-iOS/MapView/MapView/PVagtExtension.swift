@@ -23,9 +23,11 @@ extension MapViewController
         hideLayout()
         disableMapClick()
         removeAnnotations()
+        confirmButton.removeTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
+        cancelButton.removeTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
     }
     
-    @objc func onClickConfirm() {
+    @objc private func onClickConfirm() {
         if mapView.annotations?.count == 1 {
             let pvagt = PVagtDTO(latitude: (mapView.annotations?[0].coordinate.latitude)!, longitude: (mapView.annotations?[0].coordinate.longitude)!)
             fireStoreController.createPVagt(pvagt)
@@ -33,7 +35,7 @@ extension MapViewController
         }
     }
     
-    @objc func onClickCancel() {
+    @objc private func onClickCancel() {
         tabBar(mapTabBar, didSelect: tabBarItems[0])
         mapTabBar.selectedItem = tabBarItems[0]
     }

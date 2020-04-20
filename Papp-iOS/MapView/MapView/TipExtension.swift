@@ -22,6 +22,22 @@ extension MapViewController
         hideLayout()
         disableMapClick()
         removeAnnotations()
+        confirmButton.removeTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
+        cancelButton.removeTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
+    }
+    
+    @objc private func onClickConfirm() {
+        let storyboard = UIStoryboard(name: "TipDef", bundle: nil)
+        let secondVC = storyboard.instantiateViewController(identifier: "tipViewController")
+        
+        secondVC.modalPresentationStyle = .fullScreen
+        
+        present(secondVC, animated: false, completion: nil)
+    }
+    
+    @objc private func onClickCancel() {
+        tabBar(mapTabBar, didSelect: tabBarItems[0])
+        mapTabBar.selectedItem = tabBarItems[0]
     }
     
     //MARK: Support methods
@@ -82,6 +98,8 @@ extension MapViewController
         cancelButton.leftAnchor.constraint(equalTo: mapView.layoutMarginsGuide.leftAnchor, constant: 10).isActive = true
         cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         cancelButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
+        confirmButton.addTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
     
     }
     
