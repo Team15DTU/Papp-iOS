@@ -53,8 +53,6 @@
 		34BC10CE240534ED0082476D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CD240534ED0082476D /* Assets.xcassets */; };
 		34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CF240534ED0082476D /* LaunchScreen.storyboard */; };
 		34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA74241E94B50085B303 /* TipViewController.swift */; };
-		34DBEA77241E94C50085B303 /* PVagtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA76241E94C50085B303 /* PVagtViewController.swift */; };
-		34DBEA79241E94F20085B303 /* PVagt.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA78241E94F20085B303 /* PVagt.storyboard */; };
 		34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7E241E951B0085B303 /* TipDef.storyboard */; };
 		34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E4447824279C9A0031FBC2 /* TableViewController.swift */; };
 		34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E49397244DDC3900D29C98 /* TipDTO.swift */; };
@@ -113,8 +111,6 @@
 		34BC10D0240534ED0082476D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34BC10D2240534ED0082476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34DBEA74241E94B50085B303 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
-		34DBEA76241E94C50085B303 /* PVagtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVagtViewController.swift; sourceTree = "<group>"; };
-		34DBEA78241E94F20085B303 /* PVagt.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PVagt.storyboard; sourceTree = "<group>"; };
 		34DBEA7E241E951B0085B303 /* TipDef.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipDef.storyboard; sourceTree = "<group>"; };
 		34E4447824279C9A0031FBC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		34E49397244DDC3900D29C98 /* TipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDTO.swift; sourceTree = "<group>"; };
@@ -179,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				34F610902445A178006AA5E4 /* MapView */,
-				34DBEA73241E94A30085B303 /* PVagt */,
 				34DBEA72241E94920085B303 /* Tip */,
 			);
 			path = MapView;
@@ -254,15 +249,6 @@
 				34DBEA7E241E951B0085B303 /* TipDef.storyboard */,
 			);
 			path = Tip;
-			sourceTree = "<group>";
-		};
-		34DBEA73241E94A30085B303 /* PVagt */ = {
-			isa = PBXGroup;
-			children = (
-				34DBEA76241E94C50085B303 /* PVagtViewController.swift */,
-				34DBEA78241E94F20085B303 /* PVagt.storyboard */,
-			);
-			path = PVagt;
 			sourceTree = "<group>";
 		};
 		34F610902445A178006AA5E4 /* MapView */ = {
@@ -365,7 +351,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				345E1A622405AC45003E859B /* Montserrat-SemiBoldItalic.ttf in Resources */,
-				34DBEA79241E94F20085B303 /* PVagt.storyboard in Resources */,
 				345E1A612405AC45003E859B /* Montserrat-Bold.ttf in Resources */,
 				34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */,
 				3472D096241FCE7D00662E1C /* loading.json in Resources */,
@@ -457,7 +442,6 @@
 				342E55412405ADB7007BB920 /* MapViewController.swift in Sources */,
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
 				347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */,
-				34DBEA77241E94C50085B303 /* PVagtViewController.swift in Sources */,
 				347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */,
 				342E553B2405AD12007BB920 /* SignViewController.swift in Sources */,
 				343EF466244DCE8B00338C35 /* PVagtDTO.swift in Sources */,
