@@ -13,7 +13,7 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'Firebase/Firestore'
 pod 'lottie-ios'
-pod 'SideMenu'
+pod 'SideMenu', '~> 6.4.8'
 # Optionally, include the Swift extensions if you're using Swift.
 pod 'FirebaseFirestoreSwift'
 end
