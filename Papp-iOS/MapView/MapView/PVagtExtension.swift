@@ -27,7 +27,7 @@ extension MapViewController
     
     @objc func onClickConfirm() {
         if mapView.annotations?.count == 1 {
-            let pvagt = PVagtDTO(lat: (mapView.annotations?[0].coordinate.latitude)!, long: (mapView.annotations?[0].coordinate.longitude)!)
+            let pvagt = PVagtDTO(latitude: (mapView.annotations?[0].coordinate.latitude)!, longitude: (mapView.annotations?[0].coordinate.longitude)!)
             fireStoreController.createPVagt(pvagt)
             onClickCancel()
         }
