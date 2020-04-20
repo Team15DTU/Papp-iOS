@@ -13,26 +13,38 @@ extension MapViewController {
     
     //MARK: Delegate methods
     
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+   func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+           
+    if previousSelectedTabBarItem == 1 && item.tag != 3 {
+            exitTip()
+        }
+        else if previousSelectedTabBarItem == 2 && item.tag != 3{
+            exitPVagt()
+        }
+           
+        switch item.tag {
+        case 0:
+            previousSelectedTabBarItem = 0
+            break
         
-        exitTip()
-        exitPVagt()
-           
-           if item.tag == 1{
-               enterTip()
-           }
-           
-           if item.tag == 2{
+        case 1:
+            enterTip()
+            previousSelectedTabBarItem = 1
+            break
+            
+        case 2:
             enterPVagt()
-           }
-        
-           if item.tag == 3{
-               present(rightMenuNavigationController, animated: true, completion: nil)
-           }
-       }
-    
-    
-    
-    
+            previousSelectedTabBarItem = 2
+            break
+               
+        case 3:
+            present(rightMenuNavigationController, animated: true, completion: nil)
+            previousSelectedTabBarItem = 3
+            break
+        default:
+            print("WARNING: No such item found at \(item.tag)")
+        }
+       
+    }
     
 }

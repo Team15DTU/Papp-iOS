@@ -21,6 +21,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     var onMapTapRecognizer = UITapGestureRecognizer()
     
+    var previousSelectedTabBarItem: Int!
+    
     @IBOutlet weak var mapView: MGLMapView!
     
     @IBOutlet weak var mapTabBar: UITabBar!
@@ -42,6 +44,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         SideMenuManager.default.rightMenuNavigationController?.presentationStyle = .menuSlideIn
         
         mapTabBar.selectedItem = tabBarItems[0]
+        
+        previousSelectedTabBarItem = mapTabBar.selectedItem?.tag
         
         mapTabBar.delegate = self
         

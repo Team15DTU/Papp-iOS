@@ -27,12 +27,13 @@ extension MapViewController
     //MARK: Support methods
     
     private func showLayout() {
-        animateLocationIcon()
+        animateUpLocationIcon()
         addButtons()
         addTopText()
     }
     
     private func hideLayout() {
+        animateDownLocationIcon()
     }
     
     private func enableMapClick() {
@@ -100,13 +101,5 @@ extension MapViewController
         
         topText.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
-    
-    private func animateLocationIcon() {
-        [UIView.animate(withDuration: 0.3, animations: {
-            self.trackButton.transform = self.trackButton.transform.translatedBy(x: 0, y: -50)
-            self.view.layoutIfNeeded()
-        }, completion: nil)]
-    }
-    
     
 }
