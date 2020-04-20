@@ -34,6 +34,9 @@ extension MapViewController
     
     private func hideLayout() {
         animateDownLocationIcon()
+        confirmButton.removeFromSuperview()
+        cancelButton.removeFromSuperview()
+        topText.removeFromSuperview()
     }
     
     private func enableMapClick() {
@@ -55,7 +58,6 @@ extension MapViewController
     }
     
     private func addButtons(){
-        let confirmButton = UIButton()
         confirmButton.setTitle("Bekræft", for: .normal)
         confirmButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
         confirmButton.backgroundColor = UIColor.init(red: 103/255, green: 150/255, blue: 190/255, alpha: 1)
@@ -69,7 +71,6 @@ extension MapViewController
         confirmButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
     
         
-        let cancelButton = UIButton()
         cancelButton.setTitle("Annuller", for: .normal)
         cancelButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
         cancelButton.backgroundColor = UIColor.gray
@@ -81,10 +82,10 @@ extension MapViewController
         cancelButton.leftAnchor.constraint(equalTo: mapView.layoutMarginsGuide.leftAnchor, constant: 10).isActive = true
         cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         cancelButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
+    
     }
     
     private func addTopText() {
-        let topText = UILabel()
         topText.text = "Markér det sted hvor du vil sætte et tip"
         topText.textAlignment = .center
         topText.textColor = UIColor.white

@@ -23,6 +23,12 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     var previousSelectedTabBarItem: Int!
     
+    let confirmButton: UIButton = UIButton()
+    
+    let cancelButton: UIButton = UIButton()
+    
+    let topText: UILabel = UILabel()
+    
     @IBOutlet weak var mapView: MGLMapView!
     
     @IBOutlet weak var mapTabBar: UITabBar!
