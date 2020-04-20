@@ -28,10 +28,12 @@ extension MapViewController
     //MARK: Support methods
     
     private func showLayout() {
+        animateUpLocationIcon()
         
     }
     
     private func hideLayout() {
+        animateDownLocationIcon()
         
     }
     
