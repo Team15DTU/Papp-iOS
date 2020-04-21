@@ -31,6 +31,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     let fireStoreController = FirestoreController.init()
     
+    let pin: MGLPointAnnotation? = MGLPointAnnotation()
+    
     @IBOutlet weak var mapView: MGLMapView!
     
     @IBOutlet weak var mapTabBar: UITabBar!
@@ -67,6 +69,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         mapView.userTrackingMode = .follow
         
         mapView.delegate = self
+        
+        fireStoreController.getAllPVagt(mapView)
         
     }
     
@@ -105,21 +109,15 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         let tapPoint: CGPoint = sender.location(in: mapView)
         let coordinate: CLLocationCoordinate2D = mapView.convert(tapPoint, toCoordinateFrom: nil)
         
-        if mapView.annotations?.count != nil, let existingAnnotations = mapView.annotations {
-            mapView.removeAnnotations(existingAnnotations)
-            let pin = MGLPointAnnotation()
-            pin.coordinate = coordinate
-            mapView.addAnnotation(pin)
-        }
-        else if mStyle.sources.count > 0 {
-            let pin = MGLPointAnnotation()
-            pin.coordinate = coordinate
-            mapView.addAnnotation(pin)
+        
+        if mStyle.sources.count > 0 {
+            mapView.removeAnnotation(pin!)
+            pin!.coordinate = coordinate
+            mapView.addAnnotation(pin!)
         }
         else {
         
-        let pin = MGLPointAnnotation()
-        pin.coordinate = coordinate
+        pin!.coordinate = coordinate
         
         let shapeSource = MGLShapeSource(identifier: "marker-source", shape: pin, options: nil)
         
@@ -127,7 +125,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
         mStyle.addSource(shapeSource)
         mStyle.addLayer(shapeLayer)
-        mapView.addAnnotation(pin)
+        mapView.addAnnotation(pin!)
         }
     }
 }
