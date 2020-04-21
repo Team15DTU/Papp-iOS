@@ -6,9 +6,10 @@
 //  Copyright © 2020 Nikolaj Wassmann. All rights reserved.
 //
 
-import Foundation
 import Firebase
 import FBSDKCoreKit
+import UIKit
+import Mapbox
 
 class FirestoreController {
     
@@ -89,5 +90,29 @@ class FirestoreController {
                 print("Sucessfully added Tip to DB")
             }
         }
+    }
+    
+    func getAllPVagt(_ mapView: MGLMapView) {
+        db.collection(Collections.Pvagt.rawValue).addSnapshotListener { documentSnapshot, error in
+              guard error == nil else {
+                print("Error fetching document: \(error!)")
+                return
+              }
+            for document in documentSnapshot!.documents {
+                let data = document.data()
+                print("Data: \(data["latitude"] ?? "")")
+                
+                
+                let coordinate = CLLocationCoordinate2D(latitude: (data["latitude"] as! CLLocationDegrees), longitude: (data["longitude"] as! CLLocationDegrees))
+                
+                let pin = MGLPointAnnotation()
+                pin.coordinate = coordinate
+                mapView.addAnnotation(pin)
+ 
+            }
+ 
+            
+        }
+        
     }
 }
