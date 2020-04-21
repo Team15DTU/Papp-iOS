@@ -9,6 +9,8 @@
 import UIKit
 import Mapbox
 import SideMenu
+import FBSDKCoreKit
+import FirebaseAuth
 
 
 class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate {
@@ -46,6 +48,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         rightMenuNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as? SideMenuNavigationController
         
         SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: mapView, forMenu: .right)
@@ -72,6 +75,16 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
         fireStoreController.getAllPVagt(mapView)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     //MARK: Delegate methods

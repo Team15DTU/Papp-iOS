@@ -29,16 +29,28 @@ class ViewController: UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 if (AccessToken.current != nil){
                     print("Facebook login")
+                    self.resetRoot()
                     self.sendToMapView()
                 }
                 else if (Auth.auth().currentUser != nil){
                        print("Firebase login")
+                    self.resetRoot()
                     self.sendToMapView()
                 }
                 else {
                     self.sendToSignIn()
                 }
         })
+    }
+    
+    func resetRoot() {
+           guard let rootVC = UIStoryboard.init(name: "MapView", bundle: nil).instantiateViewController(withIdentifier: "MapView") as? MapViewController else {
+               return
+           }
+           let navigationController = UINavigationController(rootViewController: rootVC)
+
+           UIApplication.shared.windows.first?.rootViewController = navigationController
+           UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
     
     private func sendToMapView() {

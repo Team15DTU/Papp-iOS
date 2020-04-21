@@ -31,6 +31,7 @@ extension SignViewController {
               print("Error! Could not login \(error!.localizedDescription)")
               return
             }
+            self?.resetRoot()
             self?.signInAnimationView.stop()
             self?.signInAnimationBackground.isHidden = true
             self?.goToMapView()
@@ -51,6 +52,7 @@ extension SignViewController {
                 print("Process error \(error.localizedDescription)")
             } else {
                 print("Logged in")
+                self.resetRoot()
                 self.facebookCreditialsToFirestore()
             }
         })
@@ -89,11 +91,22 @@ extension SignViewController {
             self.present(alertController, animated: true, completion: nil)
             return
           }
+            self.resetRoot()
             self.fireStoreController.createUser()
             self.signInAnimationView.stop()
             self.signInAnimationBackground.isHidden = true
           self.goToMapView()
         }
     }
+    
+    private func resetRoot() {
+              guard let rootVC = UIStoryboard.init(name: "MapView", bundle: nil).instantiateViewController(withIdentifier: "MapView") as? MapViewController else {
+                  return
+              }
+              let navigationController = UINavigationController(rootViewController: rootVC)
+
+              UIApplication.shared.windows.first?.rootViewController = navigationController
+              UIApplication.shared.windows.first?.makeKeyAndVisible()
+       }
     
 }
