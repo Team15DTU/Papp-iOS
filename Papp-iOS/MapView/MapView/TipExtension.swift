@@ -22,11 +22,11 @@ extension MapViewController
         hideLayout()
         disableMapClick()
         removeAnnotations()
-        confirmButton.removeTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
+        confirmButton.removeTarget(self, action: #selector(onClickConfirmTip), for: .touchUpInside)
         cancelButton.removeTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
     }
     
-    @objc private func onClickConfirm() {
+    @objc private func onClickConfirmTip() {
         let storyboard = UIStoryboard(name: "TipDef", bundle: nil)
         let secondVC = storyboard.instantiateViewController(identifier: "tipViewController")
         
@@ -98,7 +98,7 @@ extension MapViewController
         cancelButton.leftAnchor.constraint(equalTo: mapView.layoutMarginsGuide.leftAnchor, constant: 10).isActive = true
         cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         cancelButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
-        confirmButton.addTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
+        confirmButton.addTarget(self, action: #selector(onClickConfirmTip), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
     
     }

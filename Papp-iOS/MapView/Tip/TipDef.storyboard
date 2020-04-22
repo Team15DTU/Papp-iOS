@@ -10,7 +10,7 @@
         <!--Tip View Controller-->
         <scene sceneID="GfT-DR-SFb">
             <objects>
-                <viewController storyboardIdentifier="TipViewController" id="ZE8-Xi-ppQ" customClass="TipViewController" customModule="Papp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tipViewController" id="ZE8-Xi-ppQ" customClass="TipViewController" customModule="Papp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v8E-ag-z0y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
