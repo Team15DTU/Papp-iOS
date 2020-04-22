@@ -10,45 +10,45 @@
         <!--Tip View Controller-->
         <scene sceneID="GfT-DR-SFb">
             <objects>
-                <viewController storyboardIdentifier="tipViewController" id="ZE8-Xi-ppQ" customClass="TipViewController" customModule="Papp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipViewController" id="ZE8-Xi-ppQ" customClass="TipViewController" customModule="Papp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v8E-ag-z0y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Skriv dit tip her" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wro-fn-Ufs">
-                                <rect key="frame" x="62" y="345" width="290" height="205"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="SendTipTextField:" destination="Ave-sK-NMg" eventType="editingDidEnd" id="Avr-1u-zfh"/>
-                                </connections>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLo-pg-ABd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BottomGreen" translatesAutoresizingMaskIntoConstraints="NO" id="yLo-pg-ABd">
                                 <rect key="frame" x="62" y="149" width="290" height="168"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Skriv dit tip her" translatesAutoresizingMaskIntoConstraints="NO" id="zoS-2L-4YU">
+                                <rect key="frame" x="62" y="345" width="290" height="205"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iMq-YV-cWR" firstAttribute="trailing" secondItem="Wro-fn-Ufs" secondAttribute="trailing" constant="62" id="4gR-eZ-ETD"/>
-                            <constraint firstItem="Wro-fn-Ufs" firstAttribute="top" secondItem="yLo-pg-ABd" secondAttribute="bottom" constant="28" id="4xf-hq-8MY"/>
-                            <constraint firstItem="yLo-pg-ABd" firstAttribute="leading" secondItem="iMq-YV-cWR" secondAttribute="leading" constant="62" id="KXV-Ja-xj5"/>
-                            <constraint firstItem="yLo-pg-ABd" firstAttribute="top" secondItem="iMq-YV-cWR" secondAttribute="top" constant="105" id="MnT-8U-TLM"/>
-                            <constraint firstItem="iMq-YV-cWR" firstAttribute="trailing" secondItem="yLo-pg-ABd" secondAttribute="trailing" constant="62" id="O1g-bY-J6S"/>
-                            <constraint firstItem="Wro-fn-Ufs" firstAttribute="leading" secondItem="iMq-YV-cWR" secondAttribute="leading" constant="62" id="aYr-yP-czL"/>
-                            <constraint firstItem="iMq-YV-cWR" firstAttribute="bottom" secondItem="Wro-fn-Ufs" secondAttribute="bottom" constant="312" id="bR9-k7-lUU"/>
+                            <constraint firstItem="iMq-YV-cWR" firstAttribute="trailing" secondItem="yLo-pg-ABd" secondAttribute="trailing" constant="62" id="0ND-tM-Auy"/>
+                            <constraint firstItem="iMq-YV-cWR" firstAttribute="trailing" secondItem="zoS-2L-4YU" secondAttribute="trailing" constant="62" id="E0I-7S-6Ih"/>
+                            <constraint firstItem="zoS-2L-4YU" firstAttribute="top" secondItem="iMq-YV-cWR" secondAttribute="top" constant="301" id="GNw-fi-Jgs"/>
+                            <constraint firstItem="yLo-pg-ABd" firstAttribute="leading" secondItem="iMq-YV-cWR" secondAttribute="leading" constant="62" id="IZx-oO-Glc"/>
+                            <constraint firstItem="iMq-YV-cWR" firstAttribute="bottom" secondItem="yLo-pg-ABd" secondAttribute="bottom" constant="545" id="MQa-76-7Zo"/>
+                            <constraint firstItem="iMq-YV-cWR" firstAttribute="bottom" secondItem="zoS-2L-4YU" secondAttribute="bottom" constant="312" id="cIv-rA-ryg"/>
+                            <constraint firstItem="yLo-pg-ABd" firstAttribute="top" secondItem="iMq-YV-cWR" secondAttribute="top" constant="105" id="hOh-NN-Sp9"/>
+                            <constraint firstItem="zoS-2L-4YU" firstAttribute="leading" secondItem="iMq-YV-cWR" secondAttribute="leading" constant="62" id="sIL-yf-kVE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iMq-YV-cWR"/>
                     </view>
                     <connections>
-                        <outlet property="SendTipTextField" destination="Wro-fn-Ufs" id="TDl-ut-Yhd"/>
+                        <outlet property="SendTipTextView" destination="zoS-2L-4YU" id="cR0-dv-gdq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zj7-VT-XAR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Ave-sK-NMg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="334.78260869565219" y="-311.38392857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BottomGreen" width="296" height="202"/>
+    </resources>
 </document>

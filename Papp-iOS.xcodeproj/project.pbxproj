@@ -245,8 +245,8 @@
 		34DBEA72241E94920085B303 /* Tip */ = {
 			isa = PBXGroup;
 			children = (
-				34DBEA74241E94B50085B303 /* TipViewController.swift */,
 				34DBEA7E241E951B0085B303 /* TipDef.storyboard */,
+				34DBEA74241E94B50085B303 /* TipViewController.swift */,
 			);
 			path = Tip;
 			sourceTree = "<group>";
