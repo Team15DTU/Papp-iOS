@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340A613D2450585800862262 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A613C2450585800862262 /* SettingsCell.swift */; };
+		340A613F24505F0800862262 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A613E24505F0800862262 /* SettingsSection.swift */; };
+		340A614124508A5A00862262 /* SettingsLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614024508A5A00862262 /* SettingsLocationViewController.swift */; };
+		340A614424508D9000862262 /* SettingsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614324508D9000862262 /* SettingsMapViewController.swift */; };
+		340A614724508DEC00862262 /* SettingsAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614624508DEC00862262 /* SettingsAboutViewController.swift */; };
+		340A614A24508DFD00862262 /* SettingsReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614924508DFD00862262 /* SettingsReportViewController.swift */; };
+		340A614C24508E0800862262 /* SettingsFAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614B24508E0800862262 /* SettingsFAQViewController.swift */; };
+		340A614E24508E1200862262 /* SettingsHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614D24508E1200862262 /* SettingsHelpViewController.swift */; };
 		342E55362405AD06007BB920 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E55352405AD06007BB920 /* UserDTO.swift */; };
 		342E553B2405AD12007BB920 /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E55372405AD12007BB920 /* SignViewController.swift */; };
 		342E553C2405AD12007BB920 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342E55382405AD12007BB920 /* SignUp.storyboard */; };
@@ -52,7 +60,6 @@
 		34BC10CC240534ED0082476D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CA240534ED0082476D /* Main.storyboard */; };
 		34BC10CE240534ED0082476D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CD240534ED0082476D /* Assets.xcassets */; };
 		34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CF240534ED0082476D /* LaunchScreen.storyboard */; };
-		34C27BC0244F2D8300E68A8B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34C27BBF244F2D8300E68A8B /* Settings.storyboard */; };
 		34C27BC2244F2DBB00E68A8B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */; };
 		34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA74241E94B50085B303 /* TipViewController.swift */; };
 		34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7E241E951B0085B303 /* TipDef.storyboard */; };
@@ -65,6 +72,14 @@
 
 /* Begin PBXFileReference section */
 		10BD691B177CC7E27620FC44 /* Pods-Papp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.release.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		340A613C2450585800862262 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		340A613E24505F0800862262 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		340A614024508A5A00862262 /* SettingsLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLocationViewController.swift; sourceTree = "<group>"; };
+		340A614324508D9000862262 /* SettingsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMapViewController.swift; sourceTree = "<group>"; };
+		340A614624508DEC00862262 /* SettingsAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAboutViewController.swift; sourceTree = "<group>"; };
+		340A614924508DFD00862262 /* SettingsReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReportViewController.swift; sourceTree = "<group>"; };
+		340A614B24508E0800862262 /* SettingsFAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFAQViewController.swift; sourceTree = "<group>"; };
+		340A614D24508E1200862262 /* SettingsHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHelpViewController.swift; sourceTree = "<group>"; };
 		342E55352405AD06007BB920 /* UserDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		342E55372405AD12007BB920 /* SignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		342E55382405AD12007BB920 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
@@ -112,7 +127,6 @@
 		34BC10CD240534ED0082476D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34BC10D0240534ED0082476D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34BC10D2240534ED0082476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34C27BBF244F2D8300E68A8B /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		34DBEA74241E94B50085B303 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		34DBEA7E241E951B0085B303 /* TipDef.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipDef.storyboard; sourceTree = "<group>"; };
@@ -136,6 +150,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		340A614224508AC500862262 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				340A614024508A5A00862262 /* SettingsLocationViewController.swift */,
+				340A614324508D9000862262 /* SettingsMapViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		340A614524508DD800862262 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				340A614624508DEC00862262 /* SettingsAboutViewController.swift */,
+				340A614924508DFD00862262 /* SettingsReportViewController.swift */,
+				340A614B24508E0800862262 /* SettingsFAQViewController.swift */,
+				340A614D24508E1200862262 /* SettingsHelpViewController.swift */,
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
 		345E1A462405ABDC003E859B /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,8 +284,11 @@
 		34C27BBE244F2D6F00E68A8B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				34C27BBF244F2D8300E68A8B /* Settings.storyboard */,
+				340A614524508DD800862262 /* Information */,
+				340A614224508AC500862262 /* General */,
 				34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */,
+				340A613C2450585800862262 /* SettingsCell.swift */,
+				340A613E24505F0800862262 /* SettingsSection.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -388,7 +425,6 @@
 				345E1A632405AC45003E859B /* Montserrat-ExtraBold.ttf in Resources */,
 				345E1A6C2405AC45003E859B /* Gibson-RegularItalic.ttf in Resources */,
 				345E1A662405AC45003E859B /* Montserrat-Regular.ttf in Resources */,
-				34C27BC0244F2D8300E68A8B /* Settings.storyboard in Resources */,
 				345E1A752405AC45003E859B /* Gibson-Regular.ttf in Resources */,
 				342E553C2405AD12007BB920 /* SignUp.storyboard in Resources */,
 				345E1A6B2405AC45003E859B /* Montserrat-ExtraBoldItalic.ttf in Resources */,
@@ -449,9 +485,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				340A614424508D9000862262 /* SettingsMapViewController.swift in Sources */,
 				3484BAE82445AD160064216E /* TipExtension.swift in Sources */,
 				34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */,
 				34BC10C9240534ED0082476D /* ViewController.swift in Sources */,
+				340A614124508A5A00862262 /* SettingsLocationViewController.swift in Sources */,
 				34C27BC2244F2DBB00E68A8B /* SettingsViewController.swift in Sources */,
 				34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */,
 				3484BAEC2445B2930064216E /* PVagtExtension.swift in Sources */,
@@ -463,8 +501,14 @@
 				343EF466244DCE8B00338C35 /* PVagtDTO.swift in Sources */,
 				347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */,
 				34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */,
+				340A613F24505F0800862262 /* SettingsSection.swift in Sources */,
+				340A613D2450585800862262 /* SettingsCell.swift in Sources */,
+				340A614724508DEC00862262 /* SettingsAboutViewController.swift in Sources */,
+				340A614A24508DFD00862262 /* SettingsReportViewController.swift in Sources */,
+				340A614E24508E1200862262 /* SettingsHelpViewController.swift in Sources */,
 				342E55362405AD06007BB920 /* UserDTO.swift in Sources */,
 				34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */,
+				340A614C24508E0800862262 /* SettingsFAQViewController.swift in Sources */,
 				34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */,
 				34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */,
 				347F8FCD241FBED100C47FB4 /* SignViewDatasource.swift in Sources */,

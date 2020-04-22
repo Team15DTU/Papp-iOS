@@ -48,6 +48,10 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Set backbutton text to nothing
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        navigationController?.view.backgroundColor = UIColor.white
         
         rightMenuNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as? SideMenuNavigationController
         
