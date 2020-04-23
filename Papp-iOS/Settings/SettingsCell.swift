@@ -66,11 +66,10 @@ class SettingsCell: UITableViewCell {
     
     @objc func handleSwitchNotificationAction(sender: UISwitch) {
          if sender.isOn {
-            sender.isOn = true
             addNotifications()
             }
          else {
-            sender.isOn = false
+            userDefaults.set(false, forKey: "Notification")
         }
         }
        
