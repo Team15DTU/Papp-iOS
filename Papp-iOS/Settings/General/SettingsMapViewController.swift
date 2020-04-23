@@ -10,9 +10,19 @@ import UIKit
 
 class SettingsMapViewController: UIViewController {
 
+    let middleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Kort"
+        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.addSubview(middleLabel)
+        middleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        middleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         // Do any additional setup after loading the view.
     }
     

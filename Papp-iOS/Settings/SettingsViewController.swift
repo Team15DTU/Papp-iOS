@@ -110,7 +110,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         guard let section = SettingsSection(rawValue: indexPath.section) else { return}
+         guard let section = SettingsSection(rawValue: indexPath.section) else { return }
+        
+        
     
         switch section {
         case .Social:
@@ -121,7 +123,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 pushViewController(SettingsMapViewController())
             }
         case .Communications:
-            print("Test")
+            print("test")
 
         case .Information:
         switch indexPath.row {
@@ -134,6 +136,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     private func pushViewController(_ viewController: UIViewController){

@@ -17,16 +17,26 @@ class SettingsCell: UITableViewCell {
             guard let sectionType = sectionType else { return }
             
             textLabel?.text = sectionType.description
-            switchControl.isHidden = !sectionType.containsSwitch
+            switchControlNotification.isHidden = !sectionType.containsNotificationSwitch
+            switchControlReport.isHidden = !sectionType.containsReportSwitch
         }
     }
     
-    lazy var switchControl: UISwitch = {
+    lazy var switchControlNotification: UISwitch = {
         let switchControl = UISwitch()
         switchControl.isOn = false
         switchControl.onTintColor = UIColor(red: 103/255, green: 150/255, blue: 190/255, alpha: 1)
         switchControl.translatesAutoresizingMaskIntoConstraints = false
-        switchControl.addTarget(self, action: #selector(handleSwitchAction), for: .valueChanged)
+        switchControl.addTarget(self, action: #selector(handleSwitchNotificationAction), for: .valueChanged)
+        return switchControl
+    }()
+    
+    lazy var switchControlReport: UISwitch = {
+        let switchControl = UISwitch()
+        switchControl.isOn = false
+        switchControl.onTintColor = UIColor(red: 103/255, green: 150/255, blue: 190/255, alpha: 1)
+        switchControl.translatesAutoresizingMaskIntoConstraints = false
+        switchControl.addTarget(self, action: #selector(handleSwitchReportAction), for: .valueChanged)
         return switchControl
     }()
     
@@ -35,9 +45,12 @@ class SettingsCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(switchControl)
-        switchControl.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        switchControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -12).isActive = true
+        addSubview(switchControlNotification)
+        switchControlNotification.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        switchControlNotification.rightAnchor.constraint(equalTo: rightAnchor, constant: -12).isActive = true
+        addSubview(switchControlReport)
+        switchControlReport.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        switchControlReport.rightAnchor.constraint(equalTo: rightAnchor, constant: -12).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,12 +59,21 @@ class SettingsCell: UITableViewCell {
     
     // MARK: - Selector
     
-    @objc func handleSwitchAction(sender: UISwitch) {
-        if sender.isOn {
-            //print("Turned On")
+    @objc func handleSwitchNotificationAction(sender: UISwitch) {
+         if sender.isOn {
+            print("Turned On Notification")
         }
         else {
-            //print("Turned Off")
+            print("Turned Off Notification")
+        }
+    }
+    
+    @objc func handleSwitchReportAction(sender: UISwitch) {
+        if sender.isOn {
+            print("Turned On Report")
+        }
+        else {
+            print("Turned Off Report")
         }
     }
     

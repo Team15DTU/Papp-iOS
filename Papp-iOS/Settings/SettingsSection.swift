@@ -7,7 +7,8 @@
 //
 
 protocol SectionType: CustomStringConvertible {
-    var containsSwitch: Bool { get }
+    var containsNotificationSwitch: Bool { get }
+    var containsReportSwitch: Bool { get }
 }
 
 enum SettingsSection: Int, CaseIterable, CustomStringConvertible {
@@ -36,7 +37,10 @@ enum GeneralOptions: Int, CaseIterable, SectionType {
         }
     }
     
-    var containsSwitch: Bool {
+    var containsNotificationSwitch: Bool {
+        return false
+    }
+    var containsReportSwitch: Bool {
         return false
     }
 }
@@ -48,13 +52,19 @@ enum CommuncationOptions: Int, CaseIterable, SectionType {
     var description: String {
         switch self {
         case .notifications: return "Notifikationer"
-        case .reportCrashes: return "Rapporter Nedbrud"
+        case .reportCrashes: return "Rapportér Nedbrud"
         }
     }
     
-    var containsSwitch: Bool {
+    var containsNotificationSwitch: Bool {
         switch self {
         case .notifications: return true
+        case .reportCrashes: return false
+        }
+    }
+    var containsReportSwitch: Bool {
+        switch self {
+        case .notifications: return false
         case .reportCrashes: return true
         }
     }
@@ -69,18 +79,21 @@ enum InformationOptions: Int, CaseIterable, SectionType {
     var description: String {
         switch self {
         case .aboutUs: return "Om Os"
-        case .reportProblem: return "Rapporter et problem"
+        case .reportProblem: return "Rapportér et problem"
         case .faq: return "FAQ"
         case .help: return "Hjælp"
         }
     }
     
-    var containsSwitch: Bool {
+    var containsNotificationSwitch: Bool {
         switch self {
         case .aboutUs: return false
         case .reportProblem: return false
         case .faq: return false
         case .help: return false
         }
+    }
+    var containsReportSwitch: Bool {
+        return false
     }
 }
