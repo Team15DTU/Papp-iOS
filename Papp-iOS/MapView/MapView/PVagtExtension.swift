@@ -31,7 +31,7 @@ extension MapViewController
         
         if let placedPin = pin {
             let pvagt = PVagtDTO(latitude: placedPin.coordinate.latitude, longitude: placedPin.coordinate.longitude)
-            fireStoreController.createPVagt(pvagt)
+            fireStoreController.createPVagt(pvagt, self)
             onClickCancel()
         }
         

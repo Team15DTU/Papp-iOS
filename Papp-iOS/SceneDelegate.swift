@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

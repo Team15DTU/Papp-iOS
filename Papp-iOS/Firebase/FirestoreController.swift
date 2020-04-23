@@ -68,7 +68,7 @@ class FirestoreController {
        }
     }
     
-    func createPVagt(_ pvagt: PVagtDTO){
+    func createPVagt(_ pvagt: PVagtDTO, _ mapViewController: MapViewController){
         db.collection(Collections.Pvagt.rawValue).addDocument(data: ["latitude": pvagt.latitude as Any, "longitude": pvagt.longitude as Any]) {
             error in
             if let error = error {
@@ -76,6 +76,12 @@ class FirestoreController {
             }
             else {
                 print("Sucessfully added PVagt to DB")
+                let alert = UIAlertController(title: "Bekræftet", message: "Dit tip er hermed blevet registeret", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Fedt!", style: .default, handler: nil)
+                )
+                mapViewController.present(alert, animated: true)
+                
             }
         }
     }
@@ -100,9 +106,6 @@ class FirestoreController {
               }
             for document in documentSnapshot!.documents {
                 let data = document.data()
-                print("Data: \(data["latitude"] ?? "")")
-                
-                
                 let coordinate = CLLocationCoordinate2D(latitude: (data["latitude"] as! CLLocationDegrees), longitude: (data["longitude"] as! CLLocationDegrees))
                 
                 let pin = MGLPointAnnotation()

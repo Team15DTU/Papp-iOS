@@ -33,7 +33,7 @@ extension SignViewController {
             }
             self?.signInAnimationView.stop()
             self?.signInAnimationBackground.isHidden = true
-            self?.goToMapView()
+            self?.resetRoot()
         }
     }
     
@@ -92,7 +92,7 @@ extension SignViewController {
             self.fireStoreController.createUser()
             self.signInAnimationView.stop()
             self.signInAnimationBackground.isHidden = true
-          self.goToMapView()
+            self.resetRoot()
         }
     }
     

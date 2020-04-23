@@ -9,6 +9,8 @@
 import UIKit
 import Mapbox
 import SideMenu
+import FBSDKCoreKit
+import FirebaseAuth
 
 
 class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate {
@@ -46,6 +48,11 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Set backbutton text to nothing
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        navigationController?.view.backgroundColor = UIColor.white
+        
         rightMenuNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as? SideMenuNavigationController
         
         SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: mapView, forMenu: .right)
@@ -72,6 +79,17 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
         fireStoreController.getAllPVagt(mapView)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        mapTabBar.selectedItem = tabBarItems[0]
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     //MARK: Delegate methods
@@ -128,4 +146,5 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         mapView.addAnnotation(pin!)
         }
     }
+    
 }

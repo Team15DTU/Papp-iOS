@@ -39,6 +39,7 @@ extension MapViewController
         tabBar(mapTabBar, didSelect: tabBarItems[0])
         mapTabBar.selectedItem = tabBarItems[0]
     }
+ 
     
     //MARK: Support methods
     
