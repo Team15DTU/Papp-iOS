@@ -84,6 +84,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        mapTabBar.selectedItem = tabBarItems[0]
     }
 
     override func viewWillDisappear(_ animated: Bool) {
