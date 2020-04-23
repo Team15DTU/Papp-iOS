@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SettingsCell: UITableViewCell {
     
     // MARK: - Fields
+    
+    let userNotificationCenter = UNUserNotificationCenter.current()
+    
+    let userDefaults = UserDefaults()
     
     var sectionType: SectionType? {
         didSet {
@@ -24,7 +29,7 @@ class SettingsCell: UITableViewCell {
     
     lazy var switchControlNotification: UISwitch = {
         let switchControl = UISwitch()
-        switchControl.isOn = false
+        switchControl.isOn = userDefaults.bool(forKey: "Notification")
         switchControl.onTintColor = UIColor(red: 103/255, green: 150/255, blue: 190/255, alpha: 1)
         switchControl.translatesAutoresizingMaskIntoConstraints = false
         switchControl.addTarget(self, action: #selector(handleSwitchNotificationAction), for: .valueChanged)
@@ -33,7 +38,7 @@ class SettingsCell: UITableViewCell {
     
     lazy var switchControlReport: UISwitch = {
         let switchControl = UISwitch()
-        switchControl.isOn = false
+        switchControl.isOn = userDefaults.bool(forKey: "Report")
         switchControl.onTintColor = UIColor(red: 103/255, green: 150/255, blue: 190/255, alpha: 1)
         switchControl.translatesAutoresizingMaskIntoConstraints = false
         switchControl.addTarget(self, action: #selector(handleSwitchReportAction), for: .valueChanged)
@@ -61,20 +66,35 @@ class SettingsCell: UITableViewCell {
     
     @objc func handleSwitchNotificationAction(sender: UISwitch) {
          if sender.isOn {
-            print("Turned On Notification")
+            sender.isOn = true
+            addNotifications()
+            }
+         else {
+            sender.isOn = false
         }
-        else {
-            print("Turned Off Notification")
         }
-    }
+       
     
     @objc func handleSwitchReportAction(sender: UISwitch) {
         if sender.isOn {
-            print("Turned On Report")
+            userDefaults.set(true, forKey: "Report")
         }
         else {
-            print("Turned Off Report")
+            userDefaults.set(false, forKey: "Report")
         }
+    }
+    
+    func permissionForNotification(_ granted: Bool){
+        if granted {
+            self.showNotification(userNotificationCenter)
+            switchControlNotification.isOn = true
+            userDefaults.set(true, forKey: "Notification")
+        }
+        else {
+            switchControlNotification.isOn = false
+            userDefaults.set(false, forKey: "Notification")
+        }
+        
     }
     
 }

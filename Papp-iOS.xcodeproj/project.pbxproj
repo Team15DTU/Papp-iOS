@@ -47,6 +47,7 @@
 		345E1A742405AC45003E859B /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A5E2405AC45003E859B /* Montserrat-Medium.ttf */; };
 		345E1A752405AC45003E859B /* Gibson-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 345E1A5F2405AC45003E859B /* Gibson-Regular.ttf */; };
 		3472D096241FCE7D00662E1C /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 3472D095241FCE7D00662E1C /* loading.json */; };
+		347332422451A15C0061FACA /* SettingsNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347332412451A15C0061FACA /* SettingsNotificationExtension.swift */; };
 		347D1D77244DB47A000F2EC5 /* AnimateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D1D76244DB47A000F2EC5 /* AnimateExtension.swift */; };
 		347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FC6241FB42F00C47FB4 /* SignUpExtension.swift */; };
 		347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */; };
@@ -112,6 +113,7 @@
 		345E1A5E2405AC45003E859B /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		345E1A5F2405AC45003E859B /* Gibson-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-Regular.ttf"; sourceTree = "<group>"; };
 		3472D095241FCE7D00662E1C /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		347332412451A15C0061FACA /* SettingsNotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNotificationExtension.swift; sourceTree = "<group>"; };
 		347D1D76244DB47A000F2EC5 /* AnimateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateExtension.swift; sourceTree = "<group>"; };
 		347F8FC6241FB42F00C47FB4 /* SignUpExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpExtension.swift; sourceTree = "<group>"; };
 		347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordExtension.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */,
 				340A613C2450585800862262 /* SettingsCell.swift */,
 				340A613E24505F0800862262 /* SettingsSection.swift */,
+				347332412451A15C0061FACA /* SettingsNotificationExtension.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				342E55412405ADB7007BB920 /* MapViewController.swift in Sources */,
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
 				347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */,
+				347332422451A15C0061FACA /* SettingsNotificationExtension.swift in Sources */,
 				347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */,
 				342E553B2405AD12007BB920 /* SignViewController.swift in Sources */,
 				343EF466244DCE8B00338C35 /* PVagtDTO.swift in Sources */,

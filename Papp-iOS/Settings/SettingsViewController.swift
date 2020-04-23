@@ -10,15 +10,18 @@ import UIKit
 
 private let reuseIdentifier = "SettingsCell"
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     // MARK: - Fields
     var tableView: UITableView!
+    
+    let userNotificationCenter = UNUserNotificationCenter.current()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.view.backgroundColor = UIColor.white
         configureUI()
+        userNotificationCenter.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -47,8 +50,18 @@ class SettingsViewController: UIViewController {
             navigationItem.title = "Indstillinger"
         }
        
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+        
+    }
 
     }
+
+
 
 
 
@@ -122,9 +135,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             else {
                 pushViewController(SettingsMapViewController())
             }
-        case .Communications:
-            print("test")
-
+ 
         case .Information:
         switch indexPath.row {
             case 0: pushViewController(SettingsAboutViewController())
@@ -135,6 +146,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 print("ERROR")
             }
 
+        case .Communications:
+            tableView.deselectRow(at: indexPath, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
