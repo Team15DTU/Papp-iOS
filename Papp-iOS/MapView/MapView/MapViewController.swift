@@ -145,4 +145,5 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         mapView.addAnnotation(pin!)
         }
     }
+    
 }
