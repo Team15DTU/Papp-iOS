@@ -121,16 +121,27 @@ class FirestoreController {
             image.tintColor = .red
             style.setImage(image.image!, forName: "exclamationmark.triangle.fill")
             
+
             
             let shapeSource = MGLShapeSource(identifier: "pvagt-source", features: pins, options: nil)
             
             let shapeLayer = MGLSymbolStyleLayer(identifier: "pvagt-style", source: shapeSource)
             
+            
             shapeLayer.iconImageName = NSExpression(forConstantValue: "exclamationmark.triangle.fill")
             shapeLayer.iconColor = NSExpression(forConstantValue: UIColor.red)
             
-            style.addSource(shapeSource)
-            style.addLayer(shapeLayer)
+            
+            if style.source(withIdentifier: "pvagt-source") == nil{
+                style.addSource(shapeSource)
+                style.addLayer(shapeLayer)
+            } else {
+                //FIXME: To update the features, the only solution I could figure out is to reload the entire style. This causes blinking of the icons
+                mapView.reloadStyle(nil)
+            }
+         
+            
+            
         }
         
     }
