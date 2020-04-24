@@ -77,8 +77,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
         mapView.delegate = self
         
-        fireStoreController.getAllPVagt(mapView)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,8 +109,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     }
     
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
-        
           mStyle = style
+        fireStoreController.getAllPVagt(mapView,style)
     }
     
     //MARK: User interaction
@@ -128,13 +126,13 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         let coordinate: CLLocationCoordinate2D = mapView.convert(tapPoint, toCoordinateFrom: nil)
         
         
-        if mStyle.sources.count > 0 {
+        if pin?.coordinate != nil {
             mapView.removeAnnotation(pin!)
             pin!.coordinate = coordinate
             mapView.addAnnotation(pin!)
         }
         else {
-        
+                
         pin!.coordinate = coordinate
         
         let shapeSource = MGLShapeSource(identifier: "marker-source", shape: pin, options: nil)
