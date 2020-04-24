@@ -98,23 +98,39 @@ class FirestoreController {
         }
     }
     
-    func getAllPVagt(_ mapView: MGLMapView) {
+    func getAllPVagt(_ mapView: MGLMapView, _ style: MGLStyle) {
         db.collection(Collections.Pvagt.rawValue).addSnapshotListener { documentSnapshot, error in
               guard error == nil else {
                 print("Error fetching document: \(error!)")
                 return
               }
+            var pins = [MGLPointFeature()]
             for document in documentSnapshot!.documents {
                 let data = document.data()
+
                 let coordinate = CLLocationCoordinate2D(latitude: (data["latitude"] as! CLLocationDegrees), longitude: (data["longitude"] as! CLLocationDegrees))
                 
-                let pin = MGLPointAnnotation()
+                let pin = MGLPointFeature()
                 pin.coordinate = coordinate
-                mapView.addAnnotation(pin)
+                pins.append(pin)
+                
  
             }
- 
             
+            let image = UIImageView(image: UIImage(systemName: "exclamationmark.triangle.fill")!.withRenderingMode(.alwaysTemplate))
+            image.tintColor = .red
+            style.setImage(image.image!, forName: "exclamationmark.triangle.fill")
+            
+            
+            let shapeSource = MGLShapeSource(identifier: "pvagt-source", features: pins, options: nil)
+            
+            let shapeLayer = MGLSymbolStyleLayer(identifier: "pvagt-style", source: shapeSource)
+            
+            shapeLayer.iconImageName = NSExpression(forConstantValue: "exclamationmark.triangle.fill")
+            shapeLayer.iconColor = NSExpression(forConstantValue: UIColor.red)
+            
+            style.addSource(shapeSource)
+            style.addLayer(shapeLayer)
         }
         
     }
