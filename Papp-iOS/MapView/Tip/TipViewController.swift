@@ -14,6 +14,10 @@ class TipViewController: UIViewController, UITextViewDelegate {
     
     let cancelButton: UIButton = UIButton()
     
+    var mapSnapshot:UIImage!
+    
+    @IBOutlet weak var tipPlacementSnap: UIImageView!
+    
     @IBOutlet weak var SendTipTextView: UITextView!
     
     override func viewDidLoad() {
@@ -26,6 +30,9 @@ class TipViewController: UIViewController, UITextViewDelegate {
         SendTipTextView.textColor = UIColor.lightGray
         
         addButtons()
+        
+        tipPlacementSnap.image = mapSnapshot
+        
         // Do any additional setup after loading the view.
     }
 

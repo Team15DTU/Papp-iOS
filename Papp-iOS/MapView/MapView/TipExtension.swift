@@ -12,7 +12,6 @@ import Mapbox
 extension MapViewController
 {
     //MARK: Public methods
-    
     func enterTip() {
         showLayout()
         enableMapClick()
@@ -23,19 +22,17 @@ extension MapViewController
         disableMapClick()
         removeAnnotations()
         confirmButton.removeTarget(self, action: #selector(onClickConfirmTip), for: .touchUpInside)
-        cancelButton.removeTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
+        cancelButton.removeTarget(self, action: #selector(onClickCancelTip), for: .touchUpInside)
     }
     
     @objc private func onClickConfirmTip() {
-        let storyboard = UIStoryboard(name: "TipDef", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "tipViewController")
-        
-        secondVC.modalPresentationStyle = .fullScreen
-        
-        present(secondVC, animated: false, completion: nil)
+        if mapView.annotations?.count == 1 {
+            createSnapshot()
+            
+        }
     }
     
-    @objc private func onClickCancel() {
+    @objc private func onClickCancelTip() {
         tabBar(mapTabBar, didSelect: tabBarItems[0])
         mapTabBar.selectedItem = tabBarItems[0]
     }
@@ -99,8 +96,7 @@ extension MapViewController
         cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         cancelButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
         confirmButton.addTarget(self, action: #selector(onClickConfirmTip), for: .touchUpInside)
-        cancelButton.addTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
-    
+        cancelButton.addTarget(self, action: #selector(onClickCancelTip), for: .touchUpInside)
     }
     
     private func addTopText() {
@@ -121,4 +117,31 @@ extension MapViewController
         topText.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
+    
+    @objc func createSnapshot() {
+        let annotation = mapView.annotations?.first?.coordinate
+        
+        let camera = MGLMapCamera(lookingAtCenter: annotation!, altitude: 100, pitch: 20, heading: 0)
+        
+        // Use the map's style, camera, size, and zoom level to set the snapshot's options.
+               let options = MGLMapSnapshotOptions(styleURL: mapView.styleURL, camera: camera, size: CGSize(width: 290, height: 200))
+               options.zoomLevel = 16
+        
+        let snapshotter = MGLMapSnapshotter.init(options: options)
+        snapshotter.start { (snapshot, error) in
+            if error != nil {
+                print("Unable to create a map snapshot.")
+            }
+            
+            let storyboard = UIStoryboard(name: "TipDef", bundle: nil)
+            let secondVC = storyboard.instantiateViewController(withIdentifier: "tipViewController") as! TipViewController
+                
+            secondVC.mapSnapshot = snapshot?.image
+            secondVC.modalPresentationStyle = .fullScreen
+
+            self.present(secondVC, animated: false, completion: nil)
+            snapshotter.isLoading //Stupid solution but without something to keep snapshotter alive there won't be created a screenshot. (garbage collector cleans up snapshottet)
+        }
+        
+    }
 }

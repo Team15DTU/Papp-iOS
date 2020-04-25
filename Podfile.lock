@@ -300,7 +300,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - FirebaseFirestoreSwift
   - lottie-ios
-  - Mapbox-iOS-SDK (~> 5.7)
+  - Mapbox-iOS-SDK (~> 5.8)
   - SideMenu (~> 6.4.8)
 
 SPEC REPOS:
@@ -364,6 +364,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
 
-PODFILE CHECKSUM: d6ece4abf1e6006604000ec363dbde5a1a041392
+PODFILE CHECKSUM: 928b7091012f0340e554e4ff64cb37379c597855
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.9.1

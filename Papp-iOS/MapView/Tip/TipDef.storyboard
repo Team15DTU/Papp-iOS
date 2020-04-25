@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BottomGreen" translatesAutoresizingMaskIntoConstraints="NO" id="yLo-pg-ABd">
-                                <rect key="frame" x="62" y="149" width="290" height="168"/>
+                                <rect key="frame" x="62" y="120" width="290" height="197"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Skriv dit tip her" translatesAutoresizingMaskIntoConstraints="NO" id="zoS-2L-4YU">
                                 <rect key="frame" x="62" y="345" width="290" height="205"/>
@@ -33,14 +33,15 @@
                             <constraint firstItem="zoS-2L-4YU" firstAttribute="top" secondItem="iMq-YV-cWR" secondAttribute="top" constant="301" id="GNw-fi-Jgs"/>
                             <constraint firstItem="yLo-pg-ABd" firstAttribute="leading" secondItem="iMq-YV-cWR" secondAttribute="leading" constant="62" id="IZx-oO-Glc"/>
                             <constraint firstItem="iMq-YV-cWR" firstAttribute="bottom" secondItem="yLo-pg-ABd" secondAttribute="bottom" constant="545" id="MQa-76-7Zo"/>
+                            <constraint firstItem="yLo-pg-ABd" firstAttribute="top" secondItem="iMq-YV-cWR" secondAttribute="top" constant="76" id="amv-KO-GFa"/>
                             <constraint firstItem="iMq-YV-cWR" firstAttribute="bottom" secondItem="zoS-2L-4YU" secondAttribute="bottom" constant="312" id="cIv-rA-ryg"/>
-                            <constraint firstItem="yLo-pg-ABd" firstAttribute="top" secondItem="iMq-YV-cWR" secondAttribute="top" constant="105" id="hOh-NN-Sp9"/>
                             <constraint firstItem="zoS-2L-4YU" firstAttribute="leading" secondItem="iMq-YV-cWR" secondAttribute="leading" constant="62" id="sIL-yf-kVE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iMq-YV-cWR"/>
                     </view>
                     <connections>
                         <outlet property="SendTipTextView" destination="zoS-2L-4YU" id="cR0-dv-gdq"/>
+                        <outlet property="tipPlacementSnap" destination="yLo-pg-ABd" id="Fjd-Q2-DKa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zj7-VT-XAR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
