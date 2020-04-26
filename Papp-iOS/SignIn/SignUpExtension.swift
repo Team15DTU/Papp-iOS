@@ -33,7 +33,7 @@ extension SignViewController {
              self?.fireStoreController.createUser(name: user.name, email: user.email)
             self?.signUpAnimationView.stop()
             self?.signUpAnimationBackground.isHidden = true
-            self?.goToMapView()
+            self?.resetRoot()
         }
     }
     

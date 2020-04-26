@@ -158,12 +158,15 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Public methods
     
-     func goToMapView(){
-        let storyboard = UIStoryboard(name: "MapView", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "MapView")
-        secondVC.modalPresentationStyle = .fullScreen
-        self.present(secondVC, animated: false, completion: nil)
-    }
+     func resetRoot() {
+        guard let rootVC = UIStoryboard.init(name: "MapView", bundle: nil).instantiateViewController(withIdentifier: "MapView") as? MapViewController else {
+                return
+            }
+            let navigationController = UINavigationController(rootViewController: rootVC)
+
+            UIApplication.shared.windows.first?.rootViewController = navigationController
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
     
 }
 

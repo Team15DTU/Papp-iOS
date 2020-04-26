@@ -9,6 +9,8 @@
 import UIKit
 import Mapbox
 import SideMenu
+import FBSDKCoreKit
+import FirebaseAuth
 
 
 class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate {
@@ -31,6 +33,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     let fireStoreController = FirestoreController.init()
     
+    let pin: MGLPointAnnotation? = MGLPointAnnotation()
+    
     @IBOutlet weak var mapView: MGLMapView!
     
     @IBOutlet weak var mapTabBar: UITabBar!
@@ -43,6 +47,11 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Set backbutton text to nothing
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        navigationController?.view.backgroundColor = UIColor.white
         
         rightMenuNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as? SideMenuNavigationController
         
@@ -70,6 +79,17 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        mapTabBar.selectedItem = tabBarItems[0]
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     //MARK: Delegate methods
     
     func mapView(_ mapView: MGLMapView, didUpdateUserLocation userLocation: Any!){
@@ -89,8 +109,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     }
     
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
-        
           mStyle = style
+        fireStoreController.getAllPVagt(mapView,style)
     }
     
     //MARK: User interaction
@@ -105,21 +125,15 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         let tapPoint: CGPoint = sender.location(in: mapView)
         let coordinate: CLLocationCoordinate2D = mapView.convert(tapPoint, toCoordinateFrom: nil)
         
-        if mapView.annotations?.count != nil, let existingAnnotations = mapView.annotations {
-            mapView.removeAnnotations(existingAnnotations)
-            let pin = MGLPointAnnotation()
-            pin.coordinate = coordinate
-            mapView.addAnnotation(pin)
-        }
-        else if mStyle.sources.count > 0 {
-            let pin = MGLPointAnnotation()
-            pin.coordinate = coordinate
-            mapView.addAnnotation(pin)
+        
+        if pin?.coordinate != nil {
+            mapView.removeAnnotation(pin!)
+            pin!.coordinate = coordinate
+            mapView.addAnnotation(pin!)
         }
         else {
-        
-        let pin = MGLPointAnnotation()
-        pin.coordinate = coordinate
+                
+        pin!.coordinate = coordinate
         
         let shapeSource = MGLShapeSource(identifier: "marker-source", shape: pin, options: nil)
         
@@ -127,7 +141,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
         mStyle.addSource(shapeSource)
         mStyle.addLayer(shapeLayer)
-        mapView.addAnnotation(pin)
+        mapView.addAnnotation(pin!)
         }
     }
+    
 }

@@ -28,16 +28,23 @@ extension MapViewController
     }
     
     @objc private func onClickConfirm() {
-        if mapView.annotations?.count == 1 {
-            let pvagt = PVagtDTO(latitude: (mapView.annotations?[0].coordinate.latitude)!, longitude: (mapView.annotations?[0].coordinate.longitude)!)
-            fireStoreController.createPVagt(pvagt)
+        
+        if let placedPin = pin {
+            let pvagt = PVagtDTO(latitude: placedPin.coordinate.latitude, longitude: placedPin.coordinate.longitude)
+            fireStoreController.createPVagt(pvagt, self)
             onClickCancel()
         }
+        
+            
     }
     
     @objc private func onClickCancel() {
         tabBar(mapTabBar, didSelect: tabBarItems[0])
         mapTabBar.selectedItem = tabBarItems[0]
+        
+         if let placedPin = pin {
+        mapView.removeAnnotation(placedPin)
+        }
     }
     
     //MARK: Support methods

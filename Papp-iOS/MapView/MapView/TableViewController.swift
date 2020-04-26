@@ -32,7 +32,10 @@ class TableViewController: UITableViewController {
             print(indexPath)
             break
         case 1:
-            print(indexPath)
+           // let storyboardSettings = UIStoryboard(name: "Settings", bundle: nil)
+            //let vc = storyboardSettings.instantiateViewController(identifier: "SettingsViewController") as SettingsViewController
+            navigationController?.pushViewController(SettingsViewController(), animated: true)
+            
             break
         case 2:
             print(indexPath)
