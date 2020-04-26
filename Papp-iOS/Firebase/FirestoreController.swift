@@ -68,6 +68,31 @@ class FirestoreController {
        }
     }
     
+    func setRoundFacebookProfileImage(_ imageView: UIImageView) {
+    if(AccessToken.current != nil)
+        {
+
+            let graphRequest = GraphRequest(graphPath: "me", parameters: ["fields" : "id"])
+            let connection = GraphRequestConnection()
+
+            connection.add(graphRequest, completionHandler: { (connection, result, error) -> Void in
+                
+                let data = result as! [String : AnyObject]
+                
+                let FBid = data["id"] as? String
+                
+                let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
+                imageView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+                imageView.layer.borderWidth = 1.0
+                imageView.layer.masksToBounds = false
+                imageView.layer.borderColor = UIColor.white.cgColor
+                imageView.layer.cornerRadius = imageView.frame.size.width / 2
+                imageView.clipsToBounds = true
+            })
+            connection.start()
+        }
+    }
+
     func createPVagt(_ pvagt: PVagtDTO, _ mapViewController: MapViewController){
         db.collection(Collections.Pvagt.rawValue).addDocument(data: ["latitude": pvagt.latitude as Any, "longitude": pvagt.longitude as Any]) {
             error in
