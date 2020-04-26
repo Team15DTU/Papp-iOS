@@ -84,36 +84,32 @@
             </objects>
             <point key="canvasLocation" x="592.75362318840587" y="41.517857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Top Side Menu View Controller-->
         <scene sceneID="mmP-i4-nrO">
             <objects>
-                <viewController id="8Oo-i5-D2X" sceneMemberID="viewController">
+                <viewController id="8Oo-i5-D2X" customClass="TopSideMenuViewController" customModule="Papp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TTb-uR-6HR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="f2x-0D-fmu">
-                                <rect key="frame" x="20" y="44" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="f2x-0D-fmu">
+                                <rect key="frame" x="20" y="44" width="90" height="89"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="2Oy-dX-OUj"/>
+                                    <constraint firstAttribute="height" constant="90" id="kMu-Yz-boi"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="03l-tk-EEy">
-                                <rect key="frame" x="20" y="172" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5X-Nl-0hY">
-                                <rect key="frame" x="52" y="173" width="29" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5X-Nl-0hY">
+                                <rect key="frame" x="46" y="141" width="29" height="21"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tester" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdp-pK-hqv">
-                                <rect key="frame" x="142" y="44" width="79" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tester" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdp-pK-hqv">
+                                <rect key="frame" x="118" y="44" width="296" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -124,11 +120,32 @@
                                     <segue destination="97Q-kb-dU7" kind="embed" id="OGc-TY-Kvc"/>
                                 </connections>
                             </containerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="03l-tk-EEy">
+                                <rect key="frame" x="20" y="142.5" width="20.5" height="17.5"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.40392156862745099" green="0.58823529411764708" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="03l-tk-EEy" firstAttribute="leading" secondItem="Ugd-US-EQz" secondAttribute="leading" constant="20" id="Eov-YX-k4H"/>
+                            <constraint firstItem="Vdp-pK-hqv" firstAttribute="leading" secondItem="f2x-0D-fmu" secondAttribute="trailing" constant="8" id="Jhb-mO-9vH"/>
+                            <constraint firstItem="Vdp-pK-hqv" firstAttribute="leading" secondItem="f2x-0D-fmu" secondAttribute="trailing" constant="8" id="S19-NN-Q9V"/>
+                            <constraint firstItem="c5X-Nl-0hY" firstAttribute="top" secondItem="f2x-0D-fmu" secondAttribute="bottom" constant="7.5" id="V5j-De-U2N"/>
+                            <constraint firstItem="c5X-Nl-0hY" firstAttribute="leading" secondItem="03l-tk-EEy" secondAttribute="trailing" constant="5.5" id="diT-sW-2w8"/>
+                            <constraint firstItem="Vdp-pK-hqv" firstAttribute="top" secondItem="Ugd-US-EQz" secondAttribute="top" id="fa4-7L-X7G"/>
+                            <constraint firstItem="Ugd-US-EQz" firstAttribute="trailing" secondItem="Vdp-pK-hqv" secondAttribute="trailing" id="kPT-c2-Nih"/>
+                            <constraint firstItem="03l-tk-EEy" firstAttribute="top" secondItem="f2x-0D-fmu" secondAttribute="bottom" constant="7.5" id="lwM-IU-Grv"/>
+                            <constraint firstItem="f2x-0D-fmu" firstAttribute="top" secondItem="TTb-uR-6HR" secondAttribute="top" constant="43.5" id="nmg-F2-7Zg"/>
+                            <constraint firstItem="f2x-0D-fmu" firstAttribute="leading" secondItem="Ugd-US-EQz" secondAttribute="leading" constant="20" id="ntP-uX-kGo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ugd-US-EQz"/>
                     </view>
                     <navigationItem key="navigationItem" id="nnz-el-Gty"/>
+                    <connections>
+                        <outlet property="heartLabel" destination="c5X-Nl-0hY" id="4h7-A0-IGC"/>
+                        <outlet property="nameLabel" destination="Vdp-pK-hqv" id="fjV-un-6zM"/>
+                        <outlet property="profileImageView" destination="f2x-0D-fmu" id="dPh-HV-Ykv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAL-Xy-HZY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

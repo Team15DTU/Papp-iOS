@@ -15,6 +15,7 @@
 		340A614A24508DFD00862262 /* SettingsReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614924508DFD00862262 /* SettingsReportViewController.swift */; };
 		340A614C24508E0800862262 /* SettingsFAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614B24508E0800862262 /* SettingsFAQViewController.swift */; };
 		340A614E24508E1200862262 /* SettingsHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614D24508E1200862262 /* SettingsHelpViewController.swift */; };
+		3411AA8624533F9400262FD7 /* TopSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411AA8524533F9400262FD7 /* TopSideMenuViewController.swift */; };
 		342E55362405AD06007BB920 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E55352405AD06007BB920 /* UserDTO.swift */; };
 		342E553B2405AD12007BB920 /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E55372405AD12007BB920 /* SignViewController.swift */; };
 		342E553C2405AD12007BB920 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342E55382405AD12007BB920 /* SignUp.storyboard */; };
@@ -81,6 +82,7 @@
 		340A614924508DFD00862262 /* SettingsReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReportViewController.swift; sourceTree = "<group>"; };
 		340A614B24508E0800862262 /* SettingsFAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFAQViewController.swift; sourceTree = "<group>"; };
 		340A614D24508E1200862262 /* SettingsHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHelpViewController.swift; sourceTree = "<group>"; };
+		3411AA8524533F9400262FD7 /* TopSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSideMenuViewController.swift; sourceTree = "<group>"; };
 		342E55352405AD06007BB920 /* UserDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		342E55372405AD12007BB920 /* SignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		342E55382405AD12007BB920 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				3484BAE72445AD160064216E /* TipExtension.swift */,
 				3484BAEB2445B2930064216E /* PVagtExtension.swift */,
 				347D1D76244DB47A000F2EC5 /* AnimateExtension.swift */,
+				3411AA8524533F9400262FD7 /* TopSideMenuViewController.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */,
 				34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */,
 				347F8FCD241FBED100C47FB4 /* SignViewDatasource.swift in Sources */,
+				3411AA8624533F9400262FD7 /* TopSideMenuViewController.swift in Sources */,
 				347D1D77244DB47A000F2EC5 /* AnimateExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
