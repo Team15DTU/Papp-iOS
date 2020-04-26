@@ -6,9 +6,10 @@
 //  Copyright © 2020 Nikolaj Wassmann. All rights reserved.
 //
 
-import Foundation
 import Firebase
 import FBSDKCoreKit
+import UIKit
+import Mapbox
 
 class FirestoreController {
     
@@ -67,7 +68,32 @@ class FirestoreController {
        }
     }
     
-    func createPVagt(_ pvagt: PVagtDTO){
+    func setRoundFacebookProfileImage(_ imageView: UIImageView) {
+    if(AccessToken.current != nil)
+        {
+
+            let graphRequest = GraphRequest(graphPath: "me", parameters: ["fields" : "id"])
+            let connection = GraphRequestConnection()
+
+            connection.add(graphRequest, completionHandler: { (connection, result, error) -> Void in
+                
+                let data = result as! [String : AnyObject]
+                
+                let FBid = data["id"] as? String
+                
+                let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
+                imageView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+                imageView.layer.borderWidth = 1.0
+                imageView.layer.masksToBounds = false
+                imageView.layer.borderColor = UIColor.white.cgColor
+                imageView.layer.cornerRadius = imageView.frame.size.width / 2
+                imageView.clipsToBounds = true
+            })
+            connection.start()
+        }
+    }
+
+    func createPVagt(_ pvagt: PVagtDTO, _ mapViewController: MapViewController){
         db.collection(Collections.Pvagt.rawValue).addDocument(data: ["latitude": pvagt.latitude as Any, "longitude": pvagt.longitude as Any]) {
             error in
             if let error = error {
@@ -75,6 +101,12 @@ class FirestoreController {
             }
             else {
                 print("Sucessfully added PVagt to DB")
+                let alert = UIAlertController(title: "Bekræftet", message: "Dit tip er hermed blevet registeret", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Fedt!", style: .default, handler: nil)
+                )
+                mapViewController.present(alert, animated: true)
+                
             }
         }
     }
@@ -89,5 +121,53 @@ class FirestoreController {
                 print("Sucessfully added Tip to DB")
             }
         }
+    }
+    
+    func getAllPVagt(_ mapView: MGLMapView, _ style: MGLStyle) {
+        db.collection(Collections.Pvagt.rawValue).addSnapshotListener { documentSnapshot, error in
+              guard error == nil else {
+                print("Error fetching document: \(error!)")
+                return
+              }
+            var pins = [MGLPointFeature()]
+            for document in documentSnapshot!.documents {
+                let data = document.data()
+
+                let coordinate = CLLocationCoordinate2D(latitude: (data["latitude"] as! CLLocationDegrees), longitude: (data["longitude"] as! CLLocationDegrees))
+                
+                let pin = MGLPointFeature()
+                pin.coordinate = coordinate
+                pins.append(pin)
+                
+ 
+            }
+            
+            let image = UIImageView(image: UIImage(systemName: "exclamationmark.triangle.fill")!.withRenderingMode(.alwaysTemplate))
+            image.tintColor = .red
+            style.setImage(image.image!, forName: "exclamationmark.triangle.fill")
+            
+
+            
+            let shapeSource = MGLShapeSource(identifier: "pvagt-source", features: pins, options: nil)
+            
+            let shapeLayer = MGLSymbolStyleLayer(identifier: "pvagt-style", source: shapeSource)
+            
+            
+            shapeLayer.iconImageName = NSExpression(forConstantValue: "exclamationmark.triangle.fill")
+            shapeLayer.iconColor = NSExpression(forConstantValue: UIColor.red)
+            
+            
+            if style.source(withIdentifier: "pvagt-source") == nil{
+                style.addSource(shapeSource)
+                style.addLayer(shapeLayer)
+            } else {
+                //FIXME: To update the features, the only solution I could figure out is to reload the entire style. This causes blinking of the icons
+                mapView.reloadStyle(nil)
+            }
+         
+            
+            
+        }
+        
     }
 }
