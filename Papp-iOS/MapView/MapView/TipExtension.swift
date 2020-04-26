@@ -27,8 +27,13 @@ extension MapViewController
     
     @objc private func onClickConfirmTip() {
         if mapView.annotations?.count == 1 {
-            createSnapshot()
-            
+            let storyboard = UIStoryboard(name: "TipDef", bundle: nil)
+            let tipVC = storyboard.instantiateViewController(withIdentifier: "tipViewController") as! TipViewController
+                           
+            tipVC.mapViewForSnapshot = mapView
+            tipVC.modalPresentationStyle = .fullScreen
+
+            present(tipVC, animated: false, completion: nil)
         }
     }
     
@@ -115,33 +120,5 @@ extension MapViewController
         topText.rightAnchor.constraint(equalTo: mapView.layoutMarginsGuide.rightAnchor, constant: -10).isActive = true
         
         topText.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    }
-    
-    
-    @objc func createSnapshot() {
-        let annotation = mapView.annotations?.first?.coordinate
-        
-        let camera = MGLMapCamera(lookingAtCenter: annotation!, altitude: 100, pitch: 20, heading: 0)
-        
-        // Use the map's style, camera, size, and zoom level to set the snapshot's options.
-               let options = MGLMapSnapshotOptions(styleURL: mapView.styleURL, camera: camera, size: CGSize(width: 290, height: 200))
-               options.zoomLevel = 16
-        
-        let snapshotter = MGLMapSnapshotter.init(options: options)
-        snapshotter.start { (snapshot, error) in
-            if error != nil {
-                print("Unable to create a map snapshot.")
-            }
-            
-            let storyboard = UIStoryboard(name: "TipDef", bundle: nil)
-            let secondVC = storyboard.instantiateViewController(withIdentifier: "tipViewController") as! TipViewController
-                
-            secondVC.mapSnapshot = snapshot?.image
-            secondVC.modalPresentationStyle = .fullScreen
-
-            self.present(secondVC, animated: false, completion: nil)
-            snapshotter.isLoading //Stupid solution but without something to keep snapshotter alive there won't be created a screenshot. (garbage collector cleans up snapshottet)
-        }
-        
     }
 }

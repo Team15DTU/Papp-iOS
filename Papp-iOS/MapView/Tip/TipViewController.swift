@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mapbox
 
 class TipViewController: UIViewController, UITextViewDelegate {
 
@@ -16,7 +17,7 @@ class TipViewController: UIViewController, UITextViewDelegate {
     let marker = #imageLiteral(resourceName: "Marker")
     
     var mapSnapshot: UIImage?
-    
+    var mapViewForSnapshot: MGLMapView?
     
     @IBOutlet weak var tipPlacementSnap: UIImageView!
     
@@ -24,24 +25,60 @@ class TipViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpTextView()
+        addButtons()
+        
+        createSnapshot()
+    }
+    
+    
+    func addMarkerOnSnapshot() {
+        let markerView = UIImageView(image: marker) // Create the view holding the image
+        markerView.frame = CGRect(x: tipPlacementSnap.bounds.width/2 - 20, y: tipPlacementSnap.bounds.height/2-50, width: 42, height: 50) // The size and position of the marker
+        
+        tipPlacementSnap.addSubview(markerView) // Add the front image on top of the background
+    }
+
+    @objc func createSnapshot() {
+        // Get the markers coordinates.
+        let annotation = mapViewForSnapshot?.annotations?.first?.coordinate
+        
+        // Create the snapshots view point to be where the marker is placed on the map.
+        let camera = MGLMapCamera(lookingAtCenter: annotation!, altitude: 100, pitch: 20, heading: 0)
+        
+        // Use the map's style, camera, size, and zoom level to set the snapshot's options.
+        let options = MGLMapSnapshotOptions(styleURL: mapViewForSnapshot?.styleURL, camera: camera, size: CGSize(width: 290, height: 200))
+        options.zoomLevel = 16
+        
+        // Create an indicator so the user knows that the snapshot is loading.
+        let indicator = UIActivityIndicatorView(frame: CGRect(x: tipPlacementSnap.bounds.width/2 - 30, y: tipPlacementSnap.bounds.height/2 - 30, width: 60, height: 60))
+        tipPlacementSnap.addSubview(indicator)
+        indicator.startAnimating()
+        
+        let snapshotter = MGLMapSnapshotter.init(options: options)
+        snapshotter.start { (snapshot, error) in
+            if error != nil {
+                print("Unable to create a map snapshot.")
+            }
+            self.tipPlacementSnap.image = snapshot?.image
+           
+            self.addMarkerOnSnapshot()
+            
+            indicator.stopAnimating()
+            snapshotter.cancel() //only needs to be here because of a bug where the garbage collector cleans up the snapshotter before a snapshot has been generated.
+        }
+    }
+    
+    
+    func setUpTextView(){
         SendTipTextView.delegate = self
         SendTipTextView.layer.borderColor = UIColor.white.cgColor
         SendTipTextView.layer.borderWidth = 2.0
         SendTipTextView.layer.cornerRadius = 10
         SendTipTextView.clipsToBounds = true
         SendTipTextView.textColor = UIColor.lightGray
-        
-        addButtons()
-        
-        tipPlacementSnap.image = mapSnapshot
-        
-        let markerView = UIImageView(image: marker) // Create the view holding the image
-        markerView.frame = CGRect(x: tipPlacementSnap.bounds.width/2 - 20, y: tipPlacementSnap.bounds.height/2-50, width: 42, height: 50) // The size and position of the front image
-        
-        tipPlacementSnap.addSubview(markerView) // Add the front image on top of the background
-        
     }
-
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
 
         if SendTipTextView.textColor == UIColor.lightGray {
