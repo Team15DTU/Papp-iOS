@@ -12,7 +12,6 @@ import Mapbox
 extension MapViewController
 {
     //MARK: Public methods
-    
     func enterTip() {
         showLayout()
         enableMapClick()
@@ -22,20 +21,23 @@ extension MapViewController
         hideLayout()
         disableMapClick()
         removeAnnotations()
-        confirmButton.removeTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
-        cancelButton.removeTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
+        confirmButton.removeTarget(self, action: #selector(onClickConfirmTip), for: .touchUpInside)
+        cancelButton.removeTarget(self, action: #selector(onClickCancelTip), for: .touchUpInside)
     }
     
-    @objc private func onClickConfirm() {
-        let storyboard = UIStoryboard(name: "TipDef", bundle: nil)
-        let secondVC = storyboard.instantiateViewController(identifier: "tipViewController")
-        
-        secondVC.modalPresentationStyle = .fullScreen
-        
-        present(secondVC, animated: false, completion: nil)
+    @objc private func onClickConfirmTip() {
+        if mapView.annotations?.count == 1 {
+            let storyboard = UIStoryboard(name: "TipDef", bundle: nil)
+            let tipVC = storyboard.instantiateViewController(withIdentifier: "tipViewController") as! TipViewController
+                           
+            tipVC.mapViewForSnapshot = mapView
+            tipVC.modalPresentationStyle = .fullScreen
+
+            present(tipVC, animated: false, completion: nil)
+        }
     }
     
-    @objc private func onClickCancel() {
+    @objc private func onClickCancelTip() {
         tabBar(mapTabBar, didSelect: tabBarItems[0])
         mapTabBar.selectedItem = tabBarItems[0]
     }
@@ -99,9 +101,8 @@ extension MapViewController
         cancelButton.leftAnchor.constraint(equalTo: mapView.layoutMarginsGuide.leftAnchor, constant: 10).isActive = true
         cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         cancelButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
-        confirmButton.addTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
-        cancelButton.addTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
-    
+        confirmButton.addTarget(self, action: #selector(onClickConfirmTip), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(onClickCancelTip), for: .touchUpInside)
     }
     
     private func addTopText() {
@@ -121,5 +122,4 @@ extension MapViewController
         
         topText.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
-    
 }

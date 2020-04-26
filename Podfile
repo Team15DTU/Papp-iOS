@@ -8,7 +8,7 @@ target 'Papp-iOS' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
-pod 'Mapbox-iOS-SDK', '~> 5.7'
+pod 'Mapbox-iOS-SDK', '~> 5.8'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'Firebase/Firestore'
