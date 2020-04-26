@@ -11,10 +11,12 @@ import UIKit
 class TipViewController: UIViewController, UITextViewDelegate {
 
     let confirmButton: UIButton = UIButton()
-    
     let cancelButton: UIButton = UIButton()
     
-    var mapSnapshot:UIImage!
+    let marker = #imageLiteral(resourceName: "Marker")
+    
+    var mapSnapshot: UIImage?
+    
     
     @IBOutlet weak var tipPlacementSnap: UIImageView!
     
@@ -33,7 +35,11 @@ class TipViewController: UIViewController, UITextViewDelegate {
         
         tipPlacementSnap.image = mapSnapshot
         
-        // Do any additional setup after loading the view.
+        let markerView = UIImageView(image: marker) // Create the view holding the image
+        markerView.frame = CGRect(x: tipPlacementSnap.bounds.width/2 - 20, y: tipPlacementSnap.bounds.height/2-50, width: 42, height: 50) // The size and position of the front image
+        
+        tipPlacementSnap.addSubview(markerView) // Add the front image on top of the background
+        
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
