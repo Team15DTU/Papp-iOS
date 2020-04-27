@@ -19,14 +19,15 @@ class TopSideMenuViewController: UIViewController {
     
     @IBOutlet weak var heartLabel: UILabel!
     
-    let user = Auth.auth().currentUser
-    
     let fireStoreController = FirestoreController.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        fireStoreController.getNameCurrentOfUser { (name) -> (Void) in
+            self.nameLabel.text = name
+        }
         
-        nameLabel.text = user?.displayName
         fireStoreController.setRoundFacebookProfileImage(profileImageView)
         
         // Do any additional setup after loading the view.
@@ -35,15 +36,5 @@ class TopSideMenuViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         print("Disappear")
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

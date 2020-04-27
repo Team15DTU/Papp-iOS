@@ -111,6 +111,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
           mStyle = style
         fireStoreController.getAllPVagt(mapView,style)
+        fireStoreController.getAllPTips(mapView, style)
     }
     
     //MARK: User interaction

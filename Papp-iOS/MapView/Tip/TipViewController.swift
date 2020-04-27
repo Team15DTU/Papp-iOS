@@ -10,6 +10,15 @@ import UIKit
 import Mapbox
 
 class TipViewController: UIViewController, UITextViewDelegate {
+    
+    
+    
+    //MARK: Ret layout fejl (Især constraints og størrelse på snapshot)
+    
+    //MARK: Hent alle tips fra database og vis dem
+    
+    //MARK: Lav Navigation til TipDef (Benyt UINavigationController) og tilbage igen
+    
 
     let confirmButton: UIButton = UIButton()
     let cancelButton: UIButton = UIButton()
@@ -23,8 +32,11 @@ class TipViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var SendTipTextView: UITextView!
     
+    let firestoreController = FirestoreController.init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         setUpTextView()
         addButtons()
         
@@ -79,23 +91,18 @@ class TipViewController: UIViewController, UITextViewDelegate {
         SendTipTextView.textColor = UIColor.lightGray
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-
-        if SendTipTextView.textColor == UIColor.lightGray {
-            SendTipTextView.text = ""
-            SendTipTextView.textColor = UIColor.white
-        }
-    }
-
-    func textViewDidEndEditing(_ textView: UITextView) {
-
-        if SendTipTextView.text == "" {
-            SendTipTextView.text = "Skriv dit tip her"
-            SendTipTextView.textColor = UIColor.lightGray
-        }
-    }
-    
     @objc private func onClickConfirm() {
+        if SendTipTextView.text == "" {
+            displayAlert()
+            return
+        }
+        
+        guard let markerLocation = mapViewForSnapshot?.annotations?.first?.coordinate else { return}
+        
+        let tip = TipDTO(description: SendTipTextView.text, latitude: markerLocation.latitude, longitude: markerLocation.longitude)
+        
+        firestoreController.createPTip(tip)
+        
         
     }
     
@@ -132,16 +139,6 @@ class TipViewController: UIViewController, UITextViewDelegate {
         cancelButton.addTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
     
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
