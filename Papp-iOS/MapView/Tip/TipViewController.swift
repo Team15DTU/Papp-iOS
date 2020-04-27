@@ -36,11 +36,28 @@ class TipViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         hideKeyboardWhenTappedAround()
         setUpTextView()
         addButtons()
         
         createSnapshot()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     
@@ -101,13 +118,18 @@ class TipViewController: UIViewController, UITextViewDelegate {
         
         let tip = TipDTO(description: SendTipTextView.text, latitude: markerLocation.latitude, longitude: markerLocation.longitude)
         
-        firestoreController.createPTip(tip)
+        firestoreController.createPTip(tip) { (completed) -> (Void) in
+            if completed == true {
+                
+            }
+        }
+        
         
         
     }
     
     @objc private func onClickCancel() {
-        dismiss(animated: false, completion: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
 
     private func addButtons(){

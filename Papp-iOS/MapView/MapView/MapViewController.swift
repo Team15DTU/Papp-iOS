@@ -82,12 +82,19 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        if previousSelectedTabBarItem == 3{
         mapTabBar.selectedItem = tabBarItems[0]
+        }
+        else {
+            mapTabBar.selectedItem = tabBarItems[previousSelectedTabBarItem]
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        if previousSelectedTabBarItem == 3{
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        }
     }
     
     //MARK: Delegate methods

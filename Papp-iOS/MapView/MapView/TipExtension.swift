@@ -31,9 +31,12 @@ extension MapViewController
             let tipVC = storyboard.instantiateViewController(withIdentifier: "tipViewController") as! TipViewController
                            
             tipVC.mapViewForSnapshot = mapView
-            tipVC.modalPresentationStyle = .fullScreen
+            
+            navigationController?.pushViewController(tipVC, animated: true)
+            
+           // tipVC.modalPresentationStyle = .fullScreen
 
-            present(tipVC, animated: false, completion: nil)
+            //present(tipVC, animated: false, completion: nil)
         }
     }
     

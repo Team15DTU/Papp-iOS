@@ -149,14 +149,16 @@ class FirestoreController {
         }
     }
     
-    func createPTip(_ tip: TipDTO){
+    func createPTip(_ tip: TipDTO, _ completion: @escaping(Bool) -> (Void)){
         db.collection(Collections.Tips.rawValue).addDocument(data: ["description":tip.description as Any, "latitude": tip.latitude as Any, "longitude": tip.longitude as Any]){
             error in
             if let error = error {
                 print("ERROR: Could not add Tip \(error)")
+                completion(false)
             }
             else {
                 print("Sucessfully added Tip to DB")
+                completion(true)
             }
         }
     }
