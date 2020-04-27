@@ -46,7 +46,6 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
             navigationController?.navigationBar.isTranslucent = false
             navigationController?.navigationBar.barStyle = .black
             navigationController?.navigationBar.barTintColor = UIColor(red: 103/255, green: 150/255, blue: 190/255, alpha: 1)
-            
             navigationItem.title = "Indstillinger"
         }
        

@@ -10,29 +10,29 @@ import UIKit
 import Mapbox
 
 class TipViewController: UIViewController, UITextViewDelegate {
-    
-    
-    
-    //MARK: Ret layout fejl (Især constraints og størrelse på snapshot)
-    
-    //MARK: Hent alle tips fra database og vis dem
-    
-    //MARK: Lav Navigation til TipDef (Benyt UINavigationController) og tilbage igen
-    
 
     let confirmButton: UIButton = UIButton()
     let cancelButton: UIButton = UIButton()
+    let snapShotImageView: UIImageView = UIImageView()
+    let tipTextView: UITextView = UITextView()
     
     let marker = #imageLiteral(resourceName: "Marker")
     
+    let firestoreController = FirestoreController.init()
+    
+    var mapViewController: MapViewController?
     var mapSnapshot: UIImage?
     var mapViewForSnapshot: MGLMapView?
+
+    init(_ mapViewController: MapViewController) {
+        self.mapViewController = mapViewController
+        super.init(nibName: nil, bundle: nil)
+    }
     
-    @IBOutlet weak var tipPlacementSnap: UIImageView!
-    
-    @IBOutlet weak var SendTipTextView: UITextView!
-    
-    let firestoreController = FirestoreController.init()
+    required init?(coder: NSCoder) {
+           super.init(coder: coder)
+       }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,7 @@ class TipViewController: UIViewController, UITextViewDelegate {
         hideKeyboardWhenTappedAround()
         setUpTextView()
         addButtons()
+        addImageView()
         
         createSnapshot()
     }
@@ -48,10 +49,12 @@ class TipViewController: UIViewController, UITextViewDelegate {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
         navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationItem.title = "Indberet tip"
         
     }
 
@@ -63,9 +66,9 @@ class TipViewController: UIViewController, UITextViewDelegate {
     
     func addMarkerOnSnapshot() {
         let markerView = UIImageView(image: marker) // Create the view holding the image
-        markerView.frame = CGRect(x: tipPlacementSnap.bounds.width/2 - 20, y: tipPlacementSnap.bounds.height/2-50, width: 42, height: 50) // The size and position of the marker
+        markerView.frame = CGRect(x: snapShotImageView.bounds.width/2 - 20, y: snapShotImageView.bounds.height/2-50, width: 42, height: 50) // The size and position of the marker
         
-        tipPlacementSnap.addSubview(markerView) // Add the front image on top of the background
+        snapShotImageView.addSubview(markerView) // Add the front image on top of the background
     }
 
     @objc func createSnapshot() {
@@ -80,8 +83,8 @@ class TipViewController: UIViewController, UITextViewDelegate {
         options.zoomLevel = 16
         
         // Create an indicator so the user knows that the snapshot is loading.
-        let indicator = UIActivityIndicatorView(frame: CGRect(x: tipPlacementSnap.bounds.width/2 - 30, y: tipPlacementSnap.bounds.height/2 - 30, width: 60, height: 60))
-        tipPlacementSnap.addSubview(indicator)
+        let indicator = UIActivityIndicatorView(frame: CGRect(x: snapShotImageView.bounds.width/2, y: snapShotImageView.bounds.height/2, width: 150, height: 150))
+        snapShotImageView.addSubview(indicator)
         indicator.startAnimating()
         
         let snapshotter = MGLMapSnapshotter.init(options: options)
@@ -89,8 +92,8 @@ class TipViewController: UIViewController, UITextViewDelegate {
             if error != nil {
                 print("Unable to create a map snapshot.")
             }
-            self.tipPlacementSnap.image = snapshot?.image
-           
+            self.snapShotImageView.image = snapshot?.image
+            
             self.addMarkerOnSnapshot()
             
             indicator.stopAnimating()
@@ -99,68 +102,32 @@ class TipViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    func setUpTextView(){
-        SendTipTextView.delegate = self
-        SendTipTextView.layer.borderColor = UIColor.white.cgColor
-        SendTipTextView.layer.borderWidth = 2.0
-        SendTipTextView.layer.cornerRadius = 10
-        SendTipTextView.clipsToBounds = true
-        SendTipTextView.textColor = UIColor.lightGray
-    }
-    
-    @objc private func onClickConfirm() {
-        if SendTipTextView.text == "" {
-            displayAlert()
+    @objc func onClickConfirm() {
+        if tipTextView.text == "" {
+            displayNoTextAlert()
             return
         }
         
         guard let markerLocation = mapViewForSnapshot?.annotations?.first?.coordinate else { return}
         
-        let tip = TipDTO(description: SendTipTextView.text, latitude: markerLocation.latitude, longitude: markerLocation.longitude)
+        let tip = TipDTO(description: tipTextView.text, latitude: markerLocation.latitude, longitude: markerLocation.longitude)
         
         firestoreController.createPTip(tip) { (completed) -> (Void) in
             if completed == true {
-                
+                self.displayCompletedAlert()
             }
         }
         
-        
-        
+        mapViewController?.tabBar(mapViewController!.mapTabBar, didSelect: mapViewController!.tabBarItems[0])
+        mapViewController?.mapTabBar.selectedItem = mapViewController?.tabBarItems[0]
+        navigationController?.popToRootViewController(animated: true)
     }
     
-    @objc private func onClickCancel() {
+    @objc func onClickCancel() {
         navigationController?.popToRootViewController(animated: true)
     }
 
-    private func addButtons(){
-        confirmButton.setTitle("Indsend tip", for: .normal)
-        confirmButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 16)
-        confirmButton.backgroundColor = UIColor.init(red: 103/255, green: 150/255, blue: 190/255, alpha: 1)
-        confirmButton.layer.cornerRadius = 20
-        view.addSubview(confirmButton)
-        
-        confirmButton.translatesAutoresizingMaskIntoConstraints = false
-        confirmButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -25).isActive = true
-        confirmButton.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor, constant: -10).isActive = true
-        confirmButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        confirmButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
-    
-        
-        cancelButton.setTitle("Annuller", for: .normal)
-        cancelButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 16)
-        cancelButton.backgroundColor = UIColor.gray
-        cancelButton.layer.cornerRadius = 20
-        view.addSubview(cancelButton)
-        
-        cancelButton.translatesAutoresizingMaskIntoConstraints = false
-        cancelButton.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -25).isActive = true
-        cancelButton.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor, constant: 10).isActive = true
-        cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        cancelButton.widthAnchor.constraint(equalToConstant: 160).isActive = true
-        confirmButton.addTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
-        cancelButton.addTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
-    
-    }
+  
 
 }
 

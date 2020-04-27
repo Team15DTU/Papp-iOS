@@ -54,6 +54,7 @@
 		347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */; };
 		347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */; };
 		347F8FCD241FBED100C47FB4 /* SignViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FCC241FBED100C47FB4 /* SignViewDatasource.swift */; };
+		348235482456EF56009B0A6D /* TipViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348235472456EF56009B0A6D /* TipViewDatasource.swift */; };
 		3484BAE82445AD160064216E /* TipExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAE72445AD160064216E /* TipExtension.swift */; };
 		3484BAEC2445B2930064216E /* PVagtExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAEB2445B2930064216E /* PVagtExtension.swift */; };
 		34ACF3592456BA210061C778 /* TextViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */; };
@@ -122,6 +123,7 @@
 		347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordExtension.swift; sourceTree = "<group>"; };
 		347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInExtension.swift; sourceTree = "<group>"; };
 		347F8FCC241FBED100C47FB4 /* SignViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewDatasource.swift; sourceTree = "<group>"; };
+		348235472456EF56009B0A6D /* TipViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewDatasource.swift; sourceTree = "<group>"; };
 		3484BAE72445AD160064216E /* TipExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipExtension.swift; sourceTree = "<group>"; };
 		3484BAEB2445B2930064216E /* PVagtExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVagtExtension.swift; sourceTree = "<group>"; };
 		34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDelegateExtension.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				34DBEA7E241E951B0085B303 /* TipDef.storyboard */,
 				34DBEA74241E94B50085B303 /* TipViewController.swift */,
 				34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */,
+				348235472456EF56009B0A6D /* TipViewDatasource.swift */,
 			);
 			path = Tip;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */,
 				34BC10C9240534ED0082476D /* ViewController.swift in Sources */,
 				340A614124508A5A00862262 /* SettingsLocationViewController.swift in Sources */,
+				348235482456EF56009B0A6D /* TipViewDatasource.swift in Sources */,
 				34C27BC2244F2DBB00E68A8B /* SettingsViewController.swift in Sources */,
 				34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */,
 				3484BAEC2445B2930064216E /* PVagtExtension.swift in Sources */,
