@@ -29,7 +29,6 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            print(indexPath)
             break
         case 1:
            // let storyboardSettings = UIStoryboard(name: "Settings", bundle: nil)
@@ -38,10 +37,8 @@ class TableViewController: UITableViewController {
             
             break
         case 2:
-            print(indexPath)
             break
         case 3:
-            print(indexPath)
             break
         case 4:
             logout()
@@ -50,6 +47,8 @@ class TableViewController: UITableViewController {
             print("ERROR: Could not find TableViewCell at indexpath \(indexPath)")
             break
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     //MARK: Support methods

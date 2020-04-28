@@ -13,6 +13,7 @@ extension TipViewController {
     
       func setUpTextView(){
         tipTextView.delegate = self
+        tipTextView.text = "Skriv dit tip her"
         tipTextView.layer.borderColor = UIColor.white.cgColor
         tipTextView.layer.borderWidth = 2.0
         tipTextView.layer.cornerRadius = 10

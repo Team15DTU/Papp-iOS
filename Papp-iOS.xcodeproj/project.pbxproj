@@ -66,7 +66,6 @@
 		34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CF240534ED0082476D /* LaunchScreen.storyboard */; };
 		34C27BC2244F2DBB00E68A8B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */; };
 		34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA74241E94B50085B303 /* TipViewController.swift */; };
-		34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7E241E951B0085B303 /* TipDef.storyboard */; };
 		34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E4447824279C9A0031FBC2 /* TableViewController.swift */; };
 		34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E49397244DDC3900D29C98 /* TipDTO.swift */; };
 		34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F610912445A19D006AA5E4 /* TabBarExtension.swift */; };
@@ -137,7 +136,6 @@
 		34BC10D2240534ED0082476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		34DBEA74241E94B50085B303 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
-		34DBEA7E241E951B0085B303 /* TipDef.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipDef.storyboard; sourceTree = "<group>"; };
 		34E4447824279C9A0031FBC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		34E49397244DDC3900D29C98 /* TipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDTO.swift; sourceTree = "<group>"; };
 		34F610912445A19D006AA5E4 /* TabBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
@@ -305,7 +303,6 @@
 		34DBEA72241E94920085B303 /* Tip */ = {
 			isa = PBXGroup;
 			children = (
-				34DBEA7E241E951B0085B303 /* TipDef.storyboard */,
 				34DBEA74241E94B50085B303 /* TipViewController.swift */,
 				34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */,
 				348235472456EF56009B0A6D /* TipViewDatasource.swift */,
@@ -420,7 +417,6 @@
 				34BC10CE240534ED0082476D /* Assets.xcassets in Resources */,
 				345E1A722405AC45003E859B /* Montserrat-BoldItalic.ttf in Resources */,
 				342E55422405ADB7007BB920 /* MapView.storyboard in Resources */,
-				34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */,
 				345E1A652405AC45003E859B /* Montserrat-MediumItalic.ttf in Resources */,
 				345E1A642405AC45003E859B /* Montserrat-Light.ttf in Resources */,
 				345E1A6E2405AC45003E859B /* Montserrat-SemiBold.ttf in Resources */,

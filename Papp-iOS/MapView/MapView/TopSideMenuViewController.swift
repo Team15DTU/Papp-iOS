@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import SideMenu
 
 class TopSideMenuViewController: UIViewController {
     
@@ -21,6 +22,8 @@ class TopSideMenuViewController: UIViewController {
     
     let fireStoreController = FirestoreController.init()
     
+    var previousSelectedTabBarItem: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -29,12 +32,11 @@ class TopSideMenuViewController: UIViewController {
         }
         
         fireStoreController.setRoundFacebookProfileImage(profileImageView)
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print("Disappear")
+        MapViewController.GlobalVariables.tabBar!.selectedItem = MapViewController.GlobalVariables.items![MapViewController.GlobalVariables.previousItem]
+        
     }
 
 }

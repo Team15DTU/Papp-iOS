@@ -87,7 +87,7 @@
         <!--Top Side Menu View Controller-->
         <scene sceneID="mmP-i4-nrO">
             <objects>
-                <viewController id="8Oo-i5-D2X" customClass="TopSideMenuViewController" customModule="Papp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="topside" id="8Oo-i5-D2X" customClass="TopSideMenuViewController" customModule="Papp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TTb-uR-6HR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
