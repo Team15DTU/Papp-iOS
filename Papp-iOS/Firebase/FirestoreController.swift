@@ -13,7 +13,7 @@ import Mapbox
 
 class FirestoreController {
     
-    //MARK: Fields
+    //MARK: - Fields
     
     var facebookName: String?
     var facebookEmail: String?
@@ -24,17 +24,17 @@ class FirestoreController {
         case Pvagt = "Pvagt"
     }
     
-    //MARK: Basic constructor
+    //MARK: - Basic constructor
     
     init() {
         
     }
     
-    //MARK: Local initialization
+    //MARK: - Local initialization
     
     let db = Firestore.firestore()
     
-    //MARK: Public methods
+    //MARK: - Create methods
     
     func createUser(name: String, email: String ) {
         
@@ -58,6 +58,39 @@ class FirestoreController {
         }
     }
     
+    func createPVagt(_ pvagt: PVagtDTO, _ mapViewController: MapViewController){
+        db.collection(Collections.Pvagt.rawValue).addDocument(data: ["latitude": pvagt.latitude as Any, "longitude": pvagt.longitude as Any]) {
+            error in
+            if let error = error {
+                print("ERROR: Could not add PVagt \(error)")
+            }
+            else {
+                print("Sucessfully added PVagt to DB")
+                let alert = UIAlertController(title: "Bekræftet", message: "Dit tip er hermed blevet registeret", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Fedt!", style: .default, handler: nil)
+                )
+                mapViewController.present(alert, animated: true)
+                
+            }
+        }
+    }
+    
+    func createPTip(_ tip: TipDTO, _ completion: @escaping(Bool) -> (Void)){
+        db.collection(Collections.Tips.rawValue).addDocument(data: ["description":tip.description as Any, "latitude": tip.latitude as Any, "longitude": tip.longitude as Any]){
+            error in
+            if let error = error {
+                print("ERROR: Could not add Tip \(error)")
+                completion(false)
+            }
+            else {
+                print("Sucessfully added Tip to DB")
+                completion(true)
+            }
+        }
+    }
+    
+    //MARK: - Read methods
     
     func getDataFromFacebook() {
         if let user = Auth.auth().currentUser {
@@ -128,38 +161,6 @@ class FirestoreController {
                 imageView.clipsToBounds = true
             })
             connection.start()
-        }
-    }
-    
-    func createPVagt(_ pvagt: PVagtDTO, _ mapViewController: MapViewController){
-        db.collection(Collections.Pvagt.rawValue).addDocument(data: ["latitude": pvagt.latitude as Any, "longitude": pvagt.longitude as Any]) {
-            error in
-            if let error = error {
-                print("ERROR: Could not add PVagt \(error)")
-            }
-            else {
-                print("Sucessfully added PVagt to DB")
-                let alert = UIAlertController(title: "Bekræftet", message: "Dit tip er hermed blevet registeret", preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "Fedt!", style: .default, handler: nil)
-                )
-                mapViewController.present(alert, animated: true)
-                
-            }
-        }
-    }
-    
-    func createPTip(_ tip: TipDTO, _ completion: @escaping(Bool) -> (Void)){
-        db.collection(Collections.Tips.rawValue).addDocument(data: ["description":tip.description as Any, "latitude": tip.latitude as Any, "longitude": tip.longitude as Any]){
-            error in
-            if let error = error {
-                print("ERROR: Could not add Tip \(error)")
-                completion(false)
-            }
-            else {
-                print("Sucessfully added Tip to DB")
-                completion(true)
-            }
         }
     }
     

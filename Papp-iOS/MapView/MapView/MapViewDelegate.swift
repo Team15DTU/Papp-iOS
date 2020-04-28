@@ -13,6 +13,43 @@ import Mapbox
 
 extension MapViewController {
     
+    // MARK: - MGLMapViewDelegate
+     
+     func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool){
+         
+         if mapView.userTrackingMode == .none {
+             trackButton.setImage(UIImage(systemName: "location"), for: .normal)
+         }
+     }
+     
+     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+         mStyle = style
+         fireStoreController.getAllPVagt(mapView,style)
+         fireStoreController.getAllPTips(mapView, style)
+     }
+     
+     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+         return true
+     }
+     
+     
+     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
+         mapView.removeAnnotations([annotation])
+     }
+     
+     
+     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+         
+         if GlobalVariables.previousItem == 0 {
+             
+             // Create an empty view annotation. Set a frame to offset the callout.
+             return MGLAnnotationView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+         }
+         return nil
+     }
+    
+    //MARK: - Public methods
+    
     @objc @IBAction func handleMapTap(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
             // Limit feature selection to just the following layer identifiers.
@@ -54,41 +91,6 @@ extension MapViewController {
         
         
         
-    }
-    
-    // MARK: - MGLMapViewDelegate
-    
-    func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool){
-        
-        if mapView.userTrackingMode == .none {
-            trackButton.setImage(UIImage(systemName: "location"), for: .normal)
-        }
-    }
-    
-    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
-        mStyle = style
-        fireStoreController.getAllPVagt(mapView,style)
-        fireStoreController.getAllPTips(mapView, style)
-    }
-    
-    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-        return true
-    }
-    
-    
-    func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
-        mapView.removeAnnotations([annotation])
-    }
-    
-    
-    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-        
-        if GlobalVariables.previousItem == 0 {
-            
-            // Create an empty view annotation. Set a frame to offset the callout.
-            return MGLAnnotationView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        }
-        return nil
     }
     
     func showCallout(feature: MGLPointFeature) {
