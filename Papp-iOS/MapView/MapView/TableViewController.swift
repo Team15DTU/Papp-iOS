@@ -31,7 +31,7 @@ class TableViewController: UITableViewController {
         case 0:
             break
         case 1:
-           // let storyboardSettings = UIStoryboard(name: "Settings", bundle: nil)
+            // let storyboardSettings = UIStoryboard(name: "Settings", bundle: nil)
             //let vc = storyboardSettings.instantiateViewController(identifier: "SettingsViewController") as SettingsViewController
             navigationController?.pushViewController(SettingsViewController(), animated: true)
             
@@ -55,16 +55,16 @@ class TableViewController: UITableViewController {
     
     private func logout() {
         guard Auth.auth().currentUser != nil else {
-               return
-           }
-
-           do {
-              try Auth.auth().signOut()
+            return
+        }
+        
+        do {
+            try Auth.auth().signOut()
             AccessToken.current = nil
             transitionToSignIn()
-           } catch let error as NSError {
-               print(error.localizedDescription)
-           }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
     private func transitionToSignIn() {

@@ -35,15 +35,15 @@ extension MapViewController
             onClickCancel()
         }
         
-            
+        
     }
     
     @objc private func onClickCancel() {
         tabBar(mapTabBar, didSelect: tabBarItems[0])
         mapTabBar.selectedItem = tabBarItems[0]
         
-         if let placedPin = pin {
-        mapView.removeAnnotation(placedPin)
+        if let placedPin = pin {
+            mapView.removeAnnotation(placedPin)
         }
     }
     
@@ -64,7 +64,7 @@ extension MapViewController
     }
     
     private func enableMapClick() {
-        onMapTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(sender:)))
+        onMapTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handlePinMapTap(sender:)))
         for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
             onMapTapRecognizer.require(toFail: recognizer)
         }
@@ -93,7 +93,7 @@ extension MapViewController
         confirmButton.rightAnchor.constraint(equalTo: mapView.layoutMarginsGuide.rightAnchor, constant: -10).isActive = true
         confirmButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         confirmButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
-    
+        
         
         cancelButton.setTitle("Annuller", for: .normal)
         cancelButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
@@ -109,7 +109,7 @@ extension MapViewController
         
         confirmButton.addTarget(self, action: #selector(onClickConfirm), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(onClickCancel), for: .touchUpInside)
-    
+        
     }
     
     private func addTopText() {

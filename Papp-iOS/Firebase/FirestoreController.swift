@@ -54,22 +54,22 @@ class FirestoreController {
             }
             else {
                 self.db.collection(Collections.User.rawValue).document(userid!).setData(["name" : self.facebookName!, "email": self.facebookEmail!])
-                }
             }
         }
-       
+    }
+    
     
     func getDataFromFacebook() {
-       if let user = Auth.auth().currentUser {
-       for profile in user.providerData {
-        facebookName = profile.displayName
-        facebookEmail = profile.email
-       }
-       }
+        if let user = Auth.auth().currentUser {
+            for profile in user.providerData {
+                facebookName = profile.displayName
+                facebookEmail = profile.email
+            }
+        }
     }
     
     func doesUserExist (_ completion: @escaping (Bool) -> Void){
-         let docRef = db.collection(Collections.User.rawValue).whereField("email", isEqualTo: facebookEmail!)
+        let docRef = db.collection(Collections.User.rawValue).whereField("email", isEqualTo: facebookEmail!)
         
         docRef.getDocuments { (querysnapshot, err) in
             if let _ = err {
@@ -107,12 +107,12 @@ class FirestoreController {
     }
     
     func setRoundFacebookProfileImage(_ imageView: UIImageView) {
-    if(AccessToken.current != nil)
+        if(AccessToken.current != nil)
         {
-
+            
             let graphRequest = GraphRequest(graphPath: "me", parameters: ["fields" : "id"])
             let connection = GraphRequestConnection()
-
+            
             connection.add(graphRequest, completionHandler: { (connection, result, error) -> Void in
                 
                 let data = result as! [String : AnyObject]
@@ -130,7 +130,7 @@ class FirestoreController {
             connection.start()
         }
     }
-
+    
     func createPVagt(_ pvagt: PVagtDTO, _ mapViewController: MapViewController){
         db.collection(Collections.Pvagt.rawValue).addDocument(data: ["latitude": pvagt.latitude as Any, "longitude": pvagt.longitude as Any]) {
             error in
@@ -165,28 +165,28 @@ class FirestoreController {
     
     func getAllPVagt(_ mapView: MGLMapView, _ style: MGLStyle) {
         db.collection(Collections.Pvagt.rawValue).addSnapshotListener { documentSnapshot, error in
-              guard error == nil else {
+            guard error == nil else {
                 print("Error fetching document: \(error!)")
                 return
-              }
+            }
             var pins = [MGLPointFeature()]
             for document in documentSnapshot!.documents {
                 let data = document.data()
-
+                
                 let coordinate = CLLocationCoordinate2D(latitude: (data["latitude"] as! CLLocationDegrees), longitude: (data["longitude"] as! CLLocationDegrees))
                 
                 let pin = MGLPointFeature()
                 pin.coordinate = coordinate
                 pins.append(pin)
                 
- 
+                
             }
             
             let image = UIImageView(image: UIImage(systemName: "exclamationmark.triangle.fill")!.withRenderingMode(.alwaysTemplate))
             image.tintColor = .red
             style.setImage(image.image!, forName: "exclamationmark.triangle.fill")
             
-
+            
             
             let shapeSource = MGLShapeSource(identifier: "pvagt-source", features: pins, options: nil)
             
@@ -204,7 +204,7 @@ class FirestoreController {
                 //FIXME: To update the features, the only solution I could figure out is to reload the entire style. This causes blinking of the icons
                 mapView.reloadStyle(nil)
             }
-         
+            
             
             
         }
@@ -212,50 +212,65 @@ class FirestoreController {
     }
     
     func getAllPTips(_ mapView: MGLMapView, _ style: MGLStyle) {
-           db.collection(Collections.Tips.rawValue).addSnapshotListener { documentSnapshot, error in
-                 guard error == nil else {
-                   print("Error fetching document: \(error!)")
-                   return
-                 }
-               var pins = [MGLPointFeature()]
-               for document in documentSnapshot!.documents {
-                   let data = document.data()
-
-                   let coordinate = CLLocationCoordinate2D(latitude: (data["latitude"] as! CLLocationDegrees), longitude: (data["longitude"] as! CLLocationDegrees))
-                   
-                   let pin = MGLPointFeature()
-                   pin.coordinate = coordinate
-                   pins.append(pin)
-                   
-    
-               }
-               
-               let image = UIImageView(image: UIImage(systemName: "message.fill")!.withRenderingMode(.alwaysTemplate))
-               image.tintColor = .red
-               style.setImage(image.image!, forName: "message.fill")
-               
-
-               
-               let shapeSource = MGLShapeSource(identifier: "tip-source", features: pins, options: nil)
-               
-               let shapeLayer = MGLSymbolStyleLayer(identifier: "tip-style", source: shapeSource)
-               
-               
-               shapeLayer.iconImageName = NSExpression(forConstantValue: "message.fill")
-               shapeLayer.iconColor = NSExpression(forConstantValue: UIColor(red: 103/255, green: 150/255, blue: 190/255, alpha: 1))
-               
-               
-               if style.source(withIdentifier: "tip-source") == nil{
-                   style.addSource(shapeSource)
-                   style.addLayer(shapeLayer)
-               } else {
-                   //FIXME: To update the features, the only solution I could figure out is to reload the entire style. This causes blinking of the icons
-                   mapView.reloadStyle(nil)
-               }
+        db.collection(Collections.Tips.rawValue).addSnapshotListener { documentSnapshot, error in
+            guard error == nil else {
+                print("Error fetching document: \(error!)")
+                return
+            }
+            var pins = [MGLPointFeature()]
+            for document in documentSnapshot!.documents {
+                let data = document.data()
+                
+                let coordinate = CLLocationCoordinate2D(latitude: (data["latitude"] as! CLLocationDegrees), longitude: (data["longitude"] as! CLLocationDegrees))
+                
+                let description = data["description"] as! String
+                
+                let pin = MGLPointFeature()
+                pin.coordinate = coordinate
+                pin.title = description
+                pin.attributes = ["description": description]
+                pins.append(pin)
+                
+                
+            }
             
-               
-               
-           }
-           
-       }
+            let image = UIImageView(image: UIImage(systemName: "message.fill")!.withRenderingMode(.alwaysTemplate))
+            image.tintColor = .red
+            style.setImage(image.image!, forName: "message.fill")
+            
+            
+            
+            let shapeSource = MGLShapeSource(identifier: "tip-source", features: pins, options: nil)
+            
+            let shapeLayer = MGLSymbolStyleLayer(identifier: "tip-style", source: shapeSource)
+            
+            
+            shapeLayer.iconImageName = NSExpression(forConstantValue: "message.fill")
+            shapeLayer.iconColor = NSExpression(forConstantValue: UIColor(red: 103/255, green: 150/255, blue: 190/255, alpha: 1))
+            
+            shapeLayer.text = NSExpression(forKeyPath: "description")
+            shapeLayer.textColor = NSExpression(forConstantValue: UIColor.white)
+            shapeLayer.textFontSize = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
+                                                   [10: 10, 16: 16])
+            shapeLayer.textTranslation = NSExpression(forConstantValue: NSValue(cgVector: CGVector(dx: 10, dy: 0)))
+            shapeLayer.textJustification = NSExpression(forConstantValue: NSValue(mglTextJustification: .center))
+            shapeLayer.textOpacity = NSExpression(forConstantValue: 0)
+            shapeLayer.textHaloColor = NSExpression(forConstantValue: UIColor.white.withAlphaComponent(0.5))
+            shapeLayer.textHaloWidth = NSExpression(forConstantValue: 1)
+            shapeLayer.textAnchor = NSExpression(forConstantValue: NSValue(mglTextAnchor: .center))
+            
+            
+            if style.source(withIdentifier: "tip-source") == nil{
+                style.addSource(shapeSource)
+                style.addLayer(shapeLayer)
+            } else {
+                //FIXME: To update the features, the only solution I could figure out is to reload the entire style. This causes blinking of the icons
+                mapView.reloadStyle(nil)
+            }
+            
+            
+            
+        }
+        
+    }
 }

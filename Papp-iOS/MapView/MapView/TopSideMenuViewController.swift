@@ -26,7 +26,7 @@ class TopSideMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         fireStoreController.getNameCurrentOfUser { (name) -> (Void) in
             self.nameLabel.text = name
         }
@@ -38,5 +38,5 @@ class TopSideMenuViewController: UIViewController {
         MapViewController.GlobalVariables.tabBar!.selectedItem = MapViewController.GlobalVariables.items![MapViewController.GlobalVariables.previousItem]
         
     }
-
+    
 }
