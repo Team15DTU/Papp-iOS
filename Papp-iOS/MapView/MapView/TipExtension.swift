@@ -34,7 +34,7 @@ extension MapViewController
             tipViewController.view.backgroundColor = .darkGray
             
             navigationController?.pushViewController(tipViewController, animated: true)
-
+            
         }
     }
     
@@ -42,7 +42,7 @@ extension MapViewController
         tabBar(mapTabBar, didSelect: tabBarItems[0])
         mapTabBar.selectedItem = tabBarItems[0]
     }
- 
+    
     
     //MARK: Support methods
     
@@ -60,7 +60,7 @@ extension MapViewController
     }
     
     private func enableMapClick() {
-        onMapTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapTap(sender:)))
+        onMapTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handlePinMapTap(sender:)))
         for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
             onMapTapRecognizer.require(toFail: recognizer)
         }
@@ -73,7 +73,7 @@ extension MapViewController
     
     private func removeAnnotations(){
         if (mapView.annotations?.count == 1) {
-        mapView.removeAnnotations(mapView.annotations!)
+            mapView.removeAnnotations(mapView.annotations!)
         }
     }
     
@@ -89,7 +89,7 @@ extension MapViewController
         confirmButton.rightAnchor.constraint(equalTo: mapView.layoutMarginsGuide.rightAnchor, constant: -10).isActive = true
         confirmButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         confirmButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
-    
+        
         
         cancelButton.setTitle("Annuller", for: .normal)
         cancelButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)

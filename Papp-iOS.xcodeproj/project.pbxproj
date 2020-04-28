@@ -65,6 +65,7 @@
 		34BC10CE240534ED0082476D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CD240534ED0082476D /* Assets.xcassets */; };
 		34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CF240534ED0082476D /* LaunchScreen.storyboard */; };
 		34C27BC2244F2DBB00E68A8B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */; };
+		34D4D1882458239C00557985 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D1872458239C00557985 /* MapViewDelegate.swift */; };
 		34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA74241E94B50085B303 /* TipViewController.swift */; };
 		34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E4447824279C9A0031FBC2 /* TableViewController.swift */; };
 		34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E49397244DDC3900D29C98 /* TipDTO.swift */; };
@@ -135,6 +136,7 @@
 		34BC10D0240534ED0082476D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34BC10D2240534ED0082476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		34D4D1872458239C00557985 /* MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
 		34DBEA74241E94B50085B303 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		34E4447824279C9A0031FBC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		34E49397244DDC3900D29C98 /* TipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDTO.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			children = (
 				342E55402405ADB7007BB920 /* MapView.storyboard */,
 				342E553F2405ADB7007BB920 /* MapViewController.swift */,
+				34D4D1872458239C00557985 /* MapViewDelegate.swift */,
 				34E4447824279C9A0031FBC2 /* TableViewController.swift */,
 				34F610912445A19D006AA5E4 /* TabBarExtension.swift */,
 				3484BAE72445AD160064216E /* TipExtension.swift */,
@@ -511,6 +514,7 @@
 				343EF466244DCE8B00338C35 /* PVagtDTO.swift in Sources */,
 				347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */,
 				34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */,
+				34D4D1882458239C00557985 /* MapViewDelegate.swift in Sources */,
 				340A613F24505F0800862262 /* SettingsSection.swift in Sources */,
 				340A613D2450585800862262 /* SettingsCell.swift in Sources */,
 				340A614724508DEC00862262 /* SettingsAboutViewController.swift in Sources */,

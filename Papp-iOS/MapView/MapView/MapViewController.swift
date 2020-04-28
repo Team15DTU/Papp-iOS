@@ -31,6 +31,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     var onMapTapRecognizer = UITapGestureRecognizer()
     
+    var onTipTapRecognizer = UITapGestureRecognizer()
+    
     var previousSelectedTabBarItem: Int!
     
     let confirmButton: UIButton = UIButton()
@@ -41,7 +43,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     let fireStoreController = FirestoreController.init()
     
-    let pin: MGLPointAnnotation? = MGLPointAnnotation()
+    let pin: MGLPointFeature? = MGLPointFeature()
     
     @IBOutlet weak var mapView: MGLMapView!
     
@@ -74,6 +76,8 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
         mapTabBar.delegate = self
         
+        enableTipMapTap()
+        
         //MARK: Needs to be moved in to its own style 
         trackButton.layer.cornerRadius = trackButton.frame.width/2
         trackButton.layer.borderWidth = 1
@@ -91,40 +95,16 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         if GlobalVariables.previousItem == 3{
-        mapTabBar.selectedItem = tabBarItems[0]
+            mapTabBar.selectedItem = tabBarItems[0]
         }
         else {
             mapTabBar.selectedItem = tabBarItems[GlobalVariables.previousItem]
         }
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
-    //MARK: Delegate methods
-    
-    func mapView(_ mapView: MGLMapView, didUpdateUserLocation userLocation: Any!){
-    }
-    
-    
-    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        
-
-    }
-    
-    func mapView(_ mapView: MGLMapView, regionWillChangeAnimated animated: Bool){
-        
-        if mapView.userTrackingMode == .none {
-            trackButton.setImage(UIImage(systemName: "location"), for: .normal)
-        }
-    }
-    
-    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
-          mStyle = style
-        fireStoreController.getAllPVagt(mapView,style)
-        fireStoreController.getAllPTips(mapView, style)
     }
     
     //MARK: User interaction
@@ -135,28 +115,5 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         trackButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
     }
     
-    @objc @IBAction func handleMapTap(sender: UITapGestureRecognizer) {
-        let tapPoint: CGPoint = sender.location(in: mapView)
-        let coordinate: CLLocationCoordinate2D = mapView.convert(tapPoint, toCoordinateFrom: nil)
-        
-        
-        if pin?.coordinate != nil {
-            mapView.removeAnnotation(pin!)
-            pin!.coordinate = coordinate
-            mapView.addAnnotation(pin!)
-        }
-        else {
-                
-        pin!.coordinate = coordinate
-        
-        let shapeSource = MGLShapeSource(identifier: "marker-source", shape: pin, options: nil)
-        
-        let shapeLayer = MGLSymbolStyleLayer(identifier: "marker-style", source: shapeSource)
-        
-        mStyle.addSource(shapeSource)
-        mStyle.addLayer(shapeLayer)
-        mapView.addAnnotation(pin!)
-        }
-    }
     
 }

@@ -110,6 +110,8 @@ class TipViewController: UIViewController, UITextViewDelegate {
         
         guard let markerLocation = mapViewForSnapshot?.annotations?.first?.coordinate else { return}
         
+        
+        
         let tip = TipDTO(description: tipTextView.text, latitude: markerLocation.latitude, longitude: markerLocation.longitude)
         
         firestoreController.createPTip(tip) { (completed) -> (Void) in

@@ -9,7 +9,7 @@
 import UIKit
 
 extension MapViewController {
-
+    
     func animateUpLocationIcon() {
         UIView.animate(withDuration: 0.3, animations: {
             self.trackButton.transform = self.trackButton.transform.translatedBy(x: 0, y: -50)

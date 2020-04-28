@@ -12,15 +12,15 @@ import UIKit
 extension TipViewController {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-
+        
         if tipTextView.textColor == UIColor.lightGray {
             tipTextView.text = ""
             tipTextView.textColor = UIColor.white
         }
     }
-
+    
     func textViewDidEndEditing(_ textView: UITextView) {
-
+        
         if tipTextView.text == "" {
             tipTextView.text = "Skriv dit tip her"
             tipTextView.textColor = UIColor.lightGray
