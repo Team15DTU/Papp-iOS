@@ -17,6 +17,14 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     
     //MARK: Fields
     
+    // Had to make Globalvariables to store control tabbar navigation
+    // If we could have used UITabBarController we wouldnt have to do this
+    struct GlobalVariables {
+        static var previousItem: Int = 0
+        static var tabBar: UITabBar?
+        static var items: [UITabBarItem]?
+    }
+    
     var rightMenuNavigationController: SideMenuNavigationController!
     
     var mStyle: MGLStyle!
@@ -62,7 +70,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
         
         mapTabBar.selectedItem = tabBarItems[0]
         
-        previousSelectedTabBarItem = mapTabBar.selectedItem?.tag
+        GlobalVariables.previousItem = mapTabBar.selectedItem!.tag
         
         mapTabBar.delegate = self
         
@@ -82,7 +90,12 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        if GlobalVariables.previousItem == 3{
         mapTabBar.selectedItem = tabBarItems[0]
+        }
+        else {
+            mapTabBar.selectedItem = tabBarItems[GlobalVariables.previousItem]
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -111,6 +124,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate, UITabBarDelegate 
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
           mStyle = style
         fireStoreController.getAllPVagt(mapView,style)
+        fireStoreController.getAllPTips(mapView, style)
     }
     
     //MARK: User interaction

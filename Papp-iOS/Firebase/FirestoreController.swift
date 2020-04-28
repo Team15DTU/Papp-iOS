@@ -37,27 +37,27 @@ class FirestoreController {
     //MARK: Public methods
     
     func createUser(name: String, email: String ) {
-        db.collection(Collections.User.rawValue).addDocument(data: ["name" : name, "email": email] ) {
-            error in
-            if let error = error {
-                print("ERROR: Could not add user \(error)")
-            } else {
-                print("Sucessfully added user to DB")
-            }
-        }
+        
+        let userid = Auth.auth().currentUser?.uid
+        
+        db.collection(Collections.User.rawValue).document(userid!).setData(["name" : name, "email": email])
     }
     
     func createUser(){
         getDataFromFacebook()
-        db.collection(Collections.User.rawValue).addDocument(data: ["name": facebookName as Any, "email" : facebookEmail as Any] ) {
-            error in
-            if let error = error {
-                print("ERROR: Could not add user \(error)")
-            } else {
-                print("Sucessfully added user to DB")
+        
+        let userid = Auth.auth().currentUser?.uid
+        
+        doesUserExist { (sucess) in
+            if sucess == true {
+                print("The user already exists")
+            }
+            else {
+                self.db.collection(Collections.User.rawValue).document(userid!).setData(["name" : self.facebookName!, "email": self.facebookEmail!])
+                }
             }
         }
-    }
+       
     
     func getDataFromFacebook() {
        if let user = Auth.auth().currentUser {
@@ -66,6 +66,44 @@ class FirestoreController {
         facebookEmail = profile.email
        }
        }
+    }
+    
+    func doesUserExist (_ completion: @escaping (Bool) -> Void){
+         let docRef = db.collection(Collections.User.rawValue).whereField("email", isEqualTo: facebookEmail!)
+        
+        docRef.getDocuments { (querysnapshot, err) in
+            if let _ = err {
+                print("Error checking user email")
+            }
+            else if (querysnapshot?.isEmpty)! {
+                completion(false)
+            }
+            else {
+                for document in (querysnapshot?.documents)! {
+                    if document.data()["email"] != nil {
+                        completion(true)
+                    }
+                }
+            }
+        }
+    }
+    
+    func getNameCurrentOfUser (_ completion: @escaping(String) -> (Void)){
+        let userid = Auth.auth().currentUser?.uid
+        var name: String!
+        
+        let docRef = db.collection(Collections.User.rawValue).document(userid!)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                name = document["name"] as? String
+                completion(name)
+            } else {
+                print("Document does not exist")
+                completion("No name")
+            }
+        }
+        
     }
     
     func setRoundFacebookProfileImage(_ imageView: UIImageView) {
@@ -111,14 +149,16 @@ class FirestoreController {
         }
     }
     
-    func createPTip(_ tip: TipDTO){
+    func createPTip(_ tip: TipDTO, _ completion: @escaping(Bool) -> (Void)){
         db.collection(Collections.Tips.rawValue).addDocument(data: ["description":tip.description as Any, "latitude": tip.latitude as Any, "longitude": tip.longitude as Any]){
             error in
             if let error = error {
                 print("ERROR: Could not add Tip \(error)")
+                completion(false)
             }
             else {
                 print("Sucessfully added Tip to DB")
+                completion(true)
             }
         }
     }
@@ -170,4 +210,52 @@ class FirestoreController {
         }
         
     }
+    
+    func getAllPTips(_ mapView: MGLMapView, _ style: MGLStyle) {
+           db.collection(Collections.Tips.rawValue).addSnapshotListener { documentSnapshot, error in
+                 guard error == nil else {
+                   print("Error fetching document: \(error!)")
+                   return
+                 }
+               var pins = [MGLPointFeature()]
+               for document in documentSnapshot!.documents {
+                   let data = document.data()
+
+                   let coordinate = CLLocationCoordinate2D(latitude: (data["latitude"] as! CLLocationDegrees), longitude: (data["longitude"] as! CLLocationDegrees))
+                   
+                   let pin = MGLPointFeature()
+                   pin.coordinate = coordinate
+                   pins.append(pin)
+                   
+    
+               }
+               
+               let image = UIImageView(image: UIImage(systemName: "message.fill")!.withRenderingMode(.alwaysTemplate))
+               image.tintColor = .red
+               style.setImage(image.image!, forName: "message.fill")
+               
+
+               
+               let shapeSource = MGLShapeSource(identifier: "tip-source", features: pins, options: nil)
+               
+               let shapeLayer = MGLSymbolStyleLayer(identifier: "tip-style", source: shapeSource)
+               
+               
+               shapeLayer.iconImageName = NSExpression(forConstantValue: "message.fill")
+               shapeLayer.iconColor = NSExpression(forConstantValue: UIColor(red: 103/255, green: 150/255, blue: 190/255, alpha: 1))
+               
+               
+               if style.source(withIdentifier: "tip-source") == nil{
+                   style.addSource(shapeSource)
+                   style.addLayer(shapeLayer)
+               } else {
+                   //FIXME: To update the features, the only solution I could figure out is to reload the entire style. This causes blinking of the icons
+                   mapView.reloadStyle(nil)
+               }
+            
+               
+               
+           }
+           
+       }
 }

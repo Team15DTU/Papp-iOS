@@ -27,13 +27,14 @@ extension MapViewController
     
     @objc private func onClickConfirmTip() {
         if mapView.annotations?.count == 1 {
-            let storyboard = UIStoryboard(name: "TipDef", bundle: nil)
-            let tipVC = storyboard.instantiateViewController(withIdentifier: "tipViewController") as! TipViewController
-                           
-            tipVC.mapViewForSnapshot = mapView
-            tipVC.modalPresentationStyle = .fullScreen
+            let tipViewController = TipViewController(self)
+            
+            tipViewController.mapViewForSnapshot = mapView
+            
+            tipViewController.view.backgroundColor = .darkGray
+            
+            navigationController?.pushViewController(tipViewController, animated: true)
 
-            present(tipVC, animated: false, completion: nil)
         }
     }
     

@@ -54,8 +54,10 @@
 		347F8FC9241FB44000C47FB4 /* ForgotPasswordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */; };
 		347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */; };
 		347F8FCD241FBED100C47FB4 /* SignViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347F8FCC241FBED100C47FB4 /* SignViewDatasource.swift */; };
+		348235482456EF56009B0A6D /* TipViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348235472456EF56009B0A6D /* TipViewDatasource.swift */; };
 		3484BAE82445AD160064216E /* TipExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAE72445AD160064216E /* TipExtension.swift */; };
 		3484BAEC2445B2930064216E /* PVagtExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAEB2445B2930064216E /* PVagtExtension.swift */; };
+		34ACF3592456BA210061C778 /* TextViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */; };
 		34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C4240534ED0082476D /* AppDelegate.swift */; };
 		34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C6240534ED0082476D /* SceneDelegate.swift */; };
 		34BC10C9240534ED0082476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C8240534ED0082476D /* ViewController.swift */; };
@@ -64,7 +66,6 @@
 		34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CF240534ED0082476D /* LaunchScreen.storyboard */; };
 		34C27BC2244F2DBB00E68A8B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */; };
 		34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA74241E94B50085B303 /* TipViewController.swift */; };
-		34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DBEA7E241E951B0085B303 /* TipDef.storyboard */; };
 		34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E4447824279C9A0031FBC2 /* TableViewController.swift */; };
 		34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E49397244DDC3900D29C98 /* TipDTO.swift */; };
 		34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F610912445A19D006AA5E4 /* TabBarExtension.swift */; };
@@ -121,8 +122,10 @@
 		347F8FC8241FB44000C47FB4 /* ForgotPasswordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordExtension.swift; sourceTree = "<group>"; };
 		347F8FCA241FBE4000C47FB4 /* SignInExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInExtension.swift; sourceTree = "<group>"; };
 		347F8FCC241FBED100C47FB4 /* SignViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewDatasource.swift; sourceTree = "<group>"; };
+		348235472456EF56009B0A6D /* TipViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewDatasource.swift; sourceTree = "<group>"; };
 		3484BAE72445AD160064216E /* TipExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipExtension.swift; sourceTree = "<group>"; };
 		3484BAEB2445B2930064216E /* PVagtExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVagtExtension.swift; sourceTree = "<group>"; };
+		34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDelegateExtension.swift; sourceTree = "<group>"; };
 		34BC10C1240534ED0082476D /* Papp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Papp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BC10C4240534ED0082476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BC10C6240534ED0082476D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,7 +136,6 @@
 		34BC10D2240534ED0082476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		34DBEA74241E94B50085B303 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
-		34DBEA7E241E951B0085B303 /* TipDef.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipDef.storyboard; sourceTree = "<group>"; };
 		34E4447824279C9A0031FBC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		34E49397244DDC3900D29C98 /* TipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDTO.swift; sourceTree = "<group>"; };
 		34F610912445A19D006AA5E4 /* TabBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
@@ -301,8 +303,9 @@
 		34DBEA72241E94920085B303 /* Tip */ = {
 			isa = PBXGroup;
 			children = (
-				34DBEA7E241E951B0085B303 /* TipDef.storyboard */,
 				34DBEA74241E94B50085B303 /* TipViewController.swift */,
+				34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */,
+				348235472456EF56009B0A6D /* TipViewDatasource.swift */,
 			);
 			path = Tip;
 			sourceTree = "<group>";
@@ -414,7 +417,6 @@
 				34BC10CE240534ED0082476D /* Assets.xcassets in Resources */,
 				345E1A722405AC45003E859B /* Montserrat-BoldItalic.ttf in Resources */,
 				342E55422405ADB7007BB920 /* MapView.storyboard in Resources */,
-				34DBEA7F241E951B0085B303 /* TipDef.storyboard in Resources */,
 				345E1A652405AC45003E859B /* Montserrat-MediumItalic.ttf in Resources */,
 				345E1A642405AC45003E859B /* Montserrat-Light.ttf in Resources */,
 				345E1A6E2405AC45003E859B /* Montserrat-SemiBold.ttf in Resources */,
@@ -496,6 +498,7 @@
 				34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */,
 				34BC10C9240534ED0082476D /* ViewController.swift in Sources */,
 				340A614124508A5A00862262 /* SettingsLocationViewController.swift in Sources */,
+				348235482456EF56009B0A6D /* TipViewDatasource.swift in Sources */,
 				34C27BC2244F2DBB00E68A8B /* SettingsViewController.swift in Sources */,
 				34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */,
 				3484BAEC2445B2930064216E /* PVagtExtension.swift in Sources */,
@@ -515,6 +518,7 @@
 				340A614E24508E1200862262 /* SettingsHelpViewController.swift in Sources */,
 				342E55362405AD06007BB920 /* UserDTO.swift in Sources */,
 				34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */,
+				34ACF3592456BA210061C778 /* TextViewDelegateExtension.swift in Sources */,
 				340A614C24508E0800862262 /* SettingsFAQViewController.swift in Sources */,
 				34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */,
 				34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */,

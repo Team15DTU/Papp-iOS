@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 
 extension MapViewController {
@@ -15,31 +16,33 @@ extension MapViewController {
     
    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
            
-    if previousSelectedTabBarItem == 1 && item.tag != 3 {
+    if GlobalVariables.previousItem == 1 && item.tag != 3 {
             exitTip()
         }
-        else if previousSelectedTabBarItem == 2 && item.tag != 3{
+        else if GlobalVariables.previousItem == 2 && item.tag != 3{
             exitPVagt()
         }
            
         switch item.tag {
         case 0:
-            previousSelectedTabBarItem = 0
+            GlobalVariables.previousItem = 0
             break
         
         case 1:
             enterTip()
-            previousSelectedTabBarItem = 1
+            GlobalVariables.previousItem = 1
             break
             
         case 2:
             enterPVagt()
-            previousSelectedTabBarItem = 2
+            GlobalVariables.previousItem = 2
             break
                
         case 3:
+            GlobalVariables.tabBar = mapTabBar
+            GlobalVariables.items = tabBarItems
             present(rightMenuNavigationController, animated: true, completion: nil)
-            previousSelectedTabBarItem = 3
+            //GlobalVariables.previousItem = 3
             break
         default:
             print("WARNING: No such item found at \(item.tag)")
