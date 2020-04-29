@@ -29,16 +29,16 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
+            navigationController?.pushViewController(ReportsViewController(), animated: true)
             break
         case 1:
-            // let storyboardSettings = UIStoryboard(name: "Settings", bundle: nil)
-            //let vc = storyboardSettings.instantiateViewController(identifier: "SettingsViewController") as SettingsViewController
             navigationController?.pushViewController(SettingsViewController(), animated: true)
-            
             break
         case 2:
+            navigationController?.pushViewController(ProfileViewController(), animated: true)
             break
         case 3:
+            navigationController?.pushViewController(FriendsViewController(), animated: true)
             break
         case 4:
             logout()

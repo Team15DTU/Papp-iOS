@@ -58,6 +58,8 @@
 		3484BAE82445AD160064216E /* TipExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAE72445AD160064216E /* TipExtension.swift */; };
 		3484BAEC2445B2930064216E /* PVagtExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484BAEB2445B2930064216E /* PVagtExtension.swift */; };
 		34ACF3592456BA210061C778 /* TextViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */; };
+		34ADF1D42459915300DA5911 /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADF1D32459915300DA5911 /* ProfileContentView.swift */; };
+		34ADF1D62459955C00DA5911 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADF1D52459955C00DA5911 /* EditProfileViewController.swift */; };
 		34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C4240534ED0082476D /* AppDelegate.swift */; };
 		34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C6240534ED0082476D /* SceneDelegate.swift */; };
 		34BC10C9240534ED0082476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C8240534ED0082476D /* ViewController.swift */; };
@@ -65,6 +67,10 @@
 		34BC10CE240534ED0082476D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CD240534ED0082476D /* Assets.xcassets */; };
 		34BC10D1240534ED0082476D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BC10CF240534ED0082476D /* LaunchScreen.storyboard */; };
 		34C27BC2244F2DBB00E68A8B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */; };
+		34CEDC3424586666006E5D90 /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CEDC3324586666006E5D90 /* ReportsViewController.swift */; };
+		34CEDC3624586670006E5D90 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CEDC3524586670006E5D90 /* ProfileViewController.swift */; };
+		34CEDC382458667A006E5D90 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CEDC372458667A006E5D90 /* FriendsViewController.swift */; };
+		34CEDC3D245871D5006E5D90 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CEDC3C245871D5006E5D90 /* ProfileHeaderView.swift */; };
 		34D4D1882458239C00557985 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D1872458239C00557985 /* MapViewDelegate.swift */; };
 		34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DBEA74241E94B50085B303 /* TipViewController.swift */; };
 		34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E4447824279C9A0031FBC2 /* TableViewController.swift */; };
@@ -127,6 +133,8 @@
 		3484BAE72445AD160064216E /* TipExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipExtension.swift; sourceTree = "<group>"; };
 		3484BAEB2445B2930064216E /* PVagtExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVagtExtension.swift; sourceTree = "<group>"; };
 		34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDelegateExtension.swift; sourceTree = "<group>"; };
+		34ADF1D32459915300DA5911 /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
+		34ADF1D52459955C00DA5911 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		34BC10C1240534ED0082476D /* Papp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Papp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BC10C4240534ED0082476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BC10C6240534ED0082476D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +144,10 @@
 		34BC10D0240534ED0082476D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34BC10D2240534ED0082476D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34C27BC1244F2DBB00E68A8B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		34CEDC3324586666006E5D90 /* ReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
+		34CEDC3524586670006E5D90 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		34CEDC372458667A006E5D90 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		34CEDC3C245871D5006E5D90 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		34D4D1872458239C00557985 /* MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
 		34DBEA74241E94B50085B303 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		34E4447824279C9A0031FBC2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +282,9 @@
 		34BC10C3240534ED0082476D /* Papp-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				34CEDC3224586647006E5D90 /* Friends */,
+				34CEDC3124586642006E5D90 /* Profile */,
+				34CEDC3024586630006E5D90 /* Reports */,
 				34C27BBE244F2D6F00E68A8B /* Settings */,
 				34B8A4B7241FCDF600166AE1 /* LottieAnimation */,
 				34FCAB6E24168A0C00E5E5D0 /* Firebase */,
@@ -300,6 +315,33 @@
 				347332412451A15C0061FACA /* SettingsNotificationExtension.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		34CEDC3024586630006E5D90 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				34CEDC3324586666006E5D90 /* ReportsViewController.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		34CEDC3124586642006E5D90 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				34CEDC3524586670006E5D90 /* ProfileViewController.swift */,
+				34CEDC3C245871D5006E5D90 /* ProfileHeaderView.swift */,
+				34ADF1D32459915300DA5911 /* ProfileContentView.swift */,
+				34ADF1D52459955C00DA5911 /* EditProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		34CEDC3224586647006E5D90 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				34CEDC372458667A006E5D90 /* FriendsViewController.swift */,
+			);
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		34DBEA72241E94920085B303 /* Tip */ = {
@@ -496,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34CEDC3424586666006E5D90 /* ReportsViewController.swift in Sources */,
 				340A614424508D9000862262 /* SettingsMapViewController.swift in Sources */,
 				3484BAE82445AD160064216E /* TipExtension.swift in Sources */,
 				34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */,
@@ -505,6 +548,7 @@
 				34C27BC2244F2DBB00E68A8B /* SettingsViewController.swift in Sources */,
 				34E4447924279C9A0031FBC2 /* TableViewController.swift in Sources */,
 				3484BAEC2445B2930064216E /* PVagtExtension.swift in Sources */,
+				34ADF1D42459915300DA5911 /* ProfileContentView.swift in Sources */,
 				342E55412405ADB7007BB920 /* MapViewController.swift in Sources */,
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
 				347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */,
@@ -520,13 +564,17 @@
 				340A614724508DEC00862262 /* SettingsAboutViewController.swift in Sources */,
 				340A614A24508DFD00862262 /* SettingsReportViewController.swift in Sources */,
 				340A614E24508E1200862262 /* SettingsHelpViewController.swift in Sources */,
+				34ADF1D62459955C00DA5911 /* EditProfileViewController.swift in Sources */,
 				342E55362405AD06007BB920 /* UserDTO.swift in Sources */,
 				34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */,
 				34ACF3592456BA210061C778 /* TextViewDelegateExtension.swift in Sources */,
+				34CEDC382458667A006E5D90 /* FriendsViewController.swift in Sources */,
 				340A614C24508E0800862262 /* SettingsFAQViewController.swift in Sources */,
 				34DBEA75241E94B50085B303 /* TipViewController.swift in Sources */,
 				34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */,
 				347F8FCD241FBED100C47FB4 /* SignViewDatasource.swift in Sources */,
+				34CEDC3D245871D5006E5D90 /* ProfileHeaderView.swift in Sources */,
+				34CEDC3624586670006E5D90 /* ProfileViewController.swift in Sources */,
 				3411AA8624533F9400262FD7 /* TopSideMenuViewController.swift in Sources */,
 				347D1D77244DB47A000F2EC5 /* AnimateExtension.swift in Sources */,
 			);
