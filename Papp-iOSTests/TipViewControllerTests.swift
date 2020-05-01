@@ -1,5 +1,5 @@
 //
-//  Papp_iOSTests.swift
+//  TipViewControllerTests.swift
 //  Papp-iOSTests
 //
 //  Created by Anders la Cour Lønborg on 27/04/2020.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Papp_iOSTests: XCTestCase {
+class TipViewControllerTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,7 +25,7 @@ class Papp_iOSTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
