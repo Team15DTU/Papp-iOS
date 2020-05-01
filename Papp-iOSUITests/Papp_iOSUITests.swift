@@ -21,12 +21,33 @@ class Papp_iOSUITests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
 
     func testExample() throws {
         // UI tests must launch the application that they test.
+        let validEmail = "test@test.dk"
+        let validPassword = "tester"
+        
         let app = XCUIApplication()
         app.launch()
+        
+        let validEmailTextField = app.textFields["Email"]
+        XCTAssertTrue(validEmailTextField.exists)
+        validEmailTextField.tap()
+        validEmailTextField.typeText(validEmail)
+        
+        let passwordTextField = app.secureTextFields["Adgangskode"]
+        XCTAssertTrue(passwordTextField.exists)
+        passwordTextField.tap()
+        passwordTextField.typeText(validPassword)
+        
+        app.buttons["Log På"].tap()
+        
+        let homeButton = app.buttons["Hjem"]
+        
+        expectation(for: NSPredicate(format: "exists == 1"), evaluatedWith: homeButton, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

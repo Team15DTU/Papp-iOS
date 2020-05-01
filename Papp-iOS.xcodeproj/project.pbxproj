@@ -69,20 +69,23 @@
 		34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E49397244DDC3900D29C98 /* TipDTO.swift */; };
 		34F610922445A19D006AA5E4 /* TabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F610912445A19D006AA5E4 /* TabBarExtension.swift */; };
 		34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */; };
+		58B4BD8E7F2392666D6B4D66 /* Pods_Papp_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 296EC9246864A3586AE51A46 /* Pods_Papp_iOSTests.framework */; };
+		6BCCAC3CC033590BD80E9F05 /* Pods_Papp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */; };
 		8731DE26BC89D1967C907B6C /* Pods_Papp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */; };
-		9A918296245651FA0042F251 /* Papp_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A918295245651FA0042F251 /* Papp_iOSTests.swift */; };
 		9A9182A4245652070042F251 /* Papp_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9182A3245652070042F251 /* Papp_iOSUITests.swift */; };
+		9A9182E12457642D0042F251 /* Papp_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9182E02457642D0042F251 /* Papp_iOSTests.swift */; };
+		9A9182E92457655B0042F251 /* TipViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9182E82457655B0042F251 /* TipViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9A918298245651FA0042F251 /* PBXContainerItemProxy */ = {
+		9A9182A6245652070042F251 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 34BC10B9240534ED0082476D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 34BC10C0240534ED0082476D;
 			remoteInfo = "Papp-iOS";
 		};
-		9A9182A6245652070042F251 /* PBXContainerItemProxy */ = {
+		9A9182E32457642D0042F251 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 34BC10B9240534ED0082476D /* Project object */;
 			proxyType = 1;
@@ -93,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		10BD691B177CC7E27620FC44 /* Pods-Papp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.release.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		296EC9246864A3586AE51A46 /* Pods_Papp_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Papp_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		340A613C2450585800862262 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		340A613E24505F0800862262 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		340A614024508A5A00862262 /* SettingsLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLocationViewController.swift; sourceTree = "<group>"; };
@@ -157,14 +161,17 @@
 		34E49397244DDC3900D29C98 /* TipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDTO.swift; sourceTree = "<group>"; };
 		34F610912445A19D006AA5E4 /* TabBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
 		34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
-		9A918293245651FA0042F251 /* Papp-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Papp-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A918295245651FA0042F251 /* Papp_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Papp_iOSTests.swift; sourceTree = "<group>"; };
-		9A918297245651FA0042F251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A9182A1245652070042F251 /* Papp-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Papp-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9182A3245652070042F251 /* Papp_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Papp_iOSUITests.swift; sourceTree = "<group>"; };
 		9A9182A5245652070042F251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A9182DE2457642D0042F251 /* Papp-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Papp-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A9182E02457642D0042F251 /* Papp_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Papp_iOSTests.swift; sourceTree = "<group>"; };
+		9A9182E22457642D0042F251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A9182E82457655B0042F251 /* TipViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewControllerTests.swift; sourceTree = "<group>"; };
 		9E0C25528CBAB91B65E6BB84 /* Pods-Papp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Papp_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0A28F68827D145CA45B8CBA /* Pods-Papp-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Papp-iOSTests/Pods-Papp-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FFE2CF13EF994009C4070653 /* Pods-Papp-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Papp-iOSTests/Pods-Papp-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,13 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8731DE26BC89D1967C907B6C /* Pods_Papp_iOS.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9A918290245651FA0042F251 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				6BCCAC3CC033590BD80E9F05 /* Pods_Papp_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +188,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A9182DB2457642D0042F251 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58B4BD8E7F2392666D6B4D66 /* Pods_Papp_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,8 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				34BC10C3240534ED0082476D /* Papp-iOS */,
-				9A918294245651FA0042F251 /* Papp-iOSTests */,
 				9A9182A2245652070042F251 /* Papp-iOSUITests */,
+				9A9182DF2457642D0042F251 /* Papp-iOSTests */,
 				34BC10C2240534ED0082476D /* Products */,
 				7896B658C4A55B84695DADA2 /* Pods */,
 				3D09587567127F9FF6E7A7B9 /* Frameworks */,
@@ -300,8 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				34BC10C1240534ED0082476D /* Papp-iOS.app */,
-				9A918293245651FA0042F251 /* Papp-iOSTests.xctest */,
 				9A9182A1245652070042F251 /* Papp-iOSUITests.xctest */,
+				9A9182DE2457642D0042F251 /* Papp-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -377,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */,
+				296EC9246864A3586AE51A46 /* Pods_Papp_iOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -386,17 +396,10 @@
 			children = (
 				9E0C25528CBAB91B65E6BB84 /* Pods-Papp-iOS.debug.xcconfig */,
 				10BD691B177CC7E27620FC44 /* Pods-Papp-iOS.release.xcconfig */,
+				E0A28F68827D145CA45B8CBA /* Pods-Papp-iOSTests.debug.xcconfig */,
+				FFE2CF13EF994009C4070653 /* Pods-Papp-iOSTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		9A918294245651FA0042F251 /* Papp-iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				9A918295245651FA0042F251 /* Papp_iOSTests.swift */,
-				9A918297245651FA0042F251 /* Info.plist */,
-			);
-			path = "Papp-iOSTests";
 			sourceTree = "<group>";
 		};
 		9A9182A2245652070042F251 /* Papp-iOSUITests */ = {
@@ -406,6 +409,16 @@
 				9A9182A5245652070042F251 /* Info.plist */,
 			);
 			path = "Papp-iOSUITests";
+			sourceTree = "<group>";
+		};
+		9A9182DF2457642D0042F251 /* Papp-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A9182E02457642D0042F251 /* Papp_iOSTests.swift */,
+				9A9182E22457642D0042F251 /* Info.plist */,
+				9A9182E82457655B0042F251 /* TipViewControllerTests.swift */,
+			);
+			path = "Papp-iOSTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,24 +443,6 @@
 			productReference = 34BC10C1240534ED0082476D /* Papp-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9A918292245651FA0042F251 /* Papp-iOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9A91829C245651FA0042F251 /* Build configuration list for PBXNativeTarget "Papp-iOSTests" */;
-			buildPhases = (
-				9A91828F245651FA0042F251 /* Sources */,
-				9A918290245651FA0042F251 /* Frameworks */,
-				9A918291245651FA0042F251 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9A918299245651FA0042F251 /* PBXTargetDependency */,
-			);
-			name = "Papp-iOSTests";
-			productName = "Papp-iOSTests";
-			productReference = 9A918293245651FA0042F251 /* Papp-iOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		9A9182A0245652070042F251 /* Papp-iOSUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A9182A8245652070042F251 /* Build configuration list for PBXNativeTarget "Papp-iOSUITests" */;
@@ -466,6 +461,25 @@
 			productReference = 9A9182A1245652070042F251 /* Papp-iOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		9A9182DD2457642D0042F251 /* Papp-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A9182E52457642D0042F251 /* Build configuration list for PBXNativeTarget "Papp-iOSTests" */;
+			buildPhases = (
+				EA3145D1C176E7B2797D615F /* [CP] Check Pods Manifest.lock */,
+				9A9182DA2457642D0042F251 /* Sources */,
+				9A9182DB2457642D0042F251 /* Frameworks */,
+				9A9182DC2457642D0042F251 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A9182E42457642D0042F251 /* PBXTargetDependency */,
+			);
+			name = "Papp-iOSTests";
+			productName = "Papp-iOSTests";
+			productReference = 9A9182DE2457642D0042F251 /* Papp-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -479,11 +493,11 @@
 					34BC10C0240534ED0082476D = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
-					9A918292245651FA0042F251 = {
+					9A9182A0245652070042F251 = {
 						CreatedOnToolsVersion = 11.4;
 						TestTargetID = 34BC10C0240534ED0082476D;
 					};
-					9A9182A0245652070042F251 = {
+					9A9182DD2457642D0042F251 = {
 						CreatedOnToolsVersion = 11.4;
 						TestTargetID = 34BC10C0240534ED0082476D;
 					};
@@ -503,7 +517,7 @@
 			projectRoot = "";
 			targets = (
 				34BC10C0240534ED0082476D /* Papp-iOS */,
-				9A918292245651FA0042F251 /* Papp-iOSTests */,
+				9A9182DD2457642D0042F251 /* Papp-iOSTests */,
 				9A9182A0245652070042F251 /* Papp-iOSUITests */,
 			);
 		};
@@ -549,14 +563,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A918291245651FA0042F251 /* Resources */ = {
+		9A91829F245652070042F251 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A91829F245652070042F251 /* Resources */ = {
+		9A9182DC2457642D0042F251 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -605,6 +619,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EA3145D1C176E7B2797D615F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Papp-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -645,14 +681,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A91828F245651FA0042F251 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9A918296245651FA0042F251 /* Papp_iOSTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9A91829D245652070042F251 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -661,18 +689,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A9182DA2457642D0042F251 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A9182E92457655B0042F251 /* TipViewControllerTests.swift in Sources */,
+				9A9182E12457642D0042F251 /* Papp_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9A918299245651FA0042F251 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 34BC10C0240534ED0082476D /* Papp-iOS */;
-			targetProxy = 9A918298245651FA0042F251 /* PBXContainerItemProxy */;
-		};
 		9A9182A7245652070042F251 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 34BC10C0240534ED0082476D /* Papp-iOS */;
 			targetProxy = 9A9182A6245652070042F251 /* PBXContainerItemProxy */;
+		};
+		9A9182E42457642D0042F251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34BC10C0240534ED0082476D /* Papp-iOS */;
+			targetProxy = 9A9182E32457642D0042F251 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -817,6 +854,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = "Papp-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -836,6 +874,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6TSQJ6DQ5;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = "Papp-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -848,50 +887,11 @@
 			};
 			name = Release;
 		};
-		9A91829A245651FA0042F251 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Papp-iOSTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Papp-iOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Papp-iOS.app/Papp-iOS";
-			};
-			name = Debug;
-		};
-		9A91829B245651FA0042F251 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Papp-iOSTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Papp-iOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Papp-iOS.app/Papp-iOS";
-			};
-			name = Release;
-		};
 		9A9182A9245652070042F251 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "${PODS_ROOT}/Firebase/Core/Sources";
 				INFOPLIST_FILE = "Papp-iOSUITests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -911,6 +911,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "${PODS_ROOT}/Firebase/Core/Sources";
 				INFOPLIST_FILE = "Papp-iOSUITests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -923,6 +924,56 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Papp-iOS";
+			};
+			name = Release;
+		};
+		9A9182E62457642D0042F251 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0A28F68827D145CA45B8CBA /* Pods-Papp-iOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				INFOPLIST_FILE = "Papp-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Papp-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Papp-iOS.app/Papp-iOS";
+			};
+			name = Debug;
+		};
+		9A9182E72457642D0042F251 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFE2CF13EF994009C4070653 /* Pods-Papp-iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				INFOPLIST_FILE = "Papp-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Papp-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Papp-iOS.app/Papp-iOS";
 			};
 			name = Release;
 		};
@@ -947,20 +998,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A91829C245651FA0042F251 /* Build configuration list for PBXNativeTarget "Papp-iOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9A91829A245651FA0042F251 /* Debug */,
-				9A91829B245651FA0042F251 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9A9182A8245652070042F251 /* Build configuration list for PBXNativeTarget "Papp-iOSUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A9182A9245652070042F251 /* Debug */,
 				9A9182AA245652070042F251 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A9182E52457642D0042F251 /* Build configuration list for PBXNativeTarget "Papp-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A9182E62457642D0042F251 /* Debug */,
+				9A9182E72457642D0042F251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
