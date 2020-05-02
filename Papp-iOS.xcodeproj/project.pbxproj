@@ -72,8 +72,7 @@
 		58B4BD8E7F2392666D6B4D66 /* Pods_Papp_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 296EC9246864A3586AE51A46 /* Pods_Papp_iOSTests.framework */; };
 		6BCCAC3CC033590BD80E9F05 /* Pods_Papp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */; };
 		8731DE26BC89D1967C907B6C /* Pods_Papp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */; };
-		9A9182A4245652070042F251 /* Papp_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9182A3245652070042F251 /* Papp_iOSUITests.swift */; };
-		9A9182E12457642D0042F251 /* Papp_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9182E02457642D0042F251 /* Papp_iOSTests.swift */; };
+		9A9182A4245652070042F251 /* SignViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9182A3245652070042F251 /* SignViewControllerUITests.swift */; };
 		9A9182E92457655B0042F251 /* TipViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9182E82457655B0042F251 /* TipViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -162,10 +161,9 @@
 		34F610912445A19D006AA5E4 /* TabBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
 		34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
 		9A9182A1245652070042F251 /* Papp-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Papp-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A9182A3245652070042F251 /* Papp_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Papp_iOSUITests.swift; sourceTree = "<group>"; };
+		9A9182A3245652070042F251 /* SignViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewControllerUITests.swift; sourceTree = "<group>"; };
 		9A9182A5245652070042F251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A9182DE2457642D0042F251 /* Papp-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Papp-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A9182E02457642D0042F251 /* Papp_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Papp_iOSTests.swift; sourceTree = "<group>"; };
 		9A9182E22457642D0042F251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A9182E82457655B0042F251 /* TipViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewControllerTests.swift; sourceTree = "<group>"; };
 		9E0C25528CBAB91B65E6BB84 /* Pods-Papp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papp-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Papp-iOS/Pods-Papp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -405,7 +403,7 @@
 		9A9182A2245652070042F251 /* Papp-iOSUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9A9182A3245652070042F251 /* Papp_iOSUITests.swift */,
+				9A9182A3245652070042F251 /* SignViewControllerUITests.swift */,
 				9A9182A5245652070042F251 /* Info.plist */,
 			);
 			path = "Papp-iOSUITests";
@@ -414,7 +412,6 @@
 		9A9182DF2457642D0042F251 /* Papp-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A9182E02457642D0042F251 /* Papp_iOSTests.swift */,
 				9A9182E22457642D0042F251 /* Info.plist */,
 				9A9182E82457655B0042F251 /* TipViewControllerTests.swift */,
 			);
@@ -685,7 +682,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A9182A4245652070042F251 /* Papp_iOSUITests.swift in Sources */,
+				9A9182A4245652070042F251 /* SignViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,7 +691,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9182E92457655B0042F251 /* TipViewControllerTests.swift in Sources */,
-				9A9182E12457642D0042F251 /* Papp_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,7 +887,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "${PODS_ROOT}/Firebase/Core/Sources";
+				ENABLE_TESTABILITY = YES;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Papp-iOSUITests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -911,7 +908,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "${PODS_ROOT}/Firebase/Core/Sources";
+				ENABLE_TESTABILITY = YES;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Papp-iOSUITests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -21,10 +21,11 @@ class Papp_iOSUITests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // MARK: Make the login session expire
         
     }
 
-    func testExample() throws {
+    func testLogin() throws {
         // UI tests must launch the application that they test.
         let validEmail = "test@test.dk"
         let validPassword = "tester"
@@ -52,6 +53,36 @@ class Papp_iOSUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    func testLoginWithKeyboard() throws {
+           // UI tests must launch the application that they test.
+           let validEmail = "test@test.dk"
+           let validPassword = "tester"
+           
+           let app = XCUIApplication()
+           app.launch()
+           
+           let validEmailTextField = app.textFields["Email"]
+           XCTAssertTrue(validEmailTextField.exists)
+           validEmailTextField.tap()
+           validEmailTextField.typeText(validEmail)
+           
+           let passwordTextField = app.secureTextFields["Adgangskode"]
+           XCTAssertTrue(passwordTextField.exists)
+           app/*@START_MENU_TOKEN@*/.buttons["Next:"]/*[[".keyboards",".buttons[\"Næste\"]",".buttons[\"Next:\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+           passwordTextField.typeText(validPassword)
+           
+           app/*@START_MENU_TOKEN@*/.buttons["Done"]/*[[".keyboards",".buttons[\"OK\"]",".buttons[\"Done\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+           
+           let homeButton = app.buttons["Hjem"]
+           
+           expectation(for: NSPredicate(format: "exists == 1"), evaluatedWith: homeButton, handler: nil)
+           waitForExpectations(timeout: 5, handler: nil)
+        
+           // Use recording to get started writing UI tests.
+           // Use XCTAssert and related functions to verify your tests produce the correct results.
+       }
+    
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
