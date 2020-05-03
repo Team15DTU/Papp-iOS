@@ -16,6 +16,7 @@
 		340A614C24508E0800862262 /* SettingsFAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614B24508E0800862262 /* SettingsFAQViewController.swift */; };
 		340A614E24508E1200862262 /* SettingsHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340A614D24508E1200862262 /* SettingsHelpViewController.swift */; };
 		3411AA8624533F9400262FD7 /* TopSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411AA8524533F9400262FD7 /* TopSideMenuViewController.swift */; };
+		3420E074245EC9FE006BE705 /* PickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3420E073245EC9FE006BE705 /* PickerViewExtension.swift */; };
 		342E55362405AD06007BB920 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E55352405AD06007BB920 /* UserDTO.swift */; };
 		342E553B2405AD12007BB920 /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342E55372405AD12007BB920 /* SignViewController.swift */; };
 		342E553C2405AD12007BB920 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342E55382405AD12007BB920 /* SignUp.storyboard */; };
@@ -60,6 +61,7 @@
 		34ACF3592456BA210061C778 /* TextViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */; };
 		34ADF1D42459915300DA5911 /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADF1D32459915300DA5911 /* ProfileContentView.swift */; };
 		34ADF1D62459955C00DA5911 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADF1D52459955C00DA5911 /* EditProfileViewController.swift */; };
+		34ADF1DE2459B8F400DA5911 /* EditProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ADF1DD2459B8F400DA5911 /* EditProfileContentView.swift */; };
 		34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C4240534ED0082476D /* AppDelegate.swift */; };
 		34BC10C7240534ED0082476D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C6240534ED0082476D /* SceneDelegate.swift */; };
 		34BC10C9240534ED0082476D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC10C8240534ED0082476D /* ViewController.swift */; };
@@ -91,6 +93,7 @@
 		340A614B24508E0800862262 /* SettingsFAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFAQViewController.swift; sourceTree = "<group>"; };
 		340A614D24508E1200862262 /* SettingsHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHelpViewController.swift; sourceTree = "<group>"; };
 		3411AA8524533F9400262FD7 /* TopSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSideMenuViewController.swift; sourceTree = "<group>"; };
+		3420E073245EC9FE006BE705 /* PickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewExtension.swift; sourceTree = "<group>"; };
 		342E55352405AD06007BB920 /* UserDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		342E55372405AD12007BB920 /* SignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		342E55382405AD12007BB920 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 		34ACF3582456BA210061C778 /* TextViewDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDelegateExtension.swift; sourceTree = "<group>"; };
 		34ADF1D32459915300DA5911 /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 		34ADF1D52459955C00DA5911 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		34ADF1DD2459B8F400DA5911 /* EditProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileContentView.swift; sourceTree = "<group>"; };
 		34BC10C1240534ED0082476D /* Papp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Papp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BC10C4240534ED0082476D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BC10C6240534ED0082476D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +257,26 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		34ADF1DB2459B8AD00DA5911 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				34CEDC3C245871D5006E5D90 /* ProfileHeaderView.swift */,
+				34ADF1D32459915300DA5911 /* ProfileContentView.swift */,
+				34ADF1DD2459B8F400DA5911 /* EditProfileContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		34ADF1DC2459B8BC00DA5911 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				34CEDC3524586670006E5D90 /* ProfileViewController.swift */,
+				34ADF1D52459955C00DA5911 /* EditProfileViewController.swift */,
+				3420E073245EC9FE006BE705 /* PickerViewExtension.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		34B8A4B7241FCDF600166AE1 /* LottieAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,10 +352,8 @@
 		34CEDC3124586642006E5D90 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				34CEDC3524586670006E5D90 /* ProfileViewController.swift */,
-				34CEDC3C245871D5006E5D90 /* ProfileHeaderView.swift */,
-				34ADF1D32459915300DA5911 /* ProfileContentView.swift */,
-				34ADF1D52459955C00DA5911 /* EditProfileViewController.swift */,
+				34ADF1DC2459B8BC00DA5911 /* Controller */,
+				34ADF1DB2459B8AD00DA5911 /* View */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -551,6 +573,7 @@
 				34ADF1D42459915300DA5911 /* ProfileContentView.swift in Sources */,
 				342E55412405ADB7007BB920 /* MapViewController.swift in Sources */,
 				34BC10C5240534ED0082476D /* AppDelegate.swift in Sources */,
+				3420E074245EC9FE006BE705 /* PickerViewExtension.swift in Sources */,
 				347F8FC7241FB42F00C47FB4 /* SignUpExtension.swift in Sources */,
 				347332422451A15C0061FACA /* SettingsNotificationExtension.swift in Sources */,
 				347F8FCB241FBE4000C47FB4 /* SignInExtension.swift in Sources */,
@@ -566,6 +589,7 @@
 				340A614E24508E1200862262 /* SettingsHelpViewController.swift in Sources */,
 				34ADF1D62459955C00DA5911 /* EditProfileViewController.swift in Sources */,
 				342E55362405AD06007BB920 /* UserDTO.swift in Sources */,
+				34ADF1DE2459B8F400DA5911 /* EditProfileContentView.swift in Sources */,
 				34E49398244DDC3900D29C98 /* TipDTO.swift in Sources */,
 				34ACF3592456BA210061C778 /* TextViewDelegateExtension.swift in Sources */,
 				34CEDC382458667A006E5D90 /* FriendsViewController.swift in Sources */,

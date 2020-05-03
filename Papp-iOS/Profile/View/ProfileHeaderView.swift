@@ -20,9 +20,8 @@ class ProfileHeaderView: UIView {
     
     let textLabel: UILabel = {
         let label = UILabel()
-        label.text = "Test"
-        label.textColor = .blue
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -38,19 +37,26 @@ class ProfileHeaderView: UIView {
     
     func addViews () {
         firestoreController.setRoundFacebookProfileImage(profileImageView)
+        firestoreController.getNameCurrentOfUser { (name) -> (Void) in
+            self.textLabel.text = name
+        }
         addSubview(profileImageView)
         addSubview(textLabel)
         addSubview(backgroundImageView)
         bringSubviewToFront(profileImageView)
+        bringSubviewToFront(textLabel)
     }
     
     func setupConstraints () {
-        textLabel.centerYAnchor.constraint(equalTo: layoutMarginsGuide.centerYAnchor).isActive = true
-        textLabel.centerXAnchor.constraint(equalTo: layoutMarginsGuide.centerXAnchor).isActive = true
-        profileImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        profileImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
         profileImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        textLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor).isActive = true
+        textLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        textLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
         backgroundImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         backgroundImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         backgroundImageView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true

@@ -26,6 +26,8 @@ class ProfileViewController: UIViewController {
         view.setupConstraints()
         return view
     }()
+    
+    let userDefaults = UserDefaults()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,8 @@ class ProfileViewController: UIViewController {
         
         view.addSubview(profileHeaderView)
         view.addSubview(profileContentView)
+        
+        getNewestUserInfo()
         
         profileHeaderView.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor).isActive = true
         profileHeaderView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
@@ -48,6 +52,15 @@ class ProfileViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getNewestUserInfo()
+    }
+    
+    func getNewestUserInfo() {
+        profileContentView.descriptionLabel.text = userDefaults.string(forKey: "descriptionText")
+        profileContentView.locationLabel.text = userDefaults.string(forKey: "country")
     }
     
     func configureNavigationBar() {
