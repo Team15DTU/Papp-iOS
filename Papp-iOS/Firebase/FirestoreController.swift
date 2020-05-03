@@ -274,4 +274,18 @@ class FirestoreController {
         }
         
     }
+    
+    func editCountry(_ country: String) {
+        
+        let currentUser = Auth.auth().currentUser
+        db.collection(Collections.User.rawValue).document(currentUser!.uid).setData(["country" : country], merge: true)
+        
+    }
+    
+    func editDescription(_ description: String) {
+        
+        let currentUser = Auth.auth().currentUser
+        db.collection(Collections.User.rawValue).document(currentUser!.uid).setData(["description" : description], merge: true)
+        
+    }
 }
