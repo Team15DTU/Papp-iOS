@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tip View Controller-->
+        <scene sceneID="GfT-DR-SFb">
+            <objects>
+                <viewController storyboardIdentifier="tipViewController" id="ZE8-Xi-ppQ" customClass="TipViewController" customModule="Papp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v8E-ag-z0y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLo-pg-ABd">
+                                <rect key="frame" x="62" y="120" width="290" height="197"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Skriv dit tip her" translatesAutoresizingMaskIntoConstraints="NO" id="zoS-2L-4YU">
+                                <rect key="frame" x="62" y="345" width="290" height="205"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iMq-YV-cWR" firstAttribute="trailing" secondItem="yLo-pg-ABd" secondAttribute="trailing" constant="62" id="0ND-tM-Auy"/>
+                            <constraint firstItem="iMq-YV-cWR" firstAttribute="trailing" secondItem="zoS-2L-4YU" secondAttribute="trailing" constant="62" id="E0I-7S-6Ih"/>
+                            <constraint firstItem="zoS-2L-4YU" firstAttribute="top" secondItem="iMq-YV-cWR" secondAttribute="top" constant="301" id="GNw-fi-Jgs"/>
+                            <constraint firstItem="yLo-pg-ABd" firstAttribute="leading" secondItem="iMq-YV-cWR" secondAttribute="leading" constant="62" id="IZx-oO-Glc"/>
+                            <constraint firstItem="iMq-YV-cWR" firstAttribute="bottom" secondItem="yLo-pg-ABd" secondAttribute="bottom" constant="545" id="MQa-76-7Zo"/>
+                            <constraint firstItem="yLo-pg-ABd" firstAttribute="top" secondItem="iMq-YV-cWR" secondAttribute="top" constant="76" id="amv-KO-GFa"/>
+                            <constraint firstItem="iMq-YV-cWR" firstAttribute="bottom" secondItem="zoS-2L-4YU" secondAttribute="bottom" constant="312" id="cIv-rA-ryg"/>
+                            <constraint firstItem="zoS-2L-4YU" firstAttribute="leading" secondItem="iMq-YV-cWR" secondAttribute="leading" constant="62" id="sIL-yf-kVE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iMq-YV-cWR"/>
+                    </view>
+                    <connections>
+                        <outlet property="SendTipTextView" destination="zoS-2L-4YU" id="cR0-dv-gdq"/>
+                        <outlet property="tipPlacementSnap" destination="yLo-pg-ABd" id="Fjd-Q2-DKa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zj7-VT-XAR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334.78260869565219" y="-311.38392857142856"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,52 +7,44 @@
 //
 
 import UIKit
-import SideMenu
 
 
 extension MapViewController {
     
     //MARK: Delegate methods
     
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        
-        if GlobalVariables.previousItem == 1 && item.tag != 3 {
+   func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+           
+    if previousSelectedTabBarItem == 1 && item.tag != 3 {
             exitTip()
         }
-        else if GlobalVariables.previousItem == 2 && item.tag != 3{
+        else if previousSelectedTabBarItem == 2 && item.tag != 3{
             exitPVagt()
         }
-        
+           
         switch item.tag {
         case 0:
-            GlobalVariables.previousItem = 0
-            enableTipMapTap()
+            previousSelectedTabBarItem = 0
             break
-            
+        
         case 1:
-            disableTipMapTap()
             enterTip()
-            
-            GlobalVariables.previousItem = 1
+            previousSelectedTabBarItem = 1
             break
             
         case 2:
-            disableTipMapTap()
             enterPVagt()
-            
-            GlobalVariables.previousItem = 2
+            previousSelectedTabBarItem = 2
             break
-            
+               
         case 3:
-            GlobalVariables.tabBar = mapTabBar
-            GlobalVariables.items = tabBarItems
             present(rightMenuNavigationController, animated: true, completion: nil)
-            //GlobalVariables.previousItem = 3
+            previousSelectedTabBarItem = 3
             break
         default:
             print("WARNING: No such item found at \(item.tag)")
         }
-        
+       
     }
     
 }

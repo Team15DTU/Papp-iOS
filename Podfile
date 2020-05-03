@@ -16,4 +16,8 @@ pod 'lottie-ios'
 pod 'SideMenu', '~> 6.4.8'
 # Optionally, include the Swift extensions if you're using Swift.
 pod 'FirebaseFirestoreSwift'
+
+target 'Papp-iOSTests' do
+     inherit! :search_paths
+   end
 end
