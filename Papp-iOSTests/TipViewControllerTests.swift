@@ -36,11 +36,21 @@ class TipViewControllerTests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
 
-    func testExample() throws {
+    func testCreateSnapshot() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        //sut.createSnapshot()
+        
+        let expectation = XCTestExpectation(description: "Create map snapshot")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+            XCTAssertNotNil(self.sut.tipPlacementSnap.image)
+            expectation.fulfill()
+        }
+        wait(for: [expectation],timeout: 10)
     }
 
     func testPerformanceExample() throws {
