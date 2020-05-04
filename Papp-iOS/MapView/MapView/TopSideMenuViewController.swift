@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
-import SideMenu
 
 class TopSideMenuViewController: UIViewController {
     
@@ -20,23 +19,31 @@ class TopSideMenuViewController: UIViewController {
     
     @IBOutlet weak var heartLabel: UILabel!
     
-    let fireStoreController = FirestoreController.init()
+    let user = Auth.auth().currentUser
     
-    var previousSelectedTabBarItem: Int!
+    let fireStoreController = FirestoreController.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fireStoreController.getNameCurrentOfUser { (name) -> (Void) in
-            self.nameLabel.text = name
-        }
-        
+        nameLabel.text = user?.displayName
         fireStoreController.setRoundFacebookProfileImage(profileImageView)
+        
+        // Do any additional setup after loading the view.
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        MapViewController.GlobalVariables.tabBar!.selectedItem = MapViewController.GlobalVariables.items![MapViewController.GlobalVariables.previousItem]
-        
+        print("Disappear")
     }
-    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

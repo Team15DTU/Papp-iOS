@@ -29,16 +29,19 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            navigationController?.pushViewController(ReportsViewController(), animated: true)
+            print(indexPath)
             break
         case 1:
+           // let storyboardSettings = UIStoryboard(name: "Settings", bundle: nil)
+            //let vc = storyboardSettings.instantiateViewController(identifier: "SettingsViewController") as SettingsViewController
             navigationController?.pushViewController(SettingsViewController(), animated: true)
+            
             break
         case 2:
-            navigationController?.pushViewController(ProfileViewController(), animated: true)
+            print(indexPath)
             break
         case 3:
-            navigationController?.pushViewController(FriendsViewController(), animated: true)
+            print(indexPath)
             break
         case 4:
             logout()
@@ -47,24 +50,22 @@ class TableViewController: UITableViewController {
             print("ERROR: Could not find TableViewCell at indexpath \(indexPath)")
             break
         }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     //MARK: Support methods
     
     private func logout() {
         guard Auth.auth().currentUser != nil else {
-            return
-        }
-        
-        do {
-            try Auth.auth().signOut()
+               return
+           }
+
+           do {
+              try Auth.auth().signOut()
             AccessToken.current = nil
             transitionToSignIn()
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
+           } catch let error as NSError {
+               print(error.localizedDescription)
+           }
     }
     
     private func transitionToSignIn() {
