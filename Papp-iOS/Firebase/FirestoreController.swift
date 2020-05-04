@@ -10,6 +10,7 @@ import Firebase
 import FBSDKCoreKit
 import UIKit
 import Mapbox
+import FirebaseAuth
 
 class FirestoreController {
     
