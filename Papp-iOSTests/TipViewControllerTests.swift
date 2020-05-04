@@ -26,11 +26,10 @@ class TipViewControllerTests: XCTestCase {
         mapView = MGLMapView(frame: CGRect(x: 0, y: 0, width: 414, height: 813))
         mapView.setCenter(CLLocationCoordinate2D(latitude: 55.31, longitude: 12.06), zoomLevel: 10, animated: false)
         mapView.addAnnotation(pin!)
+        let mapVC: MapViewController = MapViewController()
+        sut = TipViewController(mapVC)
         
-        let storyboard = UIStoryboard(name: "TipDef", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: "tipViewController") as? TipViewController
         sut.mapViewForSnapshot = mapView
-        sut.loadViewIfNeeded()
     }
 
     override func tearDownWithError() throws {
@@ -41,7 +40,7 @@ class TipViewControllerTests: XCTestCase {
     func testCreateSnapshot() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+        sut.createSnapshot()
         let expectation = XCTestExpectation(description: "Create map snapshot")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
