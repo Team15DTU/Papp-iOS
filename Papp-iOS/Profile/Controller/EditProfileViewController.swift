@@ -60,7 +60,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         guard savedCountry != nil else { return }
         
-        if contentView.descriptionTextField.text != nil {
+        if contentView.descriptionTextField.text != "" {
             userDefaults.set(contentView.descriptionTextField.text, forKey: "descriptionText")
             firestoreController.editDescription(contentView.descriptionTextField.text!)
         }
