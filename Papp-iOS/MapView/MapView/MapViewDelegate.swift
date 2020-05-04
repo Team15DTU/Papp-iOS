@@ -48,7 +48,7 @@ extension MapViewController {
          return nil
      }
     
-    //MARK: - Public methods
+    //MARK: - Public methods 
     
     @objc @IBAction func handleMapTap(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
