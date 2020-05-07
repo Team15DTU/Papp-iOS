@@ -8,8 +8,8 @@
 import XCTest
 
 @testable import Papp_iOS
-
 import Mapbox
+
 
 class TipViewControllerTests: XCTestCase {
     

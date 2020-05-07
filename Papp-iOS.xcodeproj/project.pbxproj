@@ -81,6 +81,7 @@
 		34FCAB6D24168A0400E5E5D0 /* FirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */; };
 		58EB9BA5753E2A702A02F8D8 /* Pods_Papp_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A351540F6DBE5D08AF1AF7 /* Pods_Papp_iOSTests.framework */; };
 		8731DE26BC89D1967C907B6C /* Pods_Papp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A864D7B53D068E56F2E68897 /* Pods_Papp_iOS.framework */; };
+		9A3ED41B2464708200351AB2 /* EditProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3ED41A2464708200351AB2 /* EditProfileViewControllerTests.swift */; };
 		9AA663E1246052D9006A7605 /* SignViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA663E0246052D9006A7605 /* SignViewControllerUITests.swift */; };
 		9AA663E92460540E006A7605 /* TipViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA663E82460540E006A7605 /* TipViewControllerTests.swift */; };
 /* End PBXBuildFile section */
@@ -179,6 +180,7 @@
 		34E49397244DDC3900D29C98 /* TipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDTO.swift; sourceTree = "<group>"; };
 		34F610912445A19D006AA5E4 /* TabBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarExtension.swift; sourceTree = "<group>"; };
 		34FCAB6C24168A0400E5E5D0 /* FirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreController.swift; sourceTree = "<group>"; };
+		9A3ED41A2464708200351AB2 /* EditProfileViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewControllerTests.swift; sourceTree = "<group>"; };
 		9AA663D0246052B8006A7605 /* Papp-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Papp-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA663D4246052B9006A7605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AA663DE246052D9006A7605 /* Papp-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Papp-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -482,6 +484,7 @@
 			children = (
 				9AA663E0246052D9006A7605 /* SignViewControllerUITests.swift */,
 				9AA663E2246052D9006A7605 /* Info.plist */,
+				9A3ED41A2464708200351AB2 /* EditProfileViewControllerTests.swift */,
 			);
 			path = "Papp-iOSUITests";
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3ED41B2464708200351AB2 /* EditProfileViewControllerTests.swift in Sources */,
 				9AA663E1246052D9006A7605 /* SignViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -965,9 +969,12 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SRCROOT}/Pods/Firebase/CoreOnly/Sources",
+				);
 				INFOPLIST_FILE = "Papp-iOSTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -987,9 +994,12 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${SRCROOT}/Pods/Firebase/CoreOnly/Sources",
+				);
 				INFOPLIST_FILE = "Papp-iOSTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1008,7 +1018,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Papp-iOSUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1027,7 +1037,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Papp-iOSUITests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
