@@ -82,7 +82,7 @@ class TipViewController: UIViewController, UITextViewDelegate {
         let options = MGLMapSnapshotOptions(styleURL: mapViewForSnapshot?.styleURL, camera: camera, size: CGSize(width: 290, height: 200))
         options.zoomLevel = 16
         
-        // Create an indicator so the user knows that the snapshot is loading.
+        // Create an indicator to show the user that the snapshot is loading.
         let indicator = UIActivityIndicatorView(frame: CGRect(x: snapShotImageView.bounds.width/2, y: snapShotImageView.bounds.height/2, width: 150, height: 150))
         snapShotImageView.addSubview(indicator)
         indicator.startAnimating()
