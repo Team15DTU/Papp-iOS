@@ -53,7 +53,7 @@
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoicGtvbnRyb2wiLCJhIjoiY2sxaHNqYWN3MDVmaDNjano4aTRqbHZvOCJ9.ahQvQS5PuCTUiKOKoJ59XQ</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Shows your location on the map and helps improve the map.</string>
+	<string>Viser din placering på kortet og hjæper med at gøre kortet bedre.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Regular.ttf</string>
