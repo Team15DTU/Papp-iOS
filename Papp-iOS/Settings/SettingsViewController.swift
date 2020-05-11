@@ -110,12 +110,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case .Social:
             let social = GeneralOptions(rawValue: indexPath.row)
             cell.sectionType = social
+            cell.accessoryType = .disclosureIndicator
         case .Communications:
             let communications = CommuncationOptions(rawValue: indexPath.row)
             cell.sectionType = communications
         case .Information:
             let information = InformationOptions(rawValue: indexPath.row)
             cell.sectionType = information
+            cell.accessoryType = .disclosureIndicator
         }
         
         return cell
