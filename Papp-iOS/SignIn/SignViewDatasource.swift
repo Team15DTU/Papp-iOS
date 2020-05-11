@@ -34,7 +34,7 @@ extension SignViewController {
     func setUpTextFields(_ textField: UITextField) {
         let bottomline = CALayer()
         
-        bottomline.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width-45, height: 2)
+        bottomline.frame = CGRect(x: 0, y: textField.frame.height - 2, width: textField.frame.width, height: 2)
         
         bottomline.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         
