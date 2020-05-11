@@ -43,11 +43,11 @@ class TipViewControllerTests: XCTestCase {
         sut.createSnapshot()
         let expectation = XCTestExpectation(description: "Create map snapshot")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 12.0){
             XCTAssertNotNil(self.sut.snapShotImageView.image)
             expectation.fulfill()
         }
-        wait(for: [expectation],timeout: 10)
+        wait(for: [expectation],timeout: 15)
     }
 
     func testPerformanceExample() throws {

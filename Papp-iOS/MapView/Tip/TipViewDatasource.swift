@@ -49,10 +49,6 @@ extension TipViewController {
         snapShotImageView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 60).isActive = true
         
         snapShotImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        
-        
-        
-        
     }
     
     func addButtons(){

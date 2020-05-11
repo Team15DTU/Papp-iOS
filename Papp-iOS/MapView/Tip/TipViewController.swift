@@ -83,7 +83,7 @@ class TipViewController: UIViewController, UITextViewDelegate {
         options.zoomLevel = 16
         
         // Create an indicator to show the user that the snapshot is loading.
-        let indicator = UIActivityIndicatorView(frame: CGRect(x: snapShotImageView.bounds.width/2, y: snapShotImageView.bounds.height/2, width: 150, height: 150))
+        let indicator = UIActivityIndicatorView(frame: CGRect(x: snapShotImageView.bounds.width/2, y: snapShotImageView.bounds.height/2, width: 335, height: 200))
         snapShotImageView.addSubview(indicator)
         indicator.startAnimating()
         
