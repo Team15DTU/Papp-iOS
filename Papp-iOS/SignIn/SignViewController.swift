@@ -59,7 +59,20 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         setUpGreyButtons(button: signUpButton)
         setUpGreyButtons(button: forgotPasswordButton)
         setUpFacebookbutton()
+
+        
+        // Add delegate to textfields
+        emailTextField?.delegate = self
+        passwordTextField?.delegate = self
+        emailSignUpTextField?.delegate = self
+        nameSignUpTextField?.delegate = self
+        passwordSignUpTextField?.delegate = self
+        emailForgotTextField?.delegate = self
+        repeatPassword?.delegate = self
+    }
     
+    override func viewDidLayoutSubviews() {
+                
         if emailTextField?.text != nil && passwordTextField?.text != nil{
         setUpTextFields(emailTextField!)
         setUpTextFields(passwordTextField!)
@@ -75,16 +88,6 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         if emailForgotTextField?.text != nil {
             setUpTextFields(emailForgotTextField!)
         }
-
-        
-        // Add delegate to textfields
-        emailTextField?.delegate = self
-        passwordTextField?.delegate = self
-        emailSignUpTextField?.delegate = self
-        nameSignUpTextField?.delegate = self
-        passwordSignUpTextField?.delegate = self
-        emailForgotTextField?.delegate = self
-        repeatPassword?.delegate = self
     }
     
     //MARK: Delegate methods
